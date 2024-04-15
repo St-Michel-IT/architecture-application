@@ -1,0 +1,592 @@
+\documentclass{beamer}
+
+% Style
+\usepackage{xcolor}
+
+\usetheme{Madrid}
+\usepackage{dirtree}
+% Color
+\definecolor{flatblue}{RGB}{106, 137, 204}
+\usecolortheme[named=flatblue]{structure}
+% Font
+\usepackage{emoji}
+\usepackage{fontspec}
+\usepackage{csquotes}
+\setsansfont{EB Garamond}
+% Code
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=flatblue,
+    filecolor=flatblue,
+    urlcolor=flatblue,
+    citecolor=flatblue
+}
+\definecolor{flatgreen}{RGB}{0, 98, 102}
+\definecolor{flatgreyish}{RGB}{209, 216, 224}
+\lstset{
+    basicstyle=\ttfamily\scriptsize,
+    backgroundcolor=\color{flatgreyish},
+    keywordstyle=\color{flatgreen},        % Keywords font ('*' = uppercase)
+    commentstyle=\color{flatblue},         % Step between two line-numbers
+    columns=fullflexible,
+    breaklines=true
+}
+
+% Highlight
+\usepackage[most]{tcolorbox}
+\usepackage{cleveref}
+\crefformat{footnote}{#2\footnotemark[#1]#3}
+\usepackage{amsmath}
+\definecolor{flatorange}{RGB}{255, 165, 2}
+\definecolor{flatred}{RGB}{255, 71, 87}
+\tcbset{textmarker/.style={%
+skin=enhancedmiddle jigsaw,breakable,parbox=false,
+boxrule=0mm,leftrule=2mm,rightrule=0mm,boxsep=0mm,arc=0mm,outer arc=0mm,
+left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
+\newtcolorbox{dangercolorbox}{textmarker,colback=flatorange,colframe=flatred}
+
+% Title
+\title{Architectures d’Applications - Bachelor CSI}
+\author{Christophe Brun}
+\institute{Campus Saint-Michel IT}
+\date{21 septembre 2033}
+\beamertemplatenavigationsymbolsempty
+
+% Graphix with arrows in between
+\newcommand*{\vcenterimage}[1]{\vcenter{\hbox{\includegraphics[width=5cm]{#1}}}}
+\newcommand*{\vcenterarrow}{\vcenter{\hbox{$\Longrightarrow$}}}
+
+\titlegraphic{
+    \bigbreak
+    \includegraphics[width=2cm]{image/logo-papit.png}
+    \includegraphics[width=2cm]{image/logo-campus-saint-michel-it.png}
+}
+\begin{document}
+
+    \begin{frame}
+        \transdissolve
+        \titlepage
+    \end{frame}
+
+    \begin{frame}{Table des matières}
+        \tableofcontents
+    \end{frame}
+
+
+    \section{Programme du module}
+    \begin{frame}
+        \frametitle{Architectures d’Applications}
+        \framesubtitle{Compétence acquise aucours des 3 jours du module}
+        \transdissolve
+        Compétences~:
+        \begin{itemize}
+            \item \textquote{Concevoir une architecture d’applications.}~???
+        \end{itemize}
+        \pause
+        \bigbreak
+        Reformulation~:
+        \begin{itemize}
+            \item Concevoir une application architecturée.
+        \end{itemize}
+        \centering
+        \includegraphics[width=5cm]{image/engraving-of-a-monk-drawing-a-cathedral.png}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Architectures d’Applicationsa}
+        \framesubtitle{Le programme officiel des 3 jours du module}
+        \transdissolve
+        \fontsize{8pt}{8pt}\selectfont
+        \begin{enumerate}
+            \item Les différentes architectures d’une application
+            \item L’architecture REST
+            \begin{itemize}
+                \fontsize{8pt}{8pt}\selectfont
+                \item Architectures Orientées Services
+                \begin{itemize}
+                    \item Besoins de la SOA
+                    \item Notion de service
+                    \item Introduction aux Architectures Orientées Services
+                \end{itemize}
+                \item Vers les Architectures Orientées Services
+                \begin{itemize}
+                    \item Les architectures Client-Serveur
+                    \item Les architectures Web
+                \end{itemize}
+                \item Les Web Services
+                \begin{itemize}
+                    \item Appel de procédure
+                    \item World Wide Web
+                    \item Formats d’échange textuels
+                    \item Vers la notion de Web Service
+                \end{itemize}
+                \item Web Service de type SOAP et REST
+                \item Guidelines API-REST
+                \begin{itemize}
+                    \item Gestion des actions et des URLs
+                    \item Recherche, Tri, Filtre et Pagination
+                    \item Gestion des erreurs
+                \end{itemize}
+            \end{itemize}
+        \end{enumerate}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Evaluation}
+        \begin{itemize}
+            \item Bons points tout au long du module.
+            \item 25 \% x 3 sur chaque séance de travaux dirigés évalués en fin de séance.
+            2 architectures agnostiques à une application et une orientée web REST ou SOAP.
+            \item 25 \% sur une évaluation écrite finale
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Intervenant sur le module Architecture d'Aplication}
+        \framesubtitle{Christophe Brun, conseil en développement informatique}
+
+        \begin{columns}
+            \column{0.7\textwidth}
+            \begin{itemize}
+                \item 1\textsuperscript{ere} année d'intervenant à Saint-Michel \emoji{star-struck}.
+
+                \item 7 ans de conseil en développement au sein d'SSII.
+
+                \item 7 ans de conseil en développement à mon compte \href{https://papit.fr}{PapIT}.
+
+                \item Passionné~!
+                \bigbreak
+                \begin{columns}
+                    \column{0.5\textwidth}
+                    \centering
+                    \includegraphics[width=3cm]{image/logo-uppa.png}
+                    \column{0.5\textwidth}
+                    \centering
+                    \includegraphics[width=3cm]{image/logo-universite-bordeaux.png}
+                \end{columns}
+            \end{itemize}
+            \column{0.3\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/trombine-christophe.jpg}
+        \end{columns}
+    \end{frame}
+
+
+    \section{Généralités}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Pourquoi le design ou architecture logiciel~?}
+        \begin{columns}
+            \column{0.5\textwidth}
+            \textquote{The goal of software architecture is to minimize the human resources required to build and maintain the required system.}\footnotemark
+            \centering
+            \column{0.5\textwidth}
+            \centering
+            \begin{tabular}{cc}
+                \includegraphics[width=6.0cm]{image/da-vinci-plans.jpg} \\
+                L. de Vinci par C.G. Gerli en 1789.                     \\
+            \end{tabular}
+        \end{columns}
+        \footnotetext{\label{cleanarchitecture}Clean Architecture, Robert C. Martin}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Eloge de la simplicité}
+        Léonard de Vinci, 1452-1519~: \textquote{La simplicité est la sophistication suprême.}\footnote{La Pause Philo, \url{https://lapausephilo.fr/2015/09/15/simplicite-sophistication-supreme-leonard-de-vinci/}}
+        \bigbreak
+        Albert Einstein, 1879-1955~: \textquote{Si vous ne pouvez expliquer quelque chose simplement, c’est que vous ne l’avez pas bien compris.}
+        \bigbreak
+        Trouver et implémenter une architecture logiciel doit être simple.
+        C'est compliqué il y a un souci.
+        \bigbreak La modularité est en autre permise par la dissection d'un système complexe en sous-systèmes plus simples.
+        Ces systèmes plus simples n'ont qu'une seule responsabilité (Comme en programmation fonctionnelle~?).
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Définition}
+        \framesubtitle{Architecture~?, Design~?, les deux~?}
+        Encore une fois, pour faire simple, nous allons présumer que l'architecture et le design sont la même chose dans le monde du logiciel.\cref{cleanarchitecture}
+        Le \textquote{Design patterns}\footnote{Design patterns, \url{https://refactoring.guru/design-patterns}} est un classique en développement logiciel.
+        \bigbreak
+        \textquote{The onlye way to go fast is to go well.}\cref{cleanarchitecture}
+        \bigbreak
+        \textquote{The blueprint of the system.}\footnote{\label{fundsofsoftarch}Fundamentals of Software Architecture, Mark Richards et Neal Ford}
+        \bigbreak
+        Le mot système revient souvent.
+        C'est un terme vague et récursif, c'est-à-dire qu'un système est composé de système plus simples.
+        L'architecture système est d'ailleurs un domaine en charge de l'architecture de l'entreprise, des produits et des logiciels.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Définition}
+        \framesubtitle{Le couplage}
+        C'est un des termes les plus importants en architecture logiciel.
+        Il faut le comprendre l'éviter tant que possible.
+        \bigbreak
+        \textquote{It is a result of putting avariable, constant, or function in a temporary convinient, thought inappropriate, location. This is lazy and careless}\footnote{\label{cleancode}Robert C. Martin, Clean Code}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les briques}
+        \framesubtitle{Les briques en architecture}
+        \begin{columns}
+            \column{0.6\textwidth}
+            Probablement hérité du jargon de l'architecture des bâtiments, le mot brique est aussi souvent utilisé en architecture logiciel.
+            \bigbreak
+            Beaucoup d'industries utilisent des briques pour construire des systèmes plus complexes.
+            Parfois appelée \textquote{conception modulaire}, c'est par exemple, dans l'industrie automobile, réutiliser une même pièce sur plusieurs modèles de voitures.
+            \bigbreak
+            Quelles sont les briques en architecture logiciel~?
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=4cm]{image/engraving-of-a-craftman-cutting-a-stone.png}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les briques}
+        \framesubtitle{3 paradigmes de programmation représentant par des briques\cref{cleanarchitecture}}
+        \begin{itemize}
+            \item Programmation structurée (sous-ensemble de la programmation impérative), où la brique est le module de code, i.e., de programmes et sous-programmes.
+            Il contient les instructions de control de flux (if, else, for, while, etc.).
+            \item Programmation orientée objet, où la brique est la classe.
+            \item Programmation fonctionnelle, où la brique est la fonction.
+        \end{itemize}
+        \bigbreak
+        La plupart des langages de programmation modernes supportent ces 3 paradigmes. JS, Python, Java, C/C++.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les briques}
+        \framesubtitle{Exemple de programmation structurée}
+        Utilisation de tout le control flow classique.
+        \bigbreak
+        \centering
+        \begin{tabular}{cc}
+            \includegraphics[width=10cm]{image/analyse-topdown-prog-struc}                                                                                                                                        \\
+            Analyse top-down pour division des taches en sous-programmes\footnote{Programmation structurée, \url{https://perso.univ-lyon1.fr/marc.buffat/COURS/BOOK_INPROS_HTML/CHAP5/COURS_ALGORITHMIQUE.html}}.                     \\
+        \end{tabular}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Les briques}
+        \framesubtitle{Exemple de programmation fonctionnelle\cref{cleanarchitecture}}
+        Les briques sont de simples fonctions, des fonctions dîtes pures.
+        Les données ne sont modifiées uniquement que par ces fonctions.
+        \bigbreak
+        Des exemples de langages fonctionnels~: Haskell, Lisp, Erlang, Scala, F\#.
+        \bigbreak
+        D'autres langages supportent la programmation fonctionnelle comme Python, JS, Java en autre ont des outils orientés programmation fonctionnelle.
+        Souvent nommées fonctions dîtes lambda ou \textquote{arrow functions}, map, reduce, filter, etc.
+        \begin{lstlisting}[language=python]
+>>> is_even = lambda x: x % 2 == 0 # No return needed?
+>>> list(map(is_even, [1, 2, 3, 4]))
+[False, True, False, True]
+>>> list(filter(is_even, [1, 2, 3, 4])) # Kept only if True
+[2, 4]
+>>> from functools import reduce
+>>> from operator import mul
+>>> reduce(mul, [1, 2, 3, 4]) # Function applied to all elements, 1 * 2 * 3 * 4
+24
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Les briques}
+        \framesubtitle{Exemple de programmation fonctionnelle}
+        3 modules dédiés à la programmation fonctionnelle dans la \textquote{standard library}\footnote{Functional Programming Modules, \url{https://docs.python.org/3/library/functional.html}}~:
+        \begin{itemize}
+            \item \lstinline{functools}, \textquote{Higher-order functions and operations on callable objects}.
+            \item \lstinline{itertools}, \textquote{Functions creating iterators for efficient looping}.
+            \item \lstinline{operator}, \textquote{Standard operators as functions}.
+        \end{itemize}
+        \bigbreak
+        L'équivalent en JS, sans aucune librairie à importer~:
+        \begin{lstlisting}[language=java]
+> numbers = new Array(1, 2, 3, 4, 5)
+[ 1, 2, 3, 4, 5 ]
+> const isEven = x => x % 2 === 0;
+undefined
+> numbers.map(isEven);
+[ false, true, false, true, false ]
+> numbers.reduce(isEven);
+true
+> numbers.filter(isEven);
+[ 2, 4 ]
+> numbers.reduce((x, y) => y * x);
+120
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Les briques}
+        \framesubtitle{Exemple de programmation orientée objet\cref{cleanarchitecture}}
+        La brique de base en programmation orientée objet est la classe.
+        \bigbreak
+        En OOP on parle de polymorphisme, c'est la capacité d'un objet, i.e., une classe, à prendre plusieurs formes.
+        Une évolution dans une classe fille n'implique pas de modification dans la classe mère.
+        Une évolution dans une classe mère impacte les classes filles.
+        Si ces classes sont dans des modules différents, il n'est même pas nécessaire de recompiler tous les modules.
+        Pouvoir controller quelle classe dépend de quelle autre est un atout majeur de cette architecture logiciel.
+        \bigbreak
+        L'encapsulation des données et des méthodes dans une classe permet un design simple de ce qui appartient à un objet, une instance de classe, et ce qui est accessible depuis l'extérieur.
+        \bigbreak
+        L'encapsulation et l'héritage qui permet le polymorphisme sont les 2 atouts principaux de la programmation orientée objet.
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Les briques}
+        \framesubtitle{Exemple de programmation orientée objet}
+        Polymorphisme par héritage d'une classe.
+        \begin{lstlisting}[language=python]
+>>> class Oiseau:
+        def __init__(self, name):
+            self.name = name
+
+>>> class Pigeon(Oiseau):
+        def __init__(self, name):
+            Oiseau.__init__(self, name)
+        def mange_un_filtre_cigarette(self):
+            print("{} mange un filtre de cigarette!!!".format(self.name))
+
+>>> class Cygne(Oiseau):
+        def __init__(self, name):
+            Oiseau.__init__(self, name)
+        def plonge(self):
+            print("{} plonge dans le lac!!!".format(self.name))
+
+>>> goelan = Oiseau("Jonathan Livingston")
+>>> cygne = Cygne("Juste Leblanc") # C'est un Oiseau aussi !
+>>> pigeon = Pigeon("Casimir") # Même le pigeaon est un Oiseau !
+>>> all(map(lambda x: isinstance(x, Oiseau), [cygne, pigeon, goelan]))
+True
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Les briques}
+        \framesubtitle{Exemple de programmation orientée objet}
+        Polymorphisme par héritage d'une classe abstraite.
+        \begin{lstlisting}[language=python]
+>>> from abc import ABC, abstractmethod
+
+>>> class Oiseau(ABC): # ABC -> ABstract Class
+        def __init__(self):
+            pass
+        @abstractmethod
+        def vole(self): # Polymorphisme au niveau de cette méthode !
+            raise NotImplementedError
+
+>>> class Poule(Oiseau):
+        def __init__(self):
+            Oiseau.__init__(self)
+        def vole(self): # Chacun vole à sa manière, son implémentation
+            print("Je vole quelques mètres")
+
+>>> cocote = Poule()
+
+>>> cocote.vol()
+Je vole quelques mètres
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Les briques}
+        \framesubtitle{Exemple de programmation orientée objet}
+        Contrainte d'implémentation d'une méthode abstraite \lstinline{vole} .
+
+        \begin{lstlisting}[language=python]
+>>> class Dodo(Oiseau):
+        def __init__(self):
+            Oiseau.__init__(self)
+
+>>> Aussie = Dodo()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In [10], line 1
+----> 1 Aussie = Dodo()
+
+TypeError: Can't instantiate abstract class Dodo with abstract method vole
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les types de briques}
+        \framesubtitle{Exercice de 5 minutes}
+        Trouvez quel type de paradigme de programmation est utilisé dans les exemples suivants~:
+        \begin{itemize}
+            \item \url{https://github.com/facebook/Haxl/}
+            \item \url{https://github.com/gurupratap-matharu/Bike-Rental-System/blob/master/main.py}
+            \item \url{https://github.com/papit-fr/fsma/}
+        \end{itemize}
+        Tirage au sort d'un étudiant pour chaque exemple, il doit expliquer pourquoi il pense que c'est ce type de programmation.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Le TDD}
+        \framesubtitle{Test Driven Development}
+        Vouloir aller plus vite sans faire de test semble être une mauvaise idée.
+
+        Ce qui pratiquent le TDD vont plus vite dès le début d'un projet\cref{cleanarchitecture}~!
+        \bigbreak
+        \centering
+        \includegraphics[width=8cm]{image/tdd-vs-no-tdd.png}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Le TDD}
+        \framesubtitle{Quel type(s) de test~?}
+        Tous les types de tests possibles sont à écrire dès que possible avant même de commencer à coder.
+        Les tests unitaires sont en général les plus simples à écrire et les plus rapides à exécuter.
+        \bigbreak
+        Les éléments centraux, les règles de gestions, les \textquote{business rules} doivent être testables sans les éléments périphériques\cref{cleanarchitecture}~:
+        \bigbreak
+        \centering
+        \includegraphics[width=6cm]{image/the-clean-architecture.png}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Le TDD}
+        \framesubtitle{Quel types de test~?}
+        Edsger Dijkstra~: \textquote{Testing shows the presence, not the absence of bugs.}
+        \bigbreak
+        \begin{columns}
+            \column{0.5\textwidth}
+            Autrement dit, l'univers des tests est infini, on n'a jamais la certitude de sufficient tester.
+            \bigbreak
+            Même le coverage est une mauvaise mesure.
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/monk-looking-the-deepness-of-the-stars-in-the-night-sky.png}
+        \end{columns}
+    \end{frame}
+
+
+    \section{Les outils de mesure}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les mesures du couplage}
+        \framesubtitle{L'\textquote{abstractness} $A$\cref{fundsofsoftarch}}
+        L'\textquote{abstractness} est une mesure de l'abstraction par rapport aux implémentations concrètes.
+        Elle fut introduite par Robert C. Martin.
+        \begin{equation}
+            A = \frac{\sum Ca}{\sum Cc}
+        \end{equation}
+        Dans l'équation 1~:
+        \begin{itemize}
+            \item $A$ est \textquote{abstractness}
+            \item $Ca$ est le nombre de classes abstraites
+            \item $Cc$ est le nombre de classes concrètes.
+        \end{itemize}
+        \bigbreak
+        Les valeurs de $A$ sont entre 0 et 1.
+        Les extrêmes proches de 0 ou 1 sont à éviter, elles représentent des architectures trop concrètes ou trop abstraites.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les mesures du couplage}
+        \framesubtitle{Couplage afférent}
+        Le couplage afférent est le nombre total de classes qui dépendent de la classe A~:
+        \bigbreak
+        \centering
+        \includegraphics[width=5cm]{image/afferent-coupling.drawio.png}
+        \bigbreak
+        \flushleft
+        Ici $Ca$ est 3.
+
+        Un $Ca$ élevé impacte principalement la portabilité.
+        Car ce code viendra forcément avec beaucoup de code en dépendance.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les mesures du couplage}
+        \framesubtitle{Couplage efférent $Ce$}
+        Le couplage efférent est le nombre total de classes dont dépend de la classe A~:
+        \bigbreak
+        \centering
+        \includegraphics[width=5cm]{image/efferent-coupling.drawio.png}
+        \bigbreak
+        \flushleft
+        Ici $Ce$ est 3.
+
+        Plus le $Ce$ est élevé, plus le code est difficile à reuse et à maintenir.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les mesures du couplage}
+        \framesubtitle{L'\textquote{instability} $I$\cref{fundsofsoftarch}}
+        L'\textquote{instability} est une autre mesure qui en découle.
+        Elle détermine la volatilité du code, l'effort à fournir pour modifier une partie du code sans devoir en modifier une autre.
+        \begin{equation}
+            I = \frac{Ce}{Ce + Ca}
+        \end{equation}
+        Dans l'équation 2~:
+        \begin{itemize}
+            \item $I$ est \textquote{instability}
+            \item $Ca$ couplage afférent, objet ou package en entrée (\textquote{a} en premier d'où \textquote{entrée}).
+            \item $Ce$ couplage efférent, objet ou package en sortie (\textquote{e} comme \textquote{exit}).
+        \end{itemize}
+        \bigbreak
+        Quand elle est trop élevée, qu'elle tend vers 1, le code casse vite à cause d'un fort couplage.
+        Elle a donc un impact négatif sur le reuse, les correctifs, la maintenance et la portabilité.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les mesures du couplage}
+        \framesubtitle{La\textquote{Distance from main sequence} $D$\cref{fundsofsoftarch}\textsuperscript{,}\footnote{A Study on Robert C.Martin’s Metrics for Packet Categorization
+        Using Fuzzy Logic, Gurpreet Kaur and Deepak Sharma\url{https://gvpress.com/journals/IJHIT/vol8_no12/15.pdf}}}
+        Une cinquième métrique introduite par Robert C. Martin est la \textquote{Distance from main sequence}.
+        \bigbreak
+        Elle définit une relation entre $A$ et $I$ comme suit~:
+        \begin{columns}
+            \column{0.5\textwidth}
+            \begin{equation}
+                D = |A + I - 1|
+            \end{equation}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/distance-from-main-sequence.png}
+        \end{columns}
+        \bigbreak
+        \flushleft
+        $D$ doit s'approcher de 0 pour une architecture souhaitable.
+        Si $D$ est élevé, on s'éloigne de compromis acceptable.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les mesures du couplage}
+        \framesubtitle{Exercice de 15 minutes}
+        Calculer les valeurs de $Ca$, $Ce$, $A$, $I$ et $D$ pour les chaque classe du source \url{}.
+    \end{frame}
+
+    \section{Les différentes architectures d’une application}
+
+\end{document}
