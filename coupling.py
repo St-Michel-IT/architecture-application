@@ -8,15 +8,26 @@ The measures are:
     - Abstractness (A)
     - Distance (D)
 """
+from abc import ABC, abstractmethod
 from typing import Iterable
 
 
-class Moteur:
+class Tourne(ABC):
+    @abstractmethod
+    def en_avant(self):
+        ...
+
+    @abstractmethod
+    def en_arrière(self):
+        ...
+
+
+class Moteur(Tourne):
     def __init__(self):
         pass
 
 
-class Roue:
+class Roue(Tourne):
     def __init__(self):
         pass
 

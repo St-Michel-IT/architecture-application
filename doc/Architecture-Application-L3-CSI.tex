@@ -441,6 +441,9 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         Tirage au sort d'un étudiant pour chaque exemple, il doit expliquer pourquoi il pense que c'est ce type de programmation.
     \end{frame}
 
+
+    \section{TDD}
+
     \begin{frame}
         \transdissolve
         \frametitle{Le TDD}
@@ -448,6 +451,8 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         Vouloir aller plus vite sans faire de test semble être une mauvaise idée.
 
         Ce qui pratiquent le TDD vont plus vite dès le début d'un projet\cref{cleanarchitecture}~!
+
+        Entre autre, les tests unitaires font réduire la taille des classes, functions et des méthodes ce qui améliore architecture.
         \bigbreak
         \centering
         \includegraphics[width=8cm]{image/tdd-vs-no-tdd.png}
@@ -474,7 +479,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         \bigbreak
         \begin{columns}
             \column{0.5\textwidth}
-            Autrement dit, l'univers des tests est infini, on n'a jamais la certitude de sufficient tester.
+            Autrement dit, l'univers des tests est infini, on n'a jamais la certitude de suffisamment tester.
             \bigbreak
             Même le coverage est une mauvaise mesure.
             \column{0.5\textwidth}
@@ -484,13 +489,28 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
     \end{frame}
 
 
-    \section{Les outils de mesure}
+    \section{Les mesures}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les mesures du couplage}
+        \framesubtitle{L'importance des données}
+        L'architecture c'est le monde du compromis, des possibilités infinies.
+        \bigbreak
+        L'intuition, l'expérience, les connaissances et le bon sens, nous guiderons.
+
+        Mais il est possible de mesurer l'architecture et donc d'avoir une approche \textquote{Data Driven} .
+        \bigbreak
+        Nous verrons dans cette section les différentes des métriques classiques, mais pas toutes, car elles sont nombreuses.
+
+        On parle parfois des CK (Chidamber \& Kemerer) metrics qui peuvent ressembler, etc.
+    \end{frame}
 
     \begin{frame}
         \transdissolve
         \frametitle{Les mesures du couplage}
         \framesubtitle{L'\textquote{abstractness} $A$\cref{fundsofsoftarch}}
-        L'\textquote{abstractness} est une mesure de l'abstraction par rapport aux implémentations concrètes.
+        '\textquote{abstractness}  une mesure de l'abstraction par rapport aux implémentations concrètes.
         Elle fut introduite par Robert C. Martin.
         \begin{equation}
             A = \frac{\sum Ca}{\sum Cc}
@@ -583,8 +603,94 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
     \begin{frame}
         \transdissolve
         \frametitle{Les mesures du couplage}
-        \framesubtitle{Exercice de 15 minutes}
-        Calculer les valeurs de $Ca$, $Ce$, $A$, $I$ et $D$ pour les chaque classe du source \url{}.
+        \framesubtitle{Exercice de 30 minutes}
+        Calculer les valeurs de $Ca$, $Ce$, $A$, $I$ et $D$ pour les chaque classe du source \url{https://github.com/St-Michel-IT/architecture-application/blob/main/coupling.py}.
+        \bigbreak
+        Restituez le résultat dans un tableau Excel et un graphique avec les $D$ et la droite \textquote{main sequence}.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les mesures du couplage}
+        \framesubtitle{Exercice de 30 minutes}
+        Résultat de l'exercice~:
+        \bigbreak
+        \centering
+        \includegraphics[width=8cm]{image/exercice-metrics-1}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Les mesures du couplage}
+        \framesubtitle{Les outils}
+        Certains outils comme \lstinline{JCAT}\footnote{Tool for Measuring Coupling in Object-Oriented Java Software, \url{https://shorturl.at/npDR2}} en Java ou \lstinline{module_coupling_metrics}\footnote{\url{https://github.com/Oaz/module_coupling_metrics}} en Python permettent de calculer ces métriques.
+        % shell listing with the command~:
+        \begin{lstlisting}[language=bash]
+$ module_coupling_metrics data_management.py
+        \end{lstlisting}
+        \begin{columns}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/data-management-metrics-table.png}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/data-management-disance-chart.png}
+        \end{columns}
+
+        Attention à bien comprendre ces métriques et comment les interpréter.
+        \lstinline{module_coupling_metrics} est ne calcule le couplage qu'entre modules.
+        \bigbreak
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les mesures de la complexité cyclomatique}
+        \framesubtitle{La théorie}
+        Établie en 1976, elle est devenue le standard de mesure de complexity du code.
+        \bigbreak
+        Elle se calcule pour une méthode ou fonction avec l'équation suivante~:
+        \begin{equation}
+            CC = E - N + 2
+        \end{equation}
+        Ou~:
+        \begin{itemize}
+            \item $CC$ est la complexité cyclomatique.
+            \item $E$ comme \textquote{edge} , est le nombre d'arêtes (les \lstinline{return} , \lstinline{yield}, \lstinline{exit}) du graphe de contrôle de flux.
+            \item $N$ comme \textquote{node} , est le nombre de nœuds, les \lstinline{if} , \lstinline{while} , du graphe de contrôle de flux.
+        \end{itemize}
+        \bigbreak
+        Les valeurs au-dessous de 5 sont bonnes, au-dessus de 10 il y a danger\cref{fundsofsoftarch} .
+        \bigbreak
+        Une $CC$ trop élevée est un code smell de Sonar Qube.
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Les mesures de la complexité cyclomatique}
+        \framesubtitle{Exemple de fonction}
+        % C code listing
+        \begin{lstlisting}[language=c]
+uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
+    uint64_t res = 1;
+    while (exp > 1) {
+        // If the exponent digit is 1, then multiply
+        if (exp & 1) {
+            res = (res * base) % mod;
+            // If an intermediate result is zero, we can return 0.
+            // The result will be zero anyway
+            if (res == 0) {
+                return 0;
+            }
+        }
+        // If the exponent digit is 0, then square
+        base = (base * base) % mod;
+        exp >>= 1;
+    }
+    return (base * res) % mod;
+}
+        \end{lstlisting}
+
+        Ici $E$ est 2 et $N$ est 3, donc $CC$ est 1.
     \end{frame}
 
     \section{Les différentes architectures d’une application}
