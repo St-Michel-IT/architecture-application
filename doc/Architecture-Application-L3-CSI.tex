@@ -15,8 +15,8 @@
 
 \titlegraphic{
     \bigbreak
-    \includegraphics[width=2cm]{image/logo-papit.png}
-    \includegraphics[width=2cm]{image/logo-campus-saint-michel-it.png}
+    \includegraphics[width=2cm]{image/logo-papit}
+    \includegraphics[width=2cm]{image/logo-campus-saint-michel-it}
 }
 \begin{document}
 
@@ -30,7 +30,7 @@
     \end{frame}
 
 
-    \section{Programme du module}
+    \section{Programme du module}\label{sec:programme-du-module}
     \begin{frame}
         \frametitle{Architectures d’Applications}
         \framesubtitle{Compétence acquise aucours des 3 jours du module}
@@ -46,7 +46,7 @@
             \item Concevoir une application architecturée.
         \end{itemize}
         \centering
-        \includegraphics[width=5cm]{image/engraving-of-a-monk-drawing-a-cathedral.png}
+        \includegraphics[width=5cm]{image/engraving-of-a-monk-drawing-a-cathedral}
     \end{frame}
 
     \begin{frame}
@@ -94,7 +94,7 @@
         \begin{itemize}
             \item Bons points tout au long du module.
             \item 25 \% x 3 sur chaque séance de travaux dirigés évalués en fin de séance.
-            2 architectures agnostiques à une application et une orientée web REST ou SOAP.
+            2 architectures agnostiques à une application et une orientée web REST ou SOAP~.
             \item 25 \% sur une évaluation écrite finale
         \end{itemize}
     \end{frame}
@@ -109,7 +109,7 @@
             \begin{itemize}
                 \item 1\textsuperscript{ere} année d'intervenant à Saint-Michel \emoji{star-struck}.
 
-                \item 7 ans de conseil en développement au sein d'SSII.
+                \item 7 ans de conseil en développement au sein d'SSII~.
 
                 \item 7 ans de conseil en développement à mon compte \href{https://papit.fr}{PapIT}.
 
@@ -118,20 +118,20 @@
                 \begin{columns}
                     \column{0.5\textwidth}
                     \centering
-                    \includegraphics[width=3cm]{image/logo-uppa.png}
+                    \includegraphics[width=3cm]{image/logo-uppa}
                     \column{0.5\textwidth}
                     \centering
-                    \includegraphics[width=3cm]{image/logo-universite-bordeaux.png}
+                    \includegraphics[width=3cm]{image/logo-universite-bordeaux}
                 \end{columns}
             \end{itemize}
             \column{0.3\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/trombine-christophe.jpg}
+            \includegraphics[width=5cm]{image/trombine-christophe}
         \end{columns}
     \end{frame}
 
 
-    \section{Généralités}
+    \section{Généralités}\label{sec:generalites}
 
     \begin{frame}
         \transdissolve
@@ -143,8 +143,8 @@
             \column{0.5\textwidth}
             \centering
             \begin{tabular}{cc}
-                \includegraphics[width=6.0cm]{image/da-vinci-plans.jpg} \\
-                L. de Vinci par C.G. Gerli en 1789.                     \\
+                \includegraphics[width=6.0cm]{image/da-vinci-plans} \\
+                L. de Vinci par C. G. Gerli en 1789.                \\
             \end{tabular}
         \end{columns}
         \footnotetext{\label{cleanarchitecture}Clean Architecture, Robert C. Martin}
@@ -189,7 +189,8 @@
         \textquote{It is a result of putting avariable, constant, or function in a temporary convinient, thought inappropriate, location. This is lazy and careless}\footnote{\label{cleancode}Robert C. Martin, Clean Code}
     \end{frame}
 
-    \section{Les briques}
+
+    \section{Les briques}\label{sec:les-briques}
 
     \begin{frame}
         \transdissolve
@@ -205,7 +206,7 @@
             Quelles sont les briques en Architecture logicielle~?
             \column{0.4\textwidth}
             \centering
-            \includegraphics[width=4cm]{image/engraving-of-a-craftman-cutting-a-stone.png}
+            \includegraphics[width=4cm]{image/engraving-of-a-craftman-cutting-a-stone}
         \end{columns}
         \bigbreak
         \flushleft
@@ -414,7 +415,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         Entre autre, les tests unitaires font réduire la taille des classes, functions et des méthodes ce qui améliore architecture.
         \bigbreak
         \centering
-        \includegraphics[width=8cm]{image/tdd-vs-no-tdd.png}
+        \includegraphics[width=8cm]{image/tdd-vs-no-tdd}
     \end{frame}
 
     \begin{frame}
@@ -427,7 +428,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         Les éléments centraux, les règles de gestions, les \textquote{business rules} doivent être testables sans les éléments périphériques\cref{cleanarchitecture}~:
         \bigbreak
         \centering
-        \includegraphics[width=6cm]{image/the-clean-architecture.png}
+        \includegraphics[width=6cm]{image/the-clean-architecture}
     \end{frame}
 
     \begin{frame}
@@ -443,12 +444,29 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
             Même le coverage est une mauvaise mesure.
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/monk-looking-the-deepness-of-the-stars-in-the-night-sky.png}
+            \includegraphics[width=5cm]{image/monk-looking-the-deepness-of-the-stars-in-the-night-sky}
         \end{columns}
     \end{frame}
 
+    \begin{frame}
+        \transdissolve
+        \frametitle{Le TDD}
+        \framesubtitle{Exercices}
+        De nombreux exercices de TDD sont disponibles sur le web comme par sur GitHub, \url{https://github.com/gabbloquet/entrainement-au-tdd}.
+        \bigbreak
+        En 30 minutes, sans assistant du type ChatGPT, réaliser un des plus classique d'entre eux, le \textquote{FizzBuzz}, \url{https://github.com/gabbloquet/entrainement-au-tdd/blob/master/src/main/java/io/github/gabbloquet/tddtraining/FizzBuzz/FizzBuzz.java}~.
+        Respectez l'esprit du TDD qui veut que l'on écrive les tests avant le code~:
+        \begin{enumerate}
+            \item Écrire un test par requirement.
+            \item Écrire l'algorithme.
+            \item Refactoriser.
+            \item Revenir à l'étape 2 jusqu'à ce que tous les test passent.
+        \end{enumerate}
 
-    \section{Les mesures}
+    \end{frame}
+
+
+    \section{Les mesures}\label{sec:les-mesures}
 
     \begin{frame}
         \transdissolve
@@ -469,7 +487,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         \transdissolve
         \frametitle{Les mesures du couplage}
         \framesubtitle{L'\textquote{abstractness} $A$\cref{fundsofsoftarch}}
-        '\textquote{abstractness}  une mesure de l'abstraction par rapport aux implémentations concrètes.
+        L'\textquote{abstractness}  une mesure de l'abstraction par rapport aux implémentations concrètes.
         Elle fut introduite par Robert C. Martin.
         \begin{equation}
             A = \frac{\sum Ca}{\sum Cc}
@@ -492,7 +510,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         Le couplage afférent est le nombre total de classes qui dépendent de la classe A~:
         \bigbreak
         \centering
-        \includegraphics[width=5cm]{image/afferent-coupling.drawio.png}
+        \includegraphics[width=5cm]{image/afferent-coupling.drawio}
         \bigbreak
         \flushleft
         Ici $Ca$ est 3.
@@ -508,7 +526,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         Le couplage efférent est le nombre total de classes dont dépend de la classe A~:
         \bigbreak
         \centering
-        \includegraphics[width=5cm]{image/efferent-coupling.drawio.png}
+        \includegraphics[width=5cm]{image/efferent-coupling.drawio}
         \bigbreak
         \flushleft
         Ici $Ce$ est 3.
@@ -551,7 +569,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
             \end{equation}
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/distance-from-main-sequence.png}
+            \includegraphics[width=5cm]{image/distance-from-main-sequence}
         \end{columns}
         \bigbreak
         \flushleft
@@ -590,14 +608,14 @@ $ module_coupling_metrics data_management.py
         \begin{columns}
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/data-management-metrics-table.png}
+            \includegraphics[width=5cm]{image/data-management-metrics-table}
             \column{0.5\textwidth}
             \centering
-            \includegraphics[width=5cm]{image/data-management-disance-chart.png}
+            \includegraphics[width=5cm]{image/data-management-disance-chart}
         \end{columns}
 
         Attention à bien comprendre ces métriques et comment les interpréter.
-        \lstinline{module_coupling_metrics} est ne calcule le couplage qu'entre modules.
+        \lstinline{module_coupling_metrics} ne calcule le couplage qu'entre modules.
         \bigbreak
     \end{frame}
 
@@ -651,6 +669,18 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
 
         Ici $E$ est 2 et $N$ est 3, donc $CC$ est 1.
     \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Les mesures de la complexité cyclomatique}
+        \framesubtitle{Exercice}
+        Calculer la complexité cyclomatique des fonctions de l'implémentation de l'algorithme de hachage MD5 du noyau Linux.
+        \bigbreak
+        Le code est sur Github~: \url{https://github.com/torvalds/linux/blob/master/crypto/md5.c}
+        \bigbreak
+        Rendre un tableau des valeurs de $CC$ pour chaque fonction.
+    \end{frame}
+
 
     \section{Les différentes architectures d’une application}
 
