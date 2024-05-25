@@ -678,11 +678,26 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \transdissolve
         \frametitle{Les mesures de la complexité cyclomatique}
         \framesubtitle{Exercice \execcounterdispinc{}}
+        \begin{columns}
+            \column{0.5\textwidth}
+            Cette métrique peut se calculer plus facilement avec un graphe de contrôle de flux.
+            \bigbreak
+            Calculer la complexité cyclomatique de la fonction décrite à droite.
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/flux-diagram.drawio}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Les mesures de la complexité cyclomatique}
+        \framesubtitle{Exercice \execcounterdispinc{}}
         Calculer la complexité cyclomatique des fonctions de l'implémentation de l'algorithme de hachage MD5 du noyau Linux.
         \bigbreak
         Le code est sur Github~: \url{https://github.com/torvalds/linux/blob/master/crypto/md5.c}
         \bigbreak
-        Rendre un tableau des valeurs de $CC$ pour chaque fonction.
+        Rendre un tableau des valeurs de $CC$ pour chaque fonction et en tirer une conclusion.
     \end{frame}
 
 
