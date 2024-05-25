@@ -499,9 +499,9 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         \end{equation}
         Dans l'équation 1~:
         \begin{itemize}
-            \item $A$ est \textquote{abstractness}
-            \item $Ca$ est le nombre de classes abstraites
-            \item $Cc$ est le nombre de classes concrètes.
+            \item $A$ est \textquote{abstractness}.
+            \item $Ca$ est le nombre de classe(s) abstraite(s).
+            \item $Cc$ est le nombre de classe(s) concrète(s).
         \end{itemize}
         \bigbreak
         Les valeurs de $A$ sont entre 0 et 1.
@@ -512,7 +512,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         \transdissolve
         \frametitle{Les mesures du couplage}
         \framesubtitle{Couplage afférent}
-        Le couplage afférent est le nombre total de classes qui dépendent de la classe A~:
+        Le couplage afférent est le nombre total de classe(s) qui dépend(ent) de la classe A~:
         \bigbreak
         \centering
         \includegraphics[width=5cm]{image/afferent-coupling.drawio}
@@ -528,7 +528,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         \transdissolve
         \frametitle{Les mesures du couplage}
         \framesubtitle{Couplage efférent $Ce$}
-        Le couplage efférent est le nombre total de classes dont dépend de la classe A~:
+        Le couplage efférent est le nombre total de classe(s) dont dépend la classe A~:
         \bigbreak
         \centering
         \includegraphics[width=5cm]{image/efferent-coupling.drawio}
@@ -562,7 +562,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
     \begin{frame}
         \transdissolve
         \frametitle{Les mesures du couplage}
-        \framesubtitle{La\textquote{Distance from main sequence} $D$\cref{fundsofsoftarch}\textsuperscript{,}\footnote{A Study on Robert C.Martin’s Metrics for Packet Categorization
+        \framesubtitle{La\textquote{Distance from main sequence} $D$\cref{fundsofsoftarch}\footnotestep\footnote{A Study on Robert C.Martin’s Metrics for Packet Categorization
         Using Fuzzy Logic, Gurpreet Kaur and Deepak Sharma\url{https://gvpress.com/journals/IJHIT/vol8_no12/15.pdf}}}
         Une cinquième métrique introduite par Robert C. Martin est la \textquote{Distance from main sequence}.
         \bigbreak
@@ -585,7 +585,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         \transdissolve
         \frametitle{Les mesures du couplage}
         \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes}
-        Calculer les valeurs de $Ca$, $Ce$, $A$, $I$ et $D$ pour les chaque classe du source \url{https://github.com/St-Michel-IT/architecture-application/blob/main/coupling.py}.
+        Calculer les valeurs de $Ca$, $Ce$, $A$, $I$ et $D$ pour chaque classe du source \url{https://github.com/St-Michel-IT/architecture-application/blob/main/coupling.py}.
         \bigbreak
         Restituer le résultat dans un tableau Excel et un graphique avec les $D$ et la droite \textquote{main sequence}.
     \end{frame}
@@ -627,17 +627,17 @@ $ module_coupling_metrics data_management.py
         \transdissolve
         \frametitle{Les mesures de la complexité cyclomatique}
         \framesubtitle{La théorie}
-        Établie en 1976, elle est devenue le standard de mesure de complexity du code.
+        Établie en 1976, elle est devenue le standard de mesure de complexité du code.
         \bigbreak
         Elle se calcule pour une méthode ou fonction avec l'équation suivante~:
         \begin{equation}
             CC = E - N + 2
         \end{equation}
-        Ou~:
+        Où~:
         \begin{itemize}
             \item $CC$ est la complexité cyclomatique.
             \item $E$ comme \textquote{edge} , est le nombre d'arêtes (les \lstinline{return} , \lstinline{yield}, \lstinline{exit}) du graphe de contrôle de flux.
-            \item $N$ comme \textquote{node} , est le nombre de nœuds, les \lstinline{if} , \lstinline{while} , du graphe de contrôle de flux.
+            \item $N$ comme \textquote{node} , est le nombre de nœuds, les \lstinline{if}, \lstinline{while}, \lstinline{for}, du graphe de contrôle de flux.
         \end{itemize}
         \bigbreak
         Les valeurs au-dessous de 5 sont bonnes, au-dessus de 10 il y a danger\cref{fundsofsoftarch} .
@@ -718,7 +718,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         Ils ne se contredisent pas.
         Ils peuvent même être utilisés ensemble.
         \bigbreak
-        La coexistence des ces patterns permet de visualiser un même problème sous différents point de vue\cref{cleanarchitecture}\footnote{The Onion Architecture : part 1, \url{https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/}}~:
+        La coexistence des ces patterns permet de visualiser un même problème sous différents point de vue\cref{cleanarchitecture}\footnotestep\footnote{The Onion Architecture : part 1, \url{https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/}}~:
         \begin{columns}
             \column{0.5\textwidth}
             \centering
@@ -733,7 +733,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \transdissolve
         \frametitle{\textquote{Mid-level} architecture}
         \framesubtitle{Comment agencer les briques}
-        De même l'architecture hexagonale semble proche elle aussi\cref{cleanarchitecture}\footnote{Architecture hexagonale, Wikipédia, \url{https://fr.wikipedia.org/wiki/Architecture_hexagonale}}~:
+        De même l'architecture hexagonale semble proche elle aussi\cref{cleanarchitecture}\footnotestep\footnote{Architecture hexagonale, Wikipédia, \url{https://fr.wikipedia.org/wiki/Architecture_hexagonale}}~:
         \bigbreak
         \begin{columns}
             \column{0.5\textwidth}
