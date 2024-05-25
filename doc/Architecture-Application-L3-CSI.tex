@@ -35,13 +35,13 @@
         \frametitle{Architectures d’Applications}
         \framesubtitle{Compétence acquise aucours des 3 jours du module}
         \transdissolve
-        Compétences~:
+        Compétence~:
         \begin{itemize}
             \item \textquote{Concevoir une architecture d’applications.}~???
         \end{itemize}
         \pause
         \bigbreak
-        Reformulation~:
+        Reformulation possible~:
         \begin{itemize}
             \item Concevoir une application architecturée.
         \end{itemize}
@@ -94,14 +94,14 @@
         \begin{itemize}
             \item Bons points tout au long du module.
             \item 25 \% x 3 sur chaque séance de travaux dirigés évalués en fin de séance.
-            2 architectures agnostiques à une application et une orientée web REST ou SOAP~.
+            Et une application orientée web REST ou SOAP~.
             \item 25 \% sur une évaluation écrite finale
         \end{itemize}
     \end{frame}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Intervenant sur le module Architecture d'Aplication}
+        \frametitle{Intervenant sur le module architecture d'Aplication}
         \framesubtitle{Christophe Brun, conseil en développement informatique}
 
         \begin{columns}
@@ -135,7 +135,7 @@
 
     \begin{frame}
         \transdissolve
-        \frametitle{Pourquoi le design ou Architecture logicielle~?}
+        \frametitle{Pourquoi le design ou architecture logicielle~?}
         \begin{columns}
             \column{0.5\textwidth}
             \textquote{The goal of software architecture is to minimize the human resources required to build and maintain the required system.}\footnotemark
@@ -147,17 +147,17 @@
                 L. de Vinci par C. G. Gerli en 1789.                \\
             \end{tabular}
         \end{columns}
-        \footnotetext{\label{cleanarchitecture}Clean Architecture, Robert C. Martin}
+        \footnotetext{\label{cleanarchitecture}Clean architecture, Robert C. Martin}
     \end{frame}
 
     \begin{frame}
         \transdissolve
-        \frametitle{Eloge de la simplicité}
+        \frametitle{Éloge de la simplicité}
         Léonard de Vinci, 1452-1519~: \textquote{La simplicité est la sophistication suprême.}\footnote{La Pause Philo, \url{https://lapausephilo.fr/2015/09/15/simplicite-sophistication-supreme-leonard-de-vinci/}}
         \bigbreak
         Albert Einstein, 1879-1955~: \textquote{Si vous ne pouvez expliquer quelque chose simplement, c’est que vous ne l’avez pas bien compris.}
         \bigbreak
-        Trouver et implémenter une Architecture logicielle doit être simple.
+        Trouver et implémenter une architecture logicielle doit être simple.
         C'est compliqué il y a un souci.
         \bigbreak La modularité est en autre permise par la dissection d'un système complexe en sous-systèmes plus simples.
         Ces systèmes plus simples n'ont qu'une seule responsabilité (Comme en programmation fonctionnelle~?).
@@ -170,12 +170,13 @@
         Encore une fois, pour faire simple, nous allons présumer que l'architecture et le design sont la même chose dans le monde du logiciel.\cref{cleanarchitecture}
         Le \textquote{Design patterns}\footnote{Design patterns, \url{https://refactoring.guru/design-patterns}} est un classique en développement logiciel.
         \bigbreak
-        \textquote{The onlye way to go fast is to go well.}\cref{cleanarchitecture}
+        \textquote{The only way to go fast is to go well.}\cref{cleanarchitecture} Qu'est-ce que cela veut dire~?
         \bigbreak
         \textquote{The blueprint of the system.}\footnote{\label{fundsofsoftarch}Fundamentals of Software Architecture, Mark Richards et Neal Ford}
         \bigbreak
         Le mot système revient souvent.
-        C'est un terme vague et récursif, c'est-à-dire qu'un système est composé de système plus simples.
+        C'est un terme vague et récursif.
+        C'est-à-dire qu'un système est composé de systèmes plus simples.
         L'architecture système est d'ailleurs un domaine en charge de l'architecture de l'entreprise, des produits et des logiciels.
     \end{frame}
 
@@ -183,27 +184,28 @@
         \transdissolve
         \frametitle{Définition}
         \framesubtitle{Le couplage}
-        C'est un des termes les plus importants en Architecture logicielle.
-        Il faut le comprendre l'éviter tant que possible.
+        C'est un des termes les plus importants en architecture logicielle.
+        Il faut comprendre comment l'éviter tant que possible.
         \bigbreak
-        \textquote{It is a result of putting avariable, constant, or function in a temporary convinient, thought inappropriate, location. This is lazy and careless}\footnote{\label{cleancode}Robert C. Martin, Clean Code}
+        \textquote{It is a result of putting a variable, constant, or function in a temporary convinient, thought inappropriate, location. This is lazy and careless}\footnote{\label{cleancode}Robert C. Martin, Clean Code}
     \end{frame}
 
 
     \section{Les briques}\label{sec:les-briques}
 
+    \subsection{Généralités}\label{subsec:briques-generalites}
     \begin{frame}
         \transdissolve
         \frametitle{Les briques}
         \framesubtitle{Les briques en architecture}
         \begin{columns}
             \column{0.6\textwidth}
-            Probablement hérité du jargon de l'architecture des bâtiments, le mot brique est aussi souvent utilisé en Architecture logicielle.
+            Probablement hérité du jargon de l'architecture des bâtiments, le mot brique est aussi souvent utilisé en architecture logicielle.
             \bigbreak
             Beaucoup d'industries utilisent des briques pour construire des systèmes plus complexes.
             Parfois appelée \textquote{conception modulaire}, c'est par exemple, dans l'industrie automobile, réutiliser une même pièce sur plusieurs modèles de voitures.
             \bigbreak
-            Quelles sont les briques en Architecture logicielle~?
+            Quelles sont les briques en architecture logicielle~?
             \column{0.4\textwidth}
             \centering
             \includegraphics[width=4cm]{image/engraving-of-a-craftman-cutting-a-stone}
@@ -218,7 +220,7 @@
         \frametitle{Les briques}
         \framesubtitle{3 paradigmes de programmation représentant par des briques\cref{cleanarchitecture}}
         \begin{itemize}
-            \item Programmation structurée (sous-ensemble de la programmation impérative), où la brique est le module de code, i.e., de programmes et sous-programmes.
+            \item Programmation structurée (sous-ensemble de la programmation impérative), où la brique est le module de code, i.e., des programmes et sous-programmes.
             Il contient les instructions de control de flux (if, else, for, while, etc.).
             \item Programmation orientée objet, où la brique est la classe.
             \item Programmation fonctionnelle, où la brique est la fonction.
@@ -227,6 +229,7 @@
         La plupart des langages de programmation modernes supportent ces 3 paradigmes, JS, Python, Java, C/C++.
     \end{frame}
 
+    \subsection{Programmation structurée}\label{subsec:briques-struct}
     \begin{frame}
         \transdissolve
         \frametitle{Les briques}
@@ -240,6 +243,7 @@
         \end{tabular}
     \end{frame}
 
+    \subsection{Programmation fonctionnelle}\label{subsec:briques-fonc}
     \begin{frame}[fragile]
         \transdissolve
         \frametitle{Les briques}
@@ -249,8 +253,8 @@
         \bigbreak
         Des exemples de langages fonctionnels~: Haskell, Lisp, Erlang, Scala, F\#.
         \bigbreak
-        D'autres langages supportent la programmation fonctionnelle comme Python, JS, Java en autre ont des outils orientés programmation fonctionnelle.
-        Souvent nommées fonctions dîtes lambda ou \textquote{arrow functions}, map, reduce, filter, etc.
+        D'autres langages supportent la programmation fonctionnelle comme Python, JS, Java en autres et ont des outils/librairies dédiées à la programmation fonctionnelle.
+        Souvent nommées fonctions lambda ou \textquote{arrow functions}, map, reduce, filter, etc.
         \begin{lstlisting}[language=python]
 >>> is_even = lambda x: x % 2 == 0 # No return needed?
 >>> list(map(is_even, [1, 2, 3, 4]))
@@ -268,13 +272,12 @@
         \transdissolve
         \frametitle{Les briques}
         \framesubtitle{Exemple de programmation fonctionnelle}
-        3 modules dédiés à la programmation fonctionnelle dans la \textquote{standard library}\footnote{Functional Programming Modules, \url{https://docs.python.org/3/library/functional.html}}~:
+        3 modules dédiés à la programmation fonctionnelle dans la \textquote{standard library} Python\footnote{Functional Programming Modules, \url{https://docs.python.org/3/library/functional.html}}~:
         \begin{itemize}
             \item \lstinline{functools}, \textquote{Higher-order functions and operations on callable objects}.
             \item \lstinline{itertools}, \textquote{Functions creating iterators for efficient looping}.
             \item \lstinline{operator}, \textquote{Standard operators as functions}.
         \end{itemize}
-        \bigbreak
         L'équivalent en JS, sans aucune librairie à importer~:
         \begin{lstlisting}[language=java]
 > numbers = new Array(1, 2, 3, 4, 5)
@@ -292,17 +295,18 @@ true
         \end{lstlisting}
     \end{frame}
 
+    \subsection{Programmation orientée objet}\label{subsec:briques-oop}
     \begin{frame}[fragile]
         \transdissolve
         \frametitle{Les briques}
-        \framesubtitle{Exemple de programmation orientée objet\cref{cleanarchitecture}}
+        \framesubtitle{Exemple de programmation orientée objet\cref{cleanarchitecture}} (OOP)
         La brique de base en programmation orientée objet est la classe.
         \bigbreak
-        En OOP on parle de polymorphisme, c'est la capacité d'un objet, i.e., une classe, à prendre plusieurs formes.
+        En OOP on parle de polymorphisme, c'est la capacité d'un objet, i.e., d'une classe, à prendre plusieurs formes.
         Une évolution dans une classe fille n'implique pas de modification dans la classe mère.
         Une évolution dans une classe mère impacte les classes filles.
         Si ces classes sont dans des modules différents, il n'est même pas nécessaire de recompiler tous les modules.
-        Pouvoir controller quelle classe dépend de quelle autre est un atout majeur de cette Architecture logicielle.
+        Pouvoir controller quelle classe dépend de quelle autre est un atout majeur de cette architecture logicielle.
         \bigbreak
         L'encapsulation des données et des méthodes dans une classe permet un design simple de ce qui appartient à un objet, une instance de classe, et ce qui est accessible depuis l'extérieur.
         \bigbreak
@@ -314,7 +318,7 @@ true
         \frametitle{Les briques}
         \framesubtitle{Exemple de programmation orientée objet}
         Polymorphisme par héritage d'une classe.
-        \begin{lstlisting}[language=python]
+        \begin{lstlisting}
 >>> class Oiseau:
         def __init__(self, name):
             self.name = name
@@ -344,7 +348,7 @@ True
         \frametitle{Les briques}
         \framesubtitle{Exemple de programmation orientée objet}
         Polymorphisme par héritage d'une classe abstraite.
-        \begin{lstlisting}[language=python]
+        \begin{lstlisting}
 >>> from abc import ABC, abstractmethod
 
 >>> class Oiseau(ABC): # ABC -> ABstract Class
@@ -373,7 +377,7 @@ Je vole quelques mètres
         \framesubtitle{Exemple de programmation orientée objet}
         Contrainte d'implémentation d'une méthode abstraite \lstinline{vole} .
 
-        \begin{lstlisting}[language=python]
+        \begin{lstlisting}
 >>> class Dodo(Oiseau):
         def __init__(self):
             Oiseau.__init__(self)
@@ -388,11 +392,12 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         \end{lstlisting}
     \end{frame}
 
+    \subsection{Exercice}\label{subsec:briques-exe}
     \begin{frame}
         \transdissolve
         \frametitle{Les types de briques}
-        \framesubtitle{Exercice de 5 minutes}
-        Trouvez quel type de paradigme de programmation est utilisé dans les exemples suivants~:
+        \framesubtitle{Exercice \execcounterdispinc{} de 5 minutes}
+        Trouver quel type de paradigme de programmation est utilisé dans les exemples suivants~:
         \begin{itemize}
             \item \url{https://github.com/facebook/Haxl/}
             \item \url{https://github.com/gurupratap-matharu/Bike-Rental-System/blob/master/main.py}
@@ -412,7 +417,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
 
         Ce qui pratiquent le TDD vont plus vite dès le début d'un projet\cref{cleanarchitecture}~!
 
-        Entre autre, les tests unitaires font réduire la taille des classes, functions et des méthodes ce qui améliore architecture.
+        Entre autre, les tests unitaires font réduire la taille des classes, functions et des méthodes, ce qui améliore architecture.
         \bigbreak
         \centering
         \includegraphics[width=8cm]{image/tdd-vs-no-tdd}
@@ -451,11 +456,11 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
     \begin{frame}
         \transdissolve
         \frametitle{Le TDD}
-        \framesubtitle{Exercices}
+        \framesubtitle{Exercices \execcounterdispinc{}}
         De nombreux exercices de TDD sont disponibles sur le web comme par sur GitHub, \url{https://github.com/gabbloquet/entrainement-au-tdd}.
         \bigbreak
         En 30 minutes, sans assistant du type ChatGPT, réaliser un des plus classique d'entre eux, le \textquote{FizzBuzz}, \url{https://github.com/gabbloquet/entrainement-au-tdd/blob/master/src/main/java/io/github/gabbloquet/tddtraining/FizzBuzz/FizzBuzz.java}~.
-        Respectez l'esprit du TDD qui veut que l'on écrive les tests avant le code~:
+        Respecter l'esprit du TDD qui veut que l'on écrive les tests avant le code~:
         \begin{enumerate}
             \item Écrire un test par requirement.
             \item Écrire l'algorithme.
@@ -476,11 +481,11 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         \bigbreak
         L'intuition, l'expérience, les connaissances et le bon sens, nous guiderons.
 
-        Mais il est possible de mesurer l'architecture et donc d'avoir une approche \textquote{Data Driven} .
+        Mais il est possible de qualifier l'architecture avec des mesures et donc d'avoir une approche \textquote{Data Driven} .
         \bigbreak
         Nous verrons dans cette section les différentes des métriques classiques, mais pas toutes, car elles sont nombreuses.
 
-        On parle parfois des CK (Chidamber \& Kemerer) metrics qui peuvent ressembler, etc.
+        On parle parfois aussi des CK (Chidamber \& Kemerer) metrics qui peuvent ressembler, etc.
     \end{frame}
 
     \begin{frame}
@@ -571,7 +576,6 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
             \centering
             \includegraphics[width=5cm]{image/distance-from-main-sequence}
         \end{columns}
-        \bigbreak
         \flushleft
         $D$ doit s'approcher de 0 pour une architecture souhaitable.
         Si $D$ est élevé, on s'éloigne de compromis acceptable.
@@ -580,16 +584,16 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
     \begin{frame}
         \transdissolve
         \frametitle{Les mesures du couplage}
-        \framesubtitle{Exercice de 30 minutes}
+        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes}
         Calculer les valeurs de $Ca$, $Ce$, $A$, $I$ et $D$ pour les chaque classe du source \url{https://github.com/St-Michel-IT/architecture-application/blob/main/coupling.py}.
         \bigbreak
-        Restituez le résultat dans un tableau Excel et un graphique avec les $D$ et la droite \textquote{main sequence}.
+        Restituer le résultat dans un tableau Excel et un graphique avec les $D$ et la droite \textquote{main sequence}.
     \end{frame}
 
     \begin{frame}
         \transdissolve
         \frametitle{Les mesures du couplage}
-        \framesubtitle{Exercice de 30 minutes}
+        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes}
         Résultat de l'exercice~:
         \bigbreak
         \centering
@@ -673,7 +677,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
     \begin{frame}[fragile]
         \transdissolve
         \frametitle{Les mesures de la complexité cyclomatique}
-        \framesubtitle{Exercice}
+        \framesubtitle{Exercice \execcounterdispinc{}}
         Calculer la complexité cyclomatique des fonctions de l'implémentation de l'algorithme de hachage MD5 du noyau Linux.
         \bigbreak
         Le code est sur Github~: \url{https://github.com/torvalds/linux/blob/master/crypto/md5.c}
@@ -682,6 +686,464 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
     \end{frame}
 
 
-    \section{Les différentes architectures d’une application}
+    \section{Mid-level architecture}\label{sec:mid-level-architecture}
+
+    \subsection{Généralités}\label{subsec:mid-level-generalites}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{\textquote{Mid-level} architecture}
+        \framesubtitle{Comment agencer les briques}
+        Les briques vues précédemment sont nécessaires mais pas suffisantes pour construire un système.
+        Si elles ne sont pas correctement conçues il est inutile de les intégrer un design élaboré, le système risque fortement de ne pas fonctionner
+        \bigbreak
+        Pour qu'un système fonctionne, il faut que les briques soient correctement agencées.
+        C'est la \textquote{mid-level architecture}.
+        \bigbreak
+        De nombreux principes ou patterns existent pour agencer les briques.
+        Comme par exemple~:
+        \begin{itemize}
+            \item \textbf{SOLID}~: Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.
+            \item \textbf{Hexagonal Architecture}~: A.K.A Ports and Adapters.
+            \item \textbf{Onion Architecture}~: Une couche intérieur ne sait rien de celle plus extérieur.
+            \item Many more\ldots
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{\textquote{Mid-level} architecture}
+        \framesubtitle{Comment agencer les briques}
+        De manière générale ces différents patterns ne sont pas concurrents.
+        Ils ne se contredisent pas.
+        Ils peuvent même être utilisés ensemble.
+        \bigbreak
+        La coexistence des ces patterns permet de visualiser un même problème sous différents point de vue\cref{cleanarchitecture}\footnote{The Onion Architecture : part 1, \url{https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/}}~:
+        \begin{columns}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/the-clean-architecture}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/onion-architecture}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{\textquote{Mid-level} architecture}
+        \framesubtitle{Comment agencer les briques}
+        De même l'architecture hexagonale semble proche elle aussi\cref{cleanarchitecture}\footnote{Architecture hexagonale, Wikipédia, \url{https://fr.wikipedia.org/wiki/Architecture_hexagonale}}~:
+        \bigbreak
+        \begin{columns}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/the-clean-architecture}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/hexagonal-architecture}
+        \end{columns}
+    \end{frame}
+
+    \subsection{S.O.L.I.D}\label{subsec:mid-level-solid}
+
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les principes S.O.L.I.D}
+        \framesubtitle{Histoire et définition\cref{cleanarchitecture}}
+        Démarré dans les années 80, ils sont finalisés en 2004 par Robert C. Martin, le S.O.L.I.D est un acronyme pour 5 principes de design.
+        \bigbreak
+        Les buts de ces principes sont~:
+        \begin{itemize}
+            \item Tolérer le changement.
+            \item Être facile à comprendre.
+            \item Ils sont les composants de base qui peuvent être utilisés dans tout logiciel.
+        \end{itemize}
+        \bigbreak
+        C'est du \textquote{Mid-level architecture}, car même avec des briques biens conçues, agencées selon ces principes, il manque encore l'architecture de plus haut niveau.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les principes S.O.L.I.D}
+        \framesubtitle{Les 5 principes résumés\cref{cleanarchitecture}}
+        \begin{footnotesize}
+            \begin{itemize}
+                \item \textbf{Single Responsibility Principle}~: Une classe ne doit avoir qu'une seule responsabilité.
+                \item \textbf{Open-Closed Principle}~: Une classe doit être ouverte à l'extension mais fermée à la modification.
+                \item \textbf{Liskov Substitution Principle}~: Une instance de type T doit pouvoir être remplacée par une instance de type G, tel que G sous-type de T, sans que cela ne modifie la cohérence du programme.
+                Cela garantit que les sous-classes peuvent être utilisées de manière interchangeable avec leurs classes de base.
+                \item \textbf{Interface Segregation Principle}~: Les clients ne doivent pas être forcés d'implémenter des interfaces qu'ils n'utilisent pas.
+                Préférer plusieurs interfaces spécifiques pour chaque client plutôt qu'une seule interface générale.
+                Cela évite aux classes de dépendre de méthodes dont elles n'ont pas besoin, réduisant ainsi les couplages inutiles.
+                \item \textbf{Dependency Inversion Principle}~: Il faut dépendre des abstractions, pas des implémentations.
+                Cela favorise la modularité, la flexibilité et la réutilisabilité en réduisant les dépendances directes entre les modules.
+                Le code des règles de haut-niveau ne doit pas dépendre du code de détail bas-niveau.
+                Mais les détails peuvent dépendre des règles haut-niveau.
+            \end{itemize}
+        \end{footnotesize}
+    \end{frame}
+
+    \subsection{Single Responsibility Principle}\label{subsec:mid-level-s}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Single Responsibility Principle (SRP)}
+        \framesubtitle{Définition\cref{cleanarchitecture}}
+        Ne pas confondre avec le refactor d'une méthode ou d'une fonction en méthode ou fonction plus atomique.
+        \bigbreak
+        Selon Robert C. Martin, \textquote{A module should be responsible to one, and only one, actor}.
+        \begin{columns}
+            \column{0.5\textwidth}
+            Module est souvent synonyme de fichier source.
+
+            Donc autrement dit, dans un fichier source, on trouve les fonctions ou les structures de données responsables face à seul acteur.
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/s-to-avoid} \\ A éviter \\
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Single Responsibility Principle}
+        \framesubtitle{Exercice \execcounterdispinc{} de 15 minutes}
+        \begin{columns}
+            \column{0.5\textwidth}
+            Quelles solutions pour éviter ce pattern anti-SRP~?
+            \bigbreak
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/s-to-avoid}
+        \end{columns}
+        \flushleft
+        Les exigences~:
+        \begin{itemize}
+            \item Refactoriser des fonctions \lstinline{calculatePay}, \lstinline{reportHours} et \lstinline{save} avec le(s) éventuel(s) argument(s) nécessaire pour qu'elles respectent le SRP~.
+            \item Ajouter les attribues nécessaire et au moins 4 méthodes à la classe \lstinline{Employee} tout en respectant le SRP~.
+            \item Répondre sous formes d'un schéma (en utilisant Draw.io par exemple) avec les différents et classe(s), méthodes.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Single Responsibility Principle}
+        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes}
+        Codez la solution de manière simpliste.
+        \bigbreak
+        Appliquer le TDD, rédigez les tests unitaires avant de coder.
+        \bigbreak
+        A quoi resemble l'arborescence du projet~?
+        \bigbreak
+        Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+        \bigbreak
+        Le travail de certains étudiants sera évalué.
+        \bigbreak
+        \centering
+        \includegraphics[width=3cm]{image/engraving-of-an-old-watch}
+    \end{frame}
+
+    \subsection{Open-Closed Principle}\label{subsec:mid-level-o}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Open-Closed Principle (OCP)}
+        \framesubtitle{Définition\cref{cleanarchitecture}}
+        OCP veut dire~: \textquote{A software artifact should be open for extension but closed for modification}.
+        \bigbreak
+        En d'autre termes, un code doit être extensible, on peut ajouter du code et des fonctionnalités sans modifier le code existant.
+        Encore une fois, cela permet de tolérer le changement en limitant les risques de bug et en facilitant la maintenance.
+        \bigbreak
+        Une des solutions est de séparer tout ce qui est susceptible de changer pour des raisons différentes dans le futur.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Open-Closed Principle}
+        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes}
+        Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/open-close-bank-customer.py}.
+        Le code souhaité doit être extensible sans modification pour pouvoir retourner les informations actuellement printées dans stdout en HTML~.
+        \begin{columns}
+            \column{0.5\textwidth}
+            Appliquer le TDD, rédigez les tests unitaires avant de coder.
+            \bigbreak
+            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            \bigbreak
+            Le travail de certains étudiants sera évalué.
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=3cm]{image/engraving-of-an-old-watch}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Open-Closed Principle}
+        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes avec les interfaces}
+        En Java comme dans beaucoup de language il existe des interfaces.
+        Pour rappel, une interface est une structure, une liste de méthodes que les classes qui l'implémentent doivent respecter.
+        Comme les classes abstraites, une implementation, i.e., une classe en hérite, elles ne peuvent pas être instanciée directement.
+        \begin{lstlisting}[language=java]
+public class UserAgeValidator {
+  public boolean isOldEnoughToDrinkAlcohol(int age) {
+    return age >= 18;
+  }
+}
+        \end{lstlisting}
+        Cette classe ne respecte pas le OCP, si on l'applique à plusieurs pays.
+        \begin{lstlisting}[language=java]
+public class UserAgeValidator {
+  public boolean isOldEnoughToDrinkAlcohol(int age, String stateCode) {
+    return stateCode.equalsIgnoreCase('FR') && age >= 18
+      || stateCode.equalsIgnoreCase('US') && age >= 21
+  }
+}
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Open-Closed Principle}
+        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes avec les interfaces}
+        En utilisant les interfaces, refactoriser la classe \lstinline{UserAgeValidator} pour qu'elle respecte le OCP et créer les classes qui l'implémente pour divers pays.
+        \bigbreak
+        \begin{columns}
+            \column{0.5\textwidth}
+            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            \bigbreak
+            Le travail de certains étudiants sera évalué.
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=3cm]{image/engraving-of-an-old-watch}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Open-Closed Principle}
+        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes avec les interfaces}
+        En utilisant les interfaces, refactoriser la classe \lstinline{UserAgeValidator} pour qu'elle respecte le OCP et créer les classes qui l'implémente pour divers pays.
+        \bigbreak
+        \begin{columns}
+            \column{0.5\textwidth}
+            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            \bigbreak
+            Le travail de certains étudiants sera évalué.
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=3cm]{image/engraving-of-an-old-watch}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Liskov Principle}
+        \framesubtitle{Définition\cref{cleanarchitecture}}
+        Une classe enfant doit pouvoir être utilisée à la place de sa classe mère sans que cela ne modifie le comportement du programme.
+        \bigbreak
+        Pour rappel, évidemment, une classe enfant peut être substitué par un autre enfant de la même classe mère.
+        \bigbreak
+        Autrement dit une classe fille ne doit pas casser pas le code de la classe mère.
+        Ne jamais surcharger une méthode de la classe mère.
+        % Python listing
+        \begin{lstlisting}[language=python,basicstyle=\ttfamily\tiny]]
+# EXEMPLE À NE PAS SUIVRE !!!
+class Bird:
+    def fly(self):
+        pass
+
+class Ostrich(Bird):
+    def fly(self):
+        raise NotImplementedError("Ostriches cannot fly!")
+
+bird = Bird()
+bird.fly()  # Output: (no implementation)
+
+ostrich = Ostrich()
+ostrich.fly()  # Raises NotImplementedError
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Liskov Principle}
+        \framesubtitle{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
+        Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/liskov-rectangle.py}.
+        La fonction \lstinline{use_it} ne peut pas être utilisée avec la classe \lstinline{Square} sans modification.
+        Refactoriser cette dernière pour qu'elle le puisse et donc qu'elle respecte le Liskov Principle.
+        \bigbreak
+        \begin{columns}
+            \column{0.5\textwidth}
+            Appliquer le TDD, rédigez les tests unitaires avant de coder.
+            \bigbreak
+            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            \bigbreak
+            Le travail de certains étudiants sera évalué.
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=3cm]{image/engraving-of-an-old-watch}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Liskov Principle}
+        \framesubtitle{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
+        Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/liskov-rectangle.py}.
+        La fonction \lstinline{use_it} ne peut pas être utilisée avec la classe \lstinline{Square} sans modification.
+        Refactoriser les classes {Square} et {Rectangle} pour qu'elles héritent d'une classe abstraite à développer pour que \lstinline{use_it} fonctionne avec les deux classes.
+        \bigbreak
+        \begin{columns}
+            \column{0.5\textwidth}
+            Appliquer le TDD, rédigez les tests unitaires avant de coder.
+            \bigbreak
+            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            \bigbreak
+            Le travail de certains étudiants sera évalué.
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=3cm]{image/engraving-of-an-old-watch}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Interface Segragation Principle (ISP)}
+        \framesubtitle{Définition\cref{cleanarchitecture}}
+        Dépendre de quelque qui a un bagage que l'on utilise pas peut être une source de bugs inattendus.
+        \bigbreak
+        Pour éviter ce risque, il faut multiplier les interfaces plus petites pour mieux isoler l'impact d'une modification.
+        \begin{columns}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/i-to-avoid} \\ A éviter \\
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/i-preferred} \\ A appliquer \\
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Interface Segragation Principle}
+        \framesubtitle{Définition\cref{cleanarchitecture}}
+        \begin{columns}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/i-to-avoid} \\ A éviter \\
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/i-preferred} \\ A appliquer \\
+        \end{columns}
+        Dans le cas d'un langage typé statiquement, comme Java, à gauche on a une interface unique, et si il y a une modification dans une classe \lstinline{UserX}, recompilation, déploiement toutes les classes \lstinline{UserX} doivent être recompilées et redéployées même si elles ne sont pas modifiées.
+        \bigbreak
+        Ce problème n'existe pas avec l'approche à droite. \lstinline{Ops} peut être modifié sans avoir à recompiler les classes \lstinline{UserX}.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Interface Segregation Principle}
+        \framesubtitle{Définition\cref{cleanarchitecture}}
+        Question~:Pourquoi ce problème n'apparait pas avec les langages typés dynamiquement~?
+        \pause
+        \bigbreak
+        Car le type est inféré au moment de l'exécution puisqu'il est dynamique.
+        \begin{dangercolorbox}
+            Cela ne veut pas dire qu'il ne faut pas respecter l'ISP dans ces langages.
+            Les dépendances inutiles sont toujours à éviter, l'ISP est juste une raison de plus.
+        \end{dangercolorbox}
+        Quel rapport avec les dépendances aux packages distants (du web)~?
+        \pause
+        \bigbreak
+        On ne connait pas le code de ces packages, on ne sait pas ce qu'ils contiennent.
+        Le plus souvient, au mieux, on en connait les interfaces décrites dans la documentation.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Interface Segregation Principle}
+        \framesubtitle{Exercice \execcounterdispinc{} de refactoring de 30 minutes}
+        Dans le code \url{https://github.com/St-Michel-IT/architecture-application/interface-segregation-payment.py}.
+        \begin{itemize}
+            \item Trouver les classes qui ne respectent pas l'ISP~.
+            \item Refactoriser le code pour qu'il respecte l'ISP~. \textbf{Indice}~: Utiliser les classes abstraites.
+        \end{itemize}
+        \bigbreak
+        \begin{columns}
+            \column{0.5\textwidth}
+            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            \bigbreak
+            Le travail de certains étudiants sera évalué.
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=3cm]{image/engraving-of-an-old-watch}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Dependency Inversion Principle (DIP)}
+        \framesubtitle{Définition\cref{cleanarchitecture}}
+        Dépendre des structures les plus stables, i.e., les moins volatiles.
+        \bigbreak
+        Tout changement dans une classe abstraite implique un changement dans les classes concrètes qui en héritent.
+        L'inverse n'est pas vrai.
+        Un changement dans une classe concrète n'implique pas forcément de modification dans les classes abstraites.
+        \bigbreak
+        Par conséquent les abstractions et les interfaces sont plus stables que les implémentations.
+        \bigbreak
+        Autrement dit, le DIP conseil, \textbf{tant que faire ce peut}, de dépendre des abstractions et non des implémentations.
+        Les \lstinline{import}, \lstinline{use}, \lstinline{require}, \lstinline{include}, etc, doivent pointer vers des interfaces et non des classes concrètes.
+        \begin{footnotesize}
+            \begin{dangercolorbox}
+                Il n'est pas réaliste de suivre de manière stricte cette règle.
+                Tentez de l'appliquer quand c'est possible sans rajouter de complexité.
+                Gardons en tête que certaine classes concrètes sont extrêmement stable comme \lstinline{String} de \lstinline{java.lang.string}.
+            \end{dangercolorbox}
+        \end{footnotesize}
+    \end{frame}
+
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Dependency Inversion Principle}
+        \framesubtitle{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
+        Dans le code \url{https://github.com/St-Michel-IT/architecture-application/dip-to-refactor.py}.
+        \begin{itemize}
+            \item Le couplage entre la classe \lstinline{PowerSwitch} et \lstinline{LightBulb}.
+            On peut être l'interrupteur d'autre chose qu'une ampoule.
+            \item Refactoriser le code pour qu'il respecte l'DIP~. \textbf{Indice}~: Ajouter une classe abstraite.
+            \item Ajouter une classe concrète \lstinline{Fan} qui implémente la nouvelle classe abstraite comme test.
+        \end{itemize}
+        \bigbreak
+        \begin{columns}
+            \column{0.6\textwidth}
+            Appliquer le TDD, rédigez les tests unitaires avant de coder.
+            \bigbreak
+            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            \bigbreak
+            Le travail de certains étudiants sera évalué.
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=3cm]{image/engraving-of-an-old-watch}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{S.O.L.I.D.}
+        \framesubtitle{Conclusion}
+        S.O.L.I.D. est un ensemble de principes qui aident à solutionner des problèmes déjà vus aux chapitres précédents.
+        \begin{itemize}
+            \item Principalement les soucis de couplage trop fort \cref{sec:generalites}.
+            \item Une des solutions récurrente pour respecter les principes S.O.L.I.D. est de créer des abstractions.
+            Cela rappel à la mesure de l'\textquote{Abstractness} $A$ mesurer au précédent chapitre \cref{sec:les-mesures}.
+        \end{itemize}
+        \bigbreak
+        \centering
+        \includegraphics[width=4cm]{image/carbon-atoms}
+    \end{frame}
+
 
 \end{document}

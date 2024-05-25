@@ -1,3 +1,9 @@
+% The 4 lines below speed up the compilation, a lot! It stops the compiler from
+% compressing the builded PDF file.
+\RequirePackage{expl3}
+\ExplSyntaxOn
+\pdf_uncompress:
+\ExplSyntaxOff
 
 % Style
 \usepackage{xcolor}
@@ -47,3 +53,8 @@ skin=enhancedmiddle jigsaw,breakable,parbox=false,
 boxrule=0mm,leftrule=2mm,rightrule=0mm,boxsep=0mm,arc=0mm,outer arc=0mm,
 left=1mm,right=1mm,top=1mm,bottom=1mm,toptitle=1mm,bottomtitle=1mm}}
 \newtcolorbox{dangercolorbox}{textmarker,colback=flatorange,colframe=flatred}
+
+% The exercice counter
+\newcounter{execounter} % Create a new counter
+% Increment the counter and display it
+\newcommand\execcounterdispinc{\stepcounter{execounter}\theexecounter}
