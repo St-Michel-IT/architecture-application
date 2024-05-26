@@ -1,5 +1,5 @@
 \documentclass{beamer}
-
+\RequirePackage{luatex85}
 \include{../style/cours-style.sty}
 
 % Title
@@ -748,7 +748,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \transdissolve
         \frametitle{\textquote{Mid-level} architecture}
         \framesubtitle{Comment agencer les briques}
-        De même l'architecture hexagonale semble proche elle aussi\cref{cleanarchitecture}\footnotestep\footnote{Architecture hexagonale, Wikipédia, \url{https://fr.wikipedia.org/wiki/Architecture_hexagonale}}~:
+        De même, l'architecture hexagonale semble similaire elle aussi\cref{cleanarchitecture}\footnotestep\footnote{Architecture hexagonale, Wikipédia, \url{https://fr.wikipedia.org/wiki/Architecture_hexagonale}}~:
         \bigbreak
         \begin{columns}
             \column{0.5\textwidth}
@@ -767,7 +767,8 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \transdissolve
         \frametitle{Les principes S.O.L.I.D}
         \framesubtitle{Histoire et définition\cref{cleanarchitecture}}
-        Démarré dans les années 80, ils sont finalisés en 2004 par Robert C. Martin, le S.O.L.I.D est un acronyme pour 5 principes de design.
+        Démarrés dans les années 80, ils sont finalisés en 2004 par Robert C. Martin.
+        S.O.L.I.D est un acronyme pour 5 principes de design.
         \bigbreak
         Les buts de ces principes sont~:
         \begin{itemize}
@@ -776,7 +777,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
             \item Ils sont les composants de base qui peuvent être utilisés dans tout logiciel.
         \end{itemize}
         \bigbreak
-        C'est du \textquote{Mid-level architecture}, car même avec des briques biens conçues, agencées selon ces principes, il manque encore l'architecture de plus haut niveau.
+        C'est de la \textquote{Mid-level architecture}, car même avec des briques biens conçues, agencées selon ces principes, il manque encore l'architecture de plus haut niveau.
     \end{frame}
 
     \begin{frame}
@@ -806,14 +807,15 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \transdissolve
         \frametitle{Single Responsibility Principle (SRP)}
         \framesubtitle{Définition\cref{cleanarchitecture}}
-        Ne pas confondre avec le refactor d'une méthode ou d'une fonction en méthode ou fonction plus atomique.
-        \bigbreak
+        \begin{dangercolorbox}
+            Ne pas confondre avec le refactor d'une méthode ou d'une fonction en méthode ou fonction plus atomique.
+        \end{dangercolorbox}
         Selon Robert C. Martin, \textquote{A module should be responsible to one, and only one, actor}.
         \begin{columns}
             \column{0.5\textwidth}
             Module est souvent synonyme de fichier source.
 
-            Donc autrement dit, dans un fichier source, on trouve les fonctions ou les structures de données responsables face à seul acteur.
+            Donc autrement dit, dans un fichier source, on trouve les fonctions ou les structures de données responsables face à un seul acteur.
             \column{0.5\textwidth}
             \centering
             \includegraphics[width=5cm]{image/s-to-avoid} \\ A éviter \\
@@ -835,9 +837,9 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \flushleft
         Les exigences~:
         \begin{itemize}
-            \item Refactoriser des fonctions \lstinline{calculatePay}, \lstinline{reportHours} et \lstinline{save} avec le(s) éventuel(s) argument(s) nécessaire pour qu'elles respectent le SRP~.
-            \item Ajouter les attribues nécessaire et au moins 4 méthodes à la classe \lstinline{Employee} tout en respectant le SRP~.
-            \item Répondre sous formes d'un schéma (en utilisant Draw.io par exemple) avec les différents et classe(s), méthodes.
+            \item Refactoriser des fonctions \lstinline{calculatePay}, \lstinline{reportHours} et \lstinline{save} avec le(s) éventuel(s) argument(s) nécessaire(s) pour qu'elles respectent le SRP~.
+            \item Ajouter les attribues nécessaire(s) et au moins 4 méthodes à la classe \lstinline{Employee} tout en respectant le SRP~.
+            \item Répondre sous forme d'un schéma (en utilisant Draw.io par exemple) avec les différents et classe(s), méthodes.
         \end{itemize}
     \end{frame}
 
@@ -845,13 +847,13 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \transdissolve
         \frametitle{Single Responsibility Principle}
         \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes}
-        Codez la solution de manière simpliste.
+        Coder la solution de manière simpliste.
         \bigbreak
-        Appliquer le TDD, rédigez les tests unitaires avant de coder.
+        Appliquer le TDD, rédiger les tests unitaires avant de coder.
         \bigbreak
         A quoi resemble l'arborescence du projet~?
         \bigbreak
-        Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+        Commiter dans un dépôt Git, le schéma issu de l'exercice précédent, le code et les tests.
         \bigbreak
         Le travail de certains étudiants sera évalué.
         \bigbreak
@@ -867,7 +869,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \framesubtitle{Définition\cref{cleanarchitecture}}
         OCP veut dire~: \textquote{A software artifact should be open for extension but closed for modification}.
         \bigbreak
-        En d'autre termes, un code doit être extensible, on peut ajouter du code et des fonctionnalités sans modifier le code existant.
+        En d'autres termes, un code doit être extensible, on peut ajouter du code et des fonctionnalités sans modifier le code existant.
         Encore une fois, cela permet de tolérer le changement en limitant les risques de bug et en facilitant la maintenance.
         \bigbreak
         Une des solutions est de séparer tout ce qui est susceptible de changer pour des raisons différentes dans le futur.
@@ -877,16 +879,17 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \transdissolve
         \frametitle{Open-Closed Principle}
         \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes}
-        Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/open-close-bank-customer.py}.
+        Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/blob/main/open-close-bank-customer.py}.
         Le code souhaité doit être extensible sans modification pour pouvoir retourner les informations actuellement printées dans stdout en HTML~.
         \begin{columns}
             \column{0.5\textwidth}
             Appliquer le TDD, rédigez les tests unitaires avant de coder.
             \bigbreak
-            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            Commiter dans un dépôt Git, le schéma issu de l'exercice précédent, le code et les tests.
             \bigbreak
             Le travail de certains étudiants sera évalué.
             \column{0.5\textwidth}
+            \centering
             \centering
             \includegraphics[width=3cm]{image/engraving-of-an-old-watch}
         \end{columns}
@@ -898,7 +901,8 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes avec les interfaces}
         En Java comme dans beaucoup de language il existe des interfaces.
         Pour rappel, une interface est une structure, une liste de méthodes que les classes qui l'implémentent doivent respecter.
-        Comme les classes abstraites, une implementation, i.e., une classe en hérite, elles ne peuvent pas être instanciée directement.
+        Comme les classes abstraites, une implementation, i.e., une classe en hérite.
+        Elles ne peuvent pas être instanciée directement.
         \begin{lstlisting}[language=java]
 public class UserAgeValidator {
   public boolean isOldEnoughToDrinkAlcohol(int age) {
@@ -921,28 +925,11 @@ public class UserAgeValidator {
         \transdissolve
         \frametitle{Open-Closed Principle}
         \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes avec les interfaces}
-        En utilisant les interfaces, refactoriser la classe \lstinline{UserAgeValidator} pour qu'elle respecte le OCP et créer les classes qui l'implémente pour divers pays.
+        En utilisant les interfaces, refactoriser la classe \lstinline{UserAgeValidator} pour qu'elle respecte le OCP et créer les classes qui l'implémentent pour divers pays.
         \bigbreak
         \begin{columns}
             \column{0.5\textwidth}
-            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
-            \bigbreak
-            Le travail de certains étudiants sera évalué.
-            \column{0.5\textwidth}
-            \centering
-            \includegraphics[width=3cm]{image/engraving-of-an-old-watch}
-        \end{columns}
-    \end{frame}
-
-    \begin{frame}
-        \transdissolve
-        \frametitle{Open-Closed Principle}
-        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes avec les interfaces}
-        En utilisant les interfaces, refactoriser la classe \lstinline{UserAgeValidator} pour qu'elle respecte le OCP et créer les classes qui l'implémente pour divers pays.
-        \bigbreak
-        \begin{columns}
-            \column{0.5\textwidth}
-            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            Commiter dans un dépôt Git, le schéma issu de l'exercice précédent, le code et les tests.
             \bigbreak
             Le travail de certains étudiants sera évalué.
             \column{0.5\textwidth}
@@ -962,7 +949,7 @@ public class UserAgeValidator {
         Autrement dit une classe fille ne doit pas casser pas le code de la classe mère.
         Ne jamais surcharger une méthode de la classe mère.
         % Python listing
-        \begin{lstlisting}[language=python,basicstyle=\ttfamily\tiny]]
+        \begin{lstlisting}[basicstyle=\ttfamily\tiny]]
 # EXEMPLE À NE PAS SUIVRE !!!
 class Bird:
     def fly(self):
@@ -984,15 +971,15 @@ ostrich.fly()  # Raises NotImplementedError
         \transdissolve
         \frametitle{Liskov Principle}
         \framesubtitle{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
-        Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/liskov-rectangle.py}.
+        Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/blob/main/liskov-rectangle.py}.
         La fonction \lstinline{use_it} ne peut pas être utilisée avec la classe \lstinline{Square} sans modification.
         Refactoriser cette dernière pour qu'elle le puisse et donc qu'elle respecte le Liskov Principle.
         \bigbreak
         \begin{columns}
             \column{0.5\textwidth}
-            Appliquer le TDD, rédigez les tests unitaires avant de coder.
+            Appliquer le TDD, rédiger les tests unitaires avant de coder.
             \bigbreak
-            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            Commiter dans un dépôt Git, le schéma issu de l'exercice précédent, le code et les tests.
             \bigbreak
             Le travail de certains étudiants sera évalué.
             \column{0.5\textwidth}
@@ -1011,9 +998,9 @@ ostrich.fly()  # Raises NotImplementedError
         \bigbreak
         \begin{columns}
             \column{0.5\textwidth}
-            Appliquer le TDD, rédigez les tests unitaires avant de coder.
+            Appliquer le TDD, rédiger les tests unitaires avant de coder.
             \bigbreak
-            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            Commiter dans un dépôt Git, le schéma issu de l'exercice précédent, le code et les tests.
             \bigbreak
             Le travail de certains étudiants sera évalué.
             \column{0.5\textwidth}
@@ -1079,7 +1066,7 @@ ostrich.fly()  # Raises NotImplementedError
         \transdissolve
         \frametitle{Interface Segregation Principle}
         \framesubtitle{Exercice \execcounterdispinc{} de refactoring de 30 minutes}
-        Dans le code \url{https://github.com/St-Michel-IT/architecture-application/interface-segregation-payment.py}.
+        Dans le code \url{https://github.com/St-Michel-IT/architecture-application/blob/main/interface-segregation-payment.py}.
         \begin{itemize}
             \item Trouver les classes qui ne respectent pas l'ISP~.
             \item Refactoriser le code pour qu'il respecte l'ISP~. \textbf{Indice}~: Utiliser les classes abstraites.
@@ -1087,7 +1074,7 @@ ostrich.fly()  # Raises NotImplementedError
         \bigbreak
         \begin{columns}
             \column{0.5\textwidth}
-            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            Commiter dans un dépôt Git, le schéma issu de l'exercice précédent, le code et les tests.
             \bigbreak
             Le travail de certains étudiants sera évalué.
             \column{0.5\textwidth}
@@ -1114,7 +1101,7 @@ ostrich.fly()  # Raises NotImplementedError
             \begin{dangercolorbox}
                 Il n'est pas réaliste de suivre de manière stricte cette règle.
                 Tentez de l'appliquer quand c'est possible sans rajouter de complexité.
-                Gardons en tête que certaine classes concrètes sont extrêmement stable comme \lstinline{String} de \lstinline{java.lang.string}.
+                Gardons en tête que certaines classes concrètes sont extrêmement stables comme \lstinline{String} de \lstinline{java.lang.string}.
             \end{dangercolorbox}
         \end{footnotesize}
     \end{frame}
@@ -1124,19 +1111,19 @@ ostrich.fly()  # Raises NotImplementedError
         \transdissolve
         \frametitle{Dependency Inversion Principle}
         \framesubtitle{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
-        Dans le code \url{https://github.com/St-Michel-IT/architecture-application/dip-to-refactor.py}.
+        Dans le code \url{https://github.com/St-Michel-IT/architecture-application/blob/main/dip-to-refactor.py}.
         \begin{itemize}
-            \item Le couplage entre la classe \lstinline{PowerSwitch} et \lstinline{LightBulb}.
-            On peut être l'interrupteur d'autre chose qu'une ampoule.
+            \item il y a couplage entre la classe \lstinline{PowerSwitch} et \lstinline{LightBulb}.
+            Alors qu'on peut être l'interrupteur d'autre chose qu'une ampoule.
             \item Refactoriser le code pour qu'il respecte l'DIP~. \textbf{Indice}~: Ajouter une classe abstraite.
             \item Ajouter une classe concrète \lstinline{Fan} qui implémente la nouvelle classe abstraite comme test.
         \end{itemize}
         \bigbreak
         \begin{columns}
             \column{0.6\textwidth}
-            Appliquer le TDD, rédigez les tests unitaires avant de coder.
+            Appliquer le TDD, rédiger les tests unitaires avant de coder.
             \bigbreak
-            Commiter dans un dépôt Git, le schéma issue de l'exercice précédent, le code et les tests.
+            Commiter dans un dépôt Git, le schéma issu de l'exercice précédent, le code et les tests.
             \bigbreak
             Le travail de certains étudiants sera évalué.
             \column{0.4\textwidth}
@@ -1153,7 +1140,7 @@ ostrich.fly()  # Raises NotImplementedError
         \begin{itemize}
             \item Principalement les soucis de couplage trop fort \cref{sec:generalites}.
             \item Une des solutions récurrente pour respecter les principes S.O.L.I.D. est de créer des abstractions.
-            Cela rappel à la mesure de l'\textquote{Abstractness} $A$ mesurer au précédent chapitre \cref{sec:les-mesures}.
+            Cela rappel à la mesure de l'\textquote{Abstractness} $A$ mesurée au précédent chapitre \cref{sec:les-mesures}.
         \end{itemize}
         \bigbreak
         \centering
