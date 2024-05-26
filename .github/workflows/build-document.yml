@@ -12,8 +12,10 @@ jobs:
       - name: Build PDF
         run: /usr/bin/bash compile-latex.sh # Execution du script de compilation du PDF
       - name: Ghostscript compress PDF # Lossless compression of the PDF
+        if: always() # Always run this step, even if the previous one failed
         run: /usr/bin/bash compress-pdf.sh # Execution du script de compression du PDF
       - name: Upload compressed PDF
+        if: always() # Always run this step, even if the previous one failed
         uses: actions/upload-artifact@v4 # Utilisation d'une action pour uploader un artefact
         with:
           name: gs-compressed-pdf # Nom de l'artefact
