@@ -360,13 +360,13 @@ True
 
 >>> class Poule(Oiseau):
         def __init__(self):
-            Oiseau.__init__(self)
+            Oiseau.__init__(self):
         def vole(self): # Chacun vole à sa manière, son implémentation
             print("Je vole quelques mètres")
 
 >>> cocote = Poule()
 
->>> cocote.vol()
+>>> cocote.vole()
 Je vole quelques mètres
         \end{lstlisting}
     \end{frame}
@@ -593,11 +593,9 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
     \begin{frame}
         \transdissolve
         \frametitle{Les mesures du couplage}
-        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes}
-        Résultat de l'exercice~:
-        \bigbreak
+        \framesubtitle{Résultat de l'exercice précédent}
         \centering
-        \includegraphics[width=8cm]{image/exercice-metrics-1}
+        \includegraphics[width=10cm]{image/exercice-metrics-1}
     \end{frame}
 
     \begin{frame}[fragile]
@@ -710,7 +708,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \frametitle{\textquote{Mid-level} architecture}
         \framesubtitle{Comment agencer les briques}
         Les briques vues précédemment sont nécessaires mais pas suffisantes pour construire un système.
-        Si elles ne sont pas correctement conçues il est inutile de les intégrer un design élaboré, le système risque fortement de ne pas fonctionner
+        Si elles ne sont pas correctement conçues il est inutile de les intégrer à un design élaboré, le système risque fortement de ne pas fonctionner
         \bigbreak
         Pour qu'un système fonctionne, il faut que les briques soient correctement agencées.
         C'est la \textquote{mid-level architecture}.
@@ -790,7 +788,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
                 \item \textbf{Open-Closed Principle}~: Une classe doit être ouverte à l'extension mais fermée à la modification.
                 \item \textbf{Liskov Substitution Principle}~: Une instance de type T doit pouvoir être remplacée par une instance de type G, tel que G sous-type de T, sans que cela ne modifie la cohérence du programme.
                 Cela garantit que les sous-classes peuvent être utilisées de manière interchangeable avec leurs classes de base.
-                \item \textbf{Interface Segregation Principle}~: Les clients ne doivent pas être forcés d'implémenter des interfaces qu'ils n'utilisent pas.
+                \item \textbf{Interface Segregation Principle}~: Les classes ne doivent pas être forcés d'implémenter des interfaces qu'ils n'utilisent pas.
                 Préférer plusieurs interfaces spécifiques pour chaque client plutôt qu'une seule interface générale.
                 Cela évite aux classes de dépendre de méthodes dont elles n'ont pas besoin, réduisant ainsi les couplages inutiles.
                 \item \textbf{Dependency Inversion Principle}~: Il faut dépendre des abstractions, pas des implémentations.
@@ -994,7 +992,7 @@ ostrich.fly()  # Raises NotImplementedError
         \framesubtitle{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
         Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/liskov-rectangle.py}.
         La fonction \lstinline{use_it} ne peut pas être utilisée avec la classe \lstinline{Square} sans modification.
-        Refactoriser les classes {Square} et {Rectangle} pour qu'elles héritent d'une classe abstraite à développer pour que \lstinline{use_it} fonctionne avec les deux classes.
+        Refactoriser les classes \lstinline{Square} et \lstinline{Rectangle} pour qu'elles héritent d'une classe abstraite à développer et que \lstinline{use_it} fonctionne avec les deux classes.
         \bigbreak
         \begin{columns}
             \column{0.5\textwidth}
