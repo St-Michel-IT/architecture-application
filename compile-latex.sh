@@ -5,7 +5,11 @@ if ! [ -x "$(command -v lualatex)" ]; then
   exit 1
 fi
 # cd in doc or handle error
-cd doc || echo "Canot cd in doc"
+cd doc || exit 1
+# Print the path
+echo "Current Path: $(pwd)"
+# Print files in the current directory
+echo "Files in the current directory: $(ls)"
 # Compile LaTeX with lualatex, compile twice to get the table of contents
 lualatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=build/pdf Architecture-Application-L3-CSI.tex
 lualatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=build/pdf Architecture-Application-L3-CSI.tex
