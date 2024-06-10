@@ -1542,7 +1542,7 @@ lentgh of the struct: 35
         \bigbreak
         On peut les intégrer dans de nombreux systèmes, serveurs, navigateurs, applications mobiles, etc.
         \bigbreak
-        L'ID dans la requête et la réponse permet d'envoyer un batch de requêtes et d'y associer les réponses.
+        L'\lstinline{id} dans la requête et la réponse permet d'envoyer un batch de requêtes et d'y associer les réponses.
         \bigbreak
         Ils sont reconnus pour leur simplicité d'utilisation, c'est presque aussi simple d'appeler une méthode sur une machine distante qu'en local.
         Vu comme cela on comprends par contre qu'il y a un très fort couplage entre le client et le serveur.
@@ -1556,10 +1556,10 @@ lentgh of the struct: 35
         \transdissolve
         \frametitle{API REST}
         \framesubtitle{Définition\footnote{Une API REST, qu'est-ce que c'est~?, \url{https://www.redhat.com/fr/topics/api/what-is-a-rest-api}}}
-        Les API REST aussi parfois appelées API RESTful sont des API qui respectent les contraintes de l'architecture REST (Representational State Transfer) de Roy Fielding.
-        \bigbreak
-        Ces contraintes sont~:
         \begin{footnotesize}
+            Les API REST aussi parfois appelées API RESTful sont des API qui respectent les contraintes de l'architecture REST (Representational State Transfer) de Roy Fielding.
+            \bigbreak
+            Ces contraintes sont~:
             \begin{itemize}
                 \item Client-serveur~: Le client et le serveur sont séparés.
                 \item Stateless~: Chaque requête du client doit contenir toutes les informations nécessaires pour être traitée par le serveur.
@@ -1575,11 +1575,11 @@ lentgh of the struct: 35
         \transdissolve
         \frametitle{API}
         \framesubtitle{Définition}
-        Aucunes contrainte donc sur le langage de programmation, le système d'exploitation, le type de données, etc.
+        Aucune contrainte donc sur le langage de programmation, le système d'exploitation, le type de donnée, etc.
         \bigbreak
         De nombreuses libraries existent pour implémenter des API REST dans tous les langages de programmation courants.
         \bigbreak
-        Par exemple dans un serveur Flask avec \href{}{Flask-RESTful}~:
+        Par exemple dans un serveur Flask avec \href{https://flask-restful.readthedocs.io/en/latest/}{Flask-RESTful}~:
         \begin{lstlisting}[language=python,basicstyle=\ttfamily\tiny]
 from flask import Flask
 from flask_restful import Resource, Api
@@ -1643,8 +1643,8 @@ def handle_request_parsing_error(err, req, schema, *, error_status_code, error_h
         \transdissolve
         \frametitle{Swagger}
         \framesubtitle{La spécification OpenAPI et le format Swagger}
-        La spécification OpenAPI est une spécification pour décrire des API JSON.
-        Donc les API RESTful.
+        La spécification OpenAPI est une spécification pour décrire des API JSON~.
+        Donc les API RESTful entre autre.
         \bigbreak
         Cette définition au format JSON ou YAML, dans un fichier appelé \textquote{Swagger}.
         \bigbreak
@@ -1663,7 +1663,7 @@ def handle_request_parsing_error(err, req, schema, *, error_status_code, error_h
         \transdissolve
         \frametitle{Swagger}
         \framesubtitle{La spécification OpenAPI et le format Swagger}
-        Pour écrire le \textquote{Swagger} directement dans le code, il existe des librairies comme \lstinline{flasgger} permettent de générer la documentation de l'API à partir des docstrings des méthodes.
+        Pour écrire le \textquote{Swagger} directement dans le code, il existe des librairies comme \lstinline{flasgger} qui permettent de générer la documentation de l'API à partir des docstrings des méthodes.
 
         Voir par exemple \url{https://github.com/flasgger/flasgger}.
         \begin{dangercolorbox}
@@ -1679,11 +1679,11 @@ def handle_request_parsing_error(err, req, schema, *, error_status_code, error_h
         \frametitle{JSON-LD}
         \framesubtitle{JSON Linked-Data\footnote{JSON for Linking Data, \url{https://json-ld.org/}}}
         Inspiré du web sémantique et de la sémantique des données, le JSON-LD est un format de données structurées qui permet de lier des données entre elles.
-        \bigbreak
+
         \textquote{JSON-LD is a lightweight Linked Data format. It is easy for humans to read and write.}
         \bigbreak
         Exemple de retour d'une API JSON-LD~:
-        \begin{lstlisting}[language=java]
+        \begin{lstlisting}[language=java,basicstyle=\ttfamily\tiny]
 {
   "@context": "https://json-ld.org/contexts/person.jsonld",
   "@id": "http://dbpedia.org/resource/John_Lennon",
@@ -1692,7 +1692,7 @@ def handle_request_parsing_error(err, req, schema, *, error_status_code, error_h
   "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
 }
         \end{lstlisting}
-        Le \textquote{contexe} est une URL qui pointe vers un fichier JSON-LD qui définit les relations entre les données\footnote{JSON-LD contexts, \url{http://niem.github.io/json/reference/json-ld/context/}}.
+        Le \lstinline{@contex} est une URL qui pointe vers un fichier JSON-LD qui définit les relations entre les données\footnote{JSON-LD contexts, \url{http://niem.github.io/json/reference/json-ld/context/}}.
     \end{frame}
 
     \begin{frame}[fragile]
@@ -1723,7 +1723,7 @@ def handle_request_parsing_error(err, req, schema, *, error_status_code, error_h
 
         Il est basé sur XML et est donc plus verbeux que le JSON~.
 
-        Le plus utilisé over HTTP mais peut également être utilisé over SMTP, FTP, etc.
+        Le plus utilisé est over HTTP mais il peut également être utilisé over SMTP, FTP, etc.
         \bigbreak
         La WSDL pour \textquote{Web Services Description Language} est un fichier XML qui décrit les méthodes, les types de données, les protocoles de communication, etc.
         % XML listing
@@ -1746,21 +1746,23 @@ def handle_request_parsing_error(err, req, schema, *, error_status_code, error_h
         \transdissolve
         \frametitle{API SOAP}
         \framesubtitle{Définition\footnote{REST et SOAP : quelle est la différence ?, \url{https://www.redhat.com/fr/topics/integration/whats-the-difference-between-soap-rest}}}
-        Les standards de conformité intégrés incluent la sécurité, l'atomicité, la cohérence, l'isolement et la durabilité (ACID), un ensemble de propriétés qui permet d'assurer des transactions de base de données fiables.
-        Voici les principales spécifications de services web~:
-        \begin{itemize}
-            \item \textbf{WS-Security (Web Services Security)}~: spécification qui standardise la manière dont les messages sont sécurisés et transférés via des identifiants uniques appelés jetons.
-            \item \textbf{WS-ReliableMessaging}~: spécification qui standardise la gestion des erreurs entre les messages transférés par le biais d'une infrastructure informatique non fiable.
-            \item \textbf{WS-Adressing (Web Services Addressing)}~: spécification qui ajoute les informations de routage des paquets en tant que métadonnées dans des en-têtes SOAP, au lieu de les conserver plus en profondeur dans le réseau.
-            \item \textbf{WSDL (Web Services Description Language)}~: décrit la fonction d'un service web ainsi que ses limites.
-        \end{itemize}
+        \begin{footnotesize}
+            Les standards de conformité intégrés incluent la sécurité, l'atomicité, la cohérence, l'isolement et la durabilité (ACID), un ensemble de propriétés qui permet d'assurer des transactions de base de données fiables.
+            Voici les principales spécifications de ces services web~:
+            \begin{itemize}
+                \item \textbf{WS-Security (Web Services Security)}~: spécification qui standardise la manière dont les messages sont sécurisés et transférés via des identifiants uniques appelés jetons.
+                \item \textbf{WS-ReliableMessaging}~: spécification qui standardise la gestion des erreurs entre les messages transférés par le biais d'une infrastructure informatique non fiable.
+                \item \textbf{WS-Adressing (Web Services Addressing)}~: spécification qui ajoute les informations de routage des paquets en tant que métadonnées dans des en-têtes SOAP, au lieu de les conserver plus en profondeur dans le réseau.
+                \item \textbf{WSDL (Web Services Description Language)}~: décrit la fonction d'un service web ainsi que ses limites.
+            \end{itemize}
+        \end{footnotesize}
     \end{frame}
 
     \begin{frame}[fragile]
         \transdissolve
         \frametitle{API SOAP}
         \framesubtitle{La requête}
-        Des librairies existent pour générer les requêtes SOAP en Python par exemple \lstinline{zeep}~:
+        Des librairies existent pour générer les requêtes SOAP, par exemple en Python \lstinline{zeep}~:
         \begin{lstlisting}[language=python,basicstyle=\ttfamily\tiny]
 from zeep import Client
 from requests import Session
@@ -1782,10 +1784,44 @@ response = client.service.sendData(**request_data)
         \transdissolve
         \frametitle{API SOAP}
         \framesubtitle{Le serveur}
-        Des librairies existent pour transformer une API en API SOAP en Python par exemple \lstinline{spyne}.
+        Des librairies existent pour transformer un serveur web Python classique en API SOAP, par exemple \lstinline{spyne}.
         Voir leur exemple avec le module \url{https://github.com/arskom/spyne/blob/master/examples/helloworld_soap.py}.
         \bigbreak
         \centering
         \includegraphics[width=5cm]{image/soaps-chatting}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{SOA}
+        \framesubtitle{Exercice \execcounterdispinc{}}
+        \begin{tiny}
+            Désigner et développer une architecture de services qui distribue les données de l'\href{https://www.data.gouv.fr/fr/datasets/index-egalite-professionnelle-f-h-des-entreprises-de-50-salaries-ou-plus/}{Index EgaPro}.
+            Respecter les exigences suivantes~:
+            \begin{itemize}
+                \item Travailler par groupe de 3 maximum.
+                \item Créer un repo GitHub dédié et le communiquer à l'enseignant.
+                \item Chaque étudiant sera évalué selon ses commits sur le repo.
+                Il doit développer au moins un service.
+                \item Documenter l'architecture avec un diagramme de séquence.
+                \item Documenter l'API REST avec un Swagger.
+                \item Documenter l'API SOAP avec un WSDL~.
+                \item Intégrer ces schémas à un README détaillé.
+                \item Développer 3 services minimum~:
+                \begin{itemize}
+                    \begin{tiny}
+                        \item Distribution des données EgaPro en RPC~.
+                        \item Distribution des données EgaPro par API REST~.
+                        \item Distribution des données EgaPro par API SOAP~.
+                    \end{tiny}
+                \end{itemize}
+                \item Tous doivent avoir une base de donnée commune.
+                \item Distribuer les données par SIREN suffit, voir \url{https://github.com/St-Michel-IT/testing/blob/master/egapro_api.py}.
+                \item Configurer un Reverse Proxy (Nginx par exemple) pour avoir tous les services derrière le même domaine et port.
+            \end{itemize}
+            \begin{dangercolorbox}
+                Le dernier commit de la journée sera évalué.
+            \end{dangercolorbox}
+        \end{tiny}
     \end{frame}
 \end{document}
