@@ -1146,4 +1146,646 @@ ostrich.fly()  # Raises NotImplementedError
     \end{frame}
 
 
+    \section{High Level Desgin (HLD)}\label{sec:high-level-design}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{High Level Desgin (HLD)}
+        \framesubtitle{Déifiniton \footnote{Carnegie Mellon UNiverety, Philip Koopman, \url{https://course.ece.cmu.edu/~ece642/lectures/12_Architecture_HLD.pdf}}}
+        Le HLD est une description de l'architecture, une vue d'ensemble d'un système qui peut être un produit entier.
+        \bigbreak
+        On peut entre autre utiliser plusieurs diagrammes pour décrire le HLD~:
+        \begin{itemize}
+            \item UML avec le diagramme de séquence.
+            \item UML avec le diagramme d'activité.
+            \item UML avec \textquote{Use case}.
+            \item Diagramme \textquote{Data Flow}.
+        \end{itemize}
+        \bigbreak
+        Le HLD est une vue d'ensemble, il ne rentre donc pas dans les détails.
+        Ces derniers sont dans les diagrammes de la mid-level architecture.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{High Level Desgin (HLD)}
+        \framesubtitle{Exemples de diagrammes}
+        \begin{columns}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=3.5cm]{image/uml-sequence-diagram} \\ UML, diagramme de séquence \\
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=3.5cm]{image/uml-use-case-diagram} \\ UML, diagramme \textquote{Use case} \\
+        \end{columns}
+        \begin{columns}
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=4cm]{image/data-flow-diagramm-online-banking-application} \\ Diagramme Data Flow \\
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=4cm]{image/uml-activity-diagram} \\ UML, diagramme d'activité \\
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{High Level Desgin (HLD)}
+        \framesubtitle{Bonnes pratiques}
+        \begin{itemize}
+            \item C'est un ou plusieurs diagrammes
+            \item S'applique à tous les composants du système, soft, hard, réseau, etc.
+            \item S'applique à toutes les interfaces entre ces composants.
+            \item Évolue avec les spécifications.
+            \item Ne comprends pas trop de détails qui compliquent la compréhension.
+            D'autres diagrammes sont là pour ça.
+            \item Utiliser des outils dédiés, comme Draw.io ou PlantUML pour les diagrammes UML~.
+        \end{itemize}
+    \end{frame}
+
+
+    \section{Service-Oriented Architecture}\label{sec:soa}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Architectures Orientées Service}
+        \framesubtitle{Définition\cref{fundsofsoftarch}}
+        \textquote{Service-Oriented Architecture} (SOA) en anglais, est un style d'architecture logicielle qui vise à concevoir des applications comme un ensemble de services.
+        \bigbreak
+        Vu de l'extérieur, un service expose une interface qui permet d'interagir avec lui.
+        Il y a de plusieurs services, chacun dédié à une tâche spécifique.
+        Ils communiquent tous avec la même base de données.
+        \begin{columns}
+            \column{0.5\textwidth}
+            Cette une approche considérée comme l'opposé de l'approche \textquote{monolithique}.
+
+            Le client peut-être un navigateur web, une application mobile, un autre service, etc.
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/soa-server}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Architectures Orientées Service}
+        \framesubtitle{Définition\cref{fundsofsoftarch}}
+        Cette approche est hybride entre le monolithique et les microservices.
+        \bigbreak
+        Elle est considérée comme plus souple que le monolithique et plus simple que le microservices.
+        \bigbreak
+        La meilleurs flexibilité vient entre autre du fait que les services peuvent être développés dans des technologies différentes.
+        Ils peuvent être déployés indépendamment.
+        \bigbreak
+        \begin{columns}
+            \column{0.5\textwidth}
+            Un \textquote{Reverse Proxy} peut-être utilisé pour rediriger les requêtes vers le bon service tout en donnant l'impression de n'avoir qu'un seul serveur.
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=6cm]{image/reverse-proxy-flow}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Architectures Orientées Service}
+        \framesubtitle{Définition\cref{fundsofsoftarch}}
+        Quel est l'intérêt d'avoir une ou des bases de données communes à tous les services~?
+        \pause
+        \bigbreak
+        \begin{itemize}
+            \item Éviter la redondance de données.
+            \item Éviter les incohérences de données.
+            \item Éviter les problèmes de synchronisation.
+            \item Éviter les problèmes de sécurité.
+            \item Éviter un impact sur les performances lié à la duplication et à la com'.
+        \end{itemize}
+        \begin{dangercolorbox}
+            SOA n'est pas un standard ou un protocole, c'est un style d'architecture.
+        \end{dangercolorbox}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Introduction aux Architectures Orientées Services}
+        \framesubtitle{Introduction aux Architectures Orientées Services\footnote{\label{newop-soa}A Guide to Service-Oriented Architecture (SOA) Styles, \url{https://www.newnop.com/blog/a-guide-to-service-oriented-architecture-(soa)-styles}}}
+        \begin{columns}
+            \column{0.5\textwidth}
+            Plusieurs variantes de SOA ont vues le jour~:
+            \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/diversity-of-soa}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Introduction aux Architectures Orientées Services}
+        \framesubtitle{Introduction aux Architectures Orientées Services\cref{newop-soa}}
+        \begin{footnotesize}
+            \begin{itemize}
+                \item \textbf{broker}~: En s'appuyant sur les fondations de l'architecture orientée services (SOA), le style Broker introduit une entité centrale appelée \textquote{broker} pour gérer la communication entre différents services.
+                Imaginez ce \textquote{broker} comme un contrôleur de trafic expérimenté, routant habilement les messages et assurant un flux de communication fluide.
+                \item \textbf{Microservice}~: En poussant le concept de modularité à un niveau supérieur, l'architecture des microservices est devenue un choix populaire pour la construction d'applications logicielles modernes.
+                Ce style préconise de décomposer les applications en services encore plus petits, indépendants et autonomes.
+                Pensez à ces services comme à des microcosmes individuels au sein de l'écosystème applicatif plus large, chacun accomplissant une tâche spécifique.
+                \item \textbf{Serverless}~: le style architectural \textquote{serverless}, une approche native du cloud qui redéfinit la manière dont les applications sont construites et déployées.
+                Au lieu de provisionner et de gérer des serveurs, les développeurs écrivent des fragments de code appelés « fonctions » qui sont déclenchés par des événements spécifiques.
+                La gestion d'un maximum de l'infrastructure est laissée à une équipe dédiée - c'est l'essence du \textquote{serverless}.
+                Quel(s) produit(s) cloud \textquote{serverless} réputé connaissez-vous~?
+            \end{itemize}
+            Quels sont les avantages et inconvenient de ces styles~?
+        \end{footnotesize}
+    \end{frame}
+
+
+    \section{Les architectures des échanges du web}\label{sec:web-com}
+
+    \subsection{Communication client-serveur}\label{subsec:web-com-server-client}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les architectures Client-Serveur}
+        \framesubtitle{Les protocoles entre navigateur et serveur}
+        Si le client est un navigateur web, les protocoles seront le HTTP et les protocoles construits au dessus.
+        \bigbreak
+        \centering
+        \includegraphics[width=10cm]{image/browser-soa-protocols.drawio}
+        \flushleft
+        Que peut-on échanger au dessus de HTTP entre le navigateur et le serveur~?
+        \pause
+        \bigbreak
+        Des données brutes aux formats JSON, XML, HTML, etc.
+
+        Potentiellement dans un autre protocole comme JSON-RPC, OpenID Connect, SOAP over HTTP, REST, etc.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Les architectures Client-Serveur}
+        \framesubtitle{Les protocoles entre serveurs}
+        Si le client est une autre machine, beaucoup plus de protocoles sont disponibles.
+        \bigbreak
+        \centering
+        \includegraphics[width=10cm]{image/m2m-soa-protocols.drawio}
+        \flushleft
+        Que peut-on échanger au dessus de HTTP entre serveurs~?
+        \pause
+        \bigbreak
+        Des données brutes aux formats JSON, XML, etc.
+
+        Potentiellement dans un autre protocole comme SOAP over SMTP, SOAP over FTP, SOAP over HTTP, etc.
+    \end{frame}
+
+    \subsection{Appel de procédure}\label{subsec:rpc}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Appel de procédure}
+        \framesubtitle{Définition}
+        Couramment appelé RPC pour \textquote{Remote Procedure Call} en anglais.
+        \bigbreak
+        Ensemble de protocoles qui permettent à un programme client de demander à un serveur d'exécuter une fonction/procédure/programme.
+        Le retour de cette procédure, i.e., la réponse est renvoyée au client.
+        \bigbreak
+        Les premières standardisations dans une RFC datent de 1976.
+        \bigbreak
+        C'est globalement une communication inter-process.
+        \bigbreak
+        Ces appels à des méthodes et les réponses en retour sont souvent sérialisés en JSON ou XML~.
+        Ces données sérialisées sont ensuite envoyées en HTTP, le plus souvent.
+        \bigbreak
+        Fort de leur standardisation, on trouve leur implémentation côté et serveur dans tous les langages de programmation courants.
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Appel de procédure}
+        \framesubtitle{1998 le XML-RPC\footnote{Simple cross-platform distributed computing, based on the standards of the Internet., \url{http://1998.xmlrpc.com/}}}
+        Cette appel de procédure distant utilise le HTTP pour le transport et le XML pour la sérialisation.
+
+        Exemple d'appel~:
+        \begin{lstlisting}[language=xml,basicstyle=\ttfamily\tiny]
+<?xml version="1.0"?>
+    <methodCall>
+        <methodName>Teststatut</methodName>
+        <params>
+        <param>
+            <value><i4>10</i4></value>
+        </param>
+        </params>
+    </methodCall>
+        \end{lstlisting}
+        Exemple de réponse~:
+        \begin{lstlisting}[language=xml,basicstyle=\ttfamily\tiny]
+<?xml version="1.0"?>
+    <methodResponse>
+        <params>
+        <param>
+            <value><string>Statut : OK</string></value>
+        </param>
+        </params>
+    </methodResponse>
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Appel de procédure}
+        \framesubtitle{1998, le XML-RPC}
+        Quel est l'avantage du XML-RPC~?
+        \pause
+        \bigbreak
+        Les XML ont une grammaire vérifiable grâce à un schéma XSD~.
+        Le JSON de base n'a pas de grammaire.
+        Il faut définir un schéma JSON avec CDDL\footnote{Concise Data Definition Language (CDDL): A Notational Convention to Express Concise Binary Object Representation (CBOR) and JSON Data Structures., \url{https://datatracker.ietf.org/doc/html/rfc8610}} par exemple.
+
+        Quel est l'inconvénient du XML par rapport au JSON~?
+        \pause
+        \bigbreak
+        Le XML est plus verbeux que le JSON, donc plus difficile à lire et plus long à transférer.
+        \bigbreak
+        \textquote{Rappel}~: On peut parser du XML en JS dans le navigateur \url{https://developer.mozilla.org/en-US/docs/Web/XML/Parsing_and_serializing_XML}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Appel de procédure}
+        \framesubtitle{Le JSON-RPC 1 et 2\footnote{JSON-RPC, A light weight remote procedure call protocol. It is designed to be simple!, \url{https://www.jsonrpc.org/}}}
+        Le JSON se popularise au milieu des années 2000 mais est standardisé seulement en 2013\footnote{The JavaScript Object Notation (JSON) Data Interchange Format, \url{https://www.rfc-editor.org/rfc/rfc7158}}.
+
+        La dernière version de JSON-RPC, la 2.0, celle à utiliser, date de 2013 également.
+
+        Exemple d'appels et réponses~:
+        \begin{lstlisting}[language=java,basicstyle=\ttfamily\tiny]
+// Avec des "named parameters"
+{"jsonrpc": "2.0", "method": "subtract", "params": {"subtrahend": 23, "minuend": 42}, "id": 3} // Appel -->
+{"jsonrpc": "2.0", "result": 19, "id": 3} // Réponse <--
+// Équivalent aux "positional parameters"
+{"jsonrpc": "2.0", "method": "subtract", "params": [42, 23], "id": 1} // Appel -->
+{"jsonrpc": "2.0", "result": 19, "id": 1} // Réponse <--
+// Une notification n'a pas de "id" et donc pas ed réponse
+{"jsonrpc": "2.0", "method": "update", "params": [1,2,3,4,5]} // Appel -->
+{"jsonrpc": "2.0", "method": "foobar"} // Appel -->
+// Batch de commandes, les mêmes commandes sont dans un tableau, possible pour les notifications également
+[{"jsonrpc": "2.0", "method": "sum", "params": [1,2,4], "id": "1"},
+    {"jsonrpc": "2.0", "result": 19, "id": "2"}] // Appel -->
+[{"jsonrpc": "2.0", "result": 7, "id": "1"},
+    {"jsonrpc": "2.0", "result": 19, "id": "2"}] // Réponse <--
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Appel de procédure}
+        \framesubtitle{JSON-RPC}
+        Quel sont les avantages du JSON-RPC~?
+        \pause
+        \bigbreak
+        \begin{itemize}
+            \item Le JSON est plus léger que le XML, donc plus vite transféré.
+            \item Le JSON est plus facilement lisible que le XML~.
+            \item Facile à implémenter en JS dans le navigateur ou à utiliser avec une librairie.
+        \end{itemize}
+        \bigbreak
+        Quel est l'inconvénient du JSON par rapport au XML~?
+        \pause
+        \bigbreak
+        Pas de schéma du JSON de la charge utile!
+        \bigbreak
+        Voir l'exemple de serveur qui \href{https://github.com/St-Michel-IT/testing/blob/master/ble_to_rpc.py}{expose le BLE sur le HTTP over JSON-RPC}~.
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Appel de procédure}
+        \framesubtitle{gRPC\footnote{gRPC, A high performance, open source universal RPC framework, \url{https://grpc.io/}}}
+        gRPC est un RPC open source développé par Google qui l'a libéré en 2015.
+        \bigbreak
+        Il est basé sur le protocole HTTP/2 et utilise le format de sérialisation de données Protobuf A.K.A Protocol Buffer.
+        Protobuff est un format binaire défini par un schéma.
+        \bigbreak
+        Pourquoi un format binaire~?
+        % listing
+        \begin{lstlisting}
+>>> from sys import getsizeof # La taille en octets d'un objet
+>>> from struct import pack " Struct pour parser ou générer du binaire
+>>> print("Compare with string")
+>>> struct_object = pack(">H", 0xffff) # H == uInt16, unsigned short
+>>> print(0xffff)
+>>> print("lentgh of the string:", getsizeof("65535"))
+>>> print("lentgh of the struct:", getsizeof(struct_object))
+Compare with string
+65535
+lentgh of the string: 54
+lentgh of the struct: 35
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Appel de procédure}
+        \framesubtitle{Pourquoi Protobuff dans le RPC}
+        Un schéma réduit les bugs possibles.
+        \begin{itemize}
+            \item Comme par exemple un format de donnée incohérent, une balise ou une clé en JSON qui ne respecte pas la hiérarchie attendue.
+            \item Type de donnée incohérent
+            \item Valeur incohérente, comme 6000000 dans un champ qui attend un entier 16 bits.
+            \item Sûrement d'autres\ldots
+        \end{itemize}
+        \bigbreak
+        Toutes les erreurs ci-dessus vont induire un crash lors de la sérialisation des données.
+        Les données erronées ne peuvent donc pas être envoyées au client ou au serveur.
+        D'où la diminution des bugs possibles.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Appel de procédure}
+        \framesubtitle{Pourquoi Protobuff dans le RPC}
+        Rappel sur la sérialisation des données, les grandes familles~:
+        \bigbreak
+        \centering
+        \includegraphics[width=10cm]{image/serialization.drawio} \\ Échelle des problèmes potentiels du vert au rouge \\
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Appel de procédure}
+        \framesubtitle{gRPC}
+        Quel sont les avantages du gRPC~?
+        \pause
+        \bigbreak
+        \begin{itemize}
+            \item Un schéma de données qui réduit les bugs possibles.
+            \item Le HTTP/2 est plus rapide que le HTTP/1.1.
+            \item Le format binaire est plus léger que le JSON~.
+        \end{itemize}
+        \bigbreak
+        Quel sont les inconvénients du gRPC~?
+        \pause
+        \bigbreak
+        \begin{itemize}
+            \item Il y a des étapes supplémentaires d'encodage et de décodage des données.
+            \item Plus difficile à utiliser sans librairie et intégrer dans le navigateur.
+            \item Impossible de lire la charge utile sans décoder.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Appel de procédure}
+        \framesubtitle{Conclusion}
+        Les 3 types d'appels de procédure vus sont très standardisés.
+        Les librairies pour les implémenter sont disponibles dans tous les langages de programmation courants.
+        Souvent depuis des années et donc robustes.
+        \bigbreak
+        On peut les intégrer dans de nombreux systèmes, serveurs, navigateurs, applications mobiles, etc.
+        \bigbreak
+        L'ID dans la requête et la réponse permet d'envoyer un batch de requêtes et d'y associer les réponses.
+        \bigbreak
+        Ils sont reconnus pour leur simplicité d'utilisation, c'est presque aussi simple d'appeler une méthode sur une machine distante qu'en local.
+        Vu comme cela on comprends par contre qu'il y a un très fort couplage entre le client et le serveur.
+        Et donc un manque de flexibilité.
+    \end{frame}
+
+    \subsection{API REST}\label{subsec:api-rest}
+
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{API REST}
+        \framesubtitle{Définition\footnote{Une API REST, qu'est-ce que c'est~?, \url{https://www.redhat.com/fr/topics/api/what-is-a-rest-api}}}
+        Les API REST aussi parfois appelées API RESTful sont des API qui respectent les contraintes de l'architecture REST (Representational State Transfer) de Roy Fielding.
+        \bigbreak
+        Ces contraintes sont~:
+        \begin{footnotesize}
+            \begin{itemize}
+                \item Client-serveur~: Le client et le serveur sont séparés.
+                \item Stateless~: Chaque requête du client doit contenir toutes les informations nécessaires pour être traitée par le serveur.
+                \item Cacheable~: Les réponses doivent être explicitement ou implicitement marquées comme cacheable ou non.
+                \item Layered system~: Le client ne doit pas savoir si il communique avec le serveur ou un intermédiaire.
+                \item Code on demand (optional)~: Le serveur peut envoyer du code au client pour être exécuté.
+                \item Une interface uniforme entre les composants qui permet un transfert standardisé des informations~: Les ressources sont identifiées par des URI, les opérations sont standardisées (GET, POST, PUT, DELETE, etc), les réponses sont auto-descriptives.
+            \end{itemize}
+        \end{footnotesize}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{API}
+        \framesubtitle{Définition}
+        Aucunes contrainte donc sur le langage de programmation, le système d'exploitation, le type de données, etc.
+        \bigbreak
+        De nombreuses libraries existent pour implémenter des API REST dans tous les langages de programmation courants.
+        \bigbreak
+        Par exemple dans un serveur Flask avec \href{}{Flask-RESTful}~:
+        \begin{lstlisting}[language=python,basicstyle=\ttfamily\tiny]
+from flask import Flask
+from flask_restful import Resource, Api
+
+app = Flask(__name__)
+api = Api(app)
+
+
+class Hello(Resource):
+    def get(self):
+        return {'hello': 'world'}
+
+
+api.add_resource(Hello, '/hello')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{API}
+        Quelques exemples d'API REST avec des POST et aussi des arguments grâce à la librairie \lstinline{webargs} sur leur \href{https://github.com/marshmallow-code/webargs/blob/dev/examples/flaskrestful_example.py}{GitHub}.
+        % Python listing
+        \begin{lstlisting}[language=python,basicstyle=\ttfamily\tiny]
+class DateAddResource(Resource):
+    dateadd_args = {
+        "value": fields.Date(required=False),
+        "addend": fields.Int(required=True, validate=validate.Range(min=1)),
+        "unit": fields.Str(
+            load_default="days", validate=validate.OneOf(["minutes", "days"])
+        ),
+    }
+
+    @use_kwargs(dateadd_args)
+    def post(self, value, addend, unit):
+        """A date adder endpoint."""
+        value = value or dt.datetime.utcnow()
+        if unit == "minutes":
+            delta = dt.timedelta(minutes=addend)
+        else:
+            delta = dt.timedelta(days=addend)
+        result = value + delta
+        return {"result": result.isoformat()}
+
+
+# This error handler is necessary for usage with Flask-RESTful
+@parser.error_handler
+def handle_request_parsing_error(err, req, schema, *, error_status_code, error_headers):
+    """webargs error handler that uses Flask-RESTful's abort function to return
+    a JSON error response to the client.
+    """
+    abort(error_status_code, errors=err.messages)
+        \end{lstlisting}
+    \end{frame}
+
+    \subsection{La standardisation du contenu JSON}\label{subsec:api-json}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Swagger}
+        \framesubtitle{La spécification OpenAPI et le format Swagger}
+        La spécification OpenAPI est une spécification pour décrire des API JSON.
+        Donc les API RESTful.
+        \bigbreak
+        Cette définition au format JSON ou YAML, dans un fichier appelé \textquote{Swagger}.
+        \bigbreak
+        Grâce à ce fichier de définition et des outils open source comme \lstinline{swagger-codegen}, on peut générer en local ou dans le CI~:
+        \begin{itemize}
+            \item La documentation de l'API~.
+            \item Les clients pour les langages de programmation courants.
+            \item Les serveurs pour les langages de programmation courants.
+            \item Les tests.
+            \item Une web UI pour tester l'API~.
+            \item Many more\ldots
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Swagger}
+        \framesubtitle{La spécification OpenAPI et le format Swagger}
+        Pour écrire le \textquote{Swagger} directement dans le code, il existe des librairies comme \lstinline{flasgger} permettent de générer la documentation de l'API à partir des docstrings des méthodes.
+
+        Voir par exemple \url{https://github.com/flasgger/flasgger}.
+        \begin{dangercolorbox}
+            On remarque qu'on ne peut intégrer les deux libraries \lstinline{Flask-RESTful} et \lstinline{flasgger} ensemble dans un même serveur Flask.
+            Il faut écrire la définition dans un fichier \textquote{Swagger} à part, \textquote{à l'ancienne}.
+
+            La standardisation c'est propre mais c'est compliqué\ldots
+        \end{dangercolorbox}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{JSON-LD}
+        \framesubtitle{JSON Linked-Data\footnote{JSON for Linking Data, \url{https://json-ld.org/}}}
+        Inspiré du web sémantique et de la sémantique des données, le JSON-LD est un format de données structurées qui permet de lier des données entre elles.
+        \bigbreak
+        \textquote{JSON-LD is a lightweight Linked Data format. It is easy for humans to read and write.}
+        \bigbreak
+        Exemple de retour d'une API JSON-LD~:
+        \begin{lstlisting}[language=java]
+{
+  "@context": "https://json-ld.org/contexts/person.jsonld",
+  "@id": "http://dbpedia.org/resource/John_Lennon",
+  "name": "John Lennon",
+  "born": "1940-10-09",
+  "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
+}
+        \end{lstlisting}
+        Le \textquote{contexe} est une URL qui pointe vers un fichier JSON-LD qui définit les relations entre les données\footnote{JSON-LD contexts, \url{http://niem.github.io/json/reference/json-ld/context/}}.
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{JSON-LD}
+        \framesubtitle{La pagination\footnote{Pagination, \url{https://www.w3.org/community/hydra/wiki/Pagination}}}
+        Une \textquote{Collection} de données peut être paginée pour ne pas surcharger le client avec une trop grosse réponse~:
+        \begin{lstlisting}[language=java]
+{
+  "@id": "http://api.example.com/an-issue/comments?whatever=3",
+  "@type": "Collection",
+  "first": "/an-issue/comments",
+  "previous": "/an-issue/comments?whatever=2",
+  "next": "/an-issue/comments?whatever=4",
+  "last": "/an-issue/comments?whatever=498",
+  "member": [ ... ]
+}
+        \end{lstlisting}
+    \end{frame}
+
+    \subsection{API SOAP}\label{subsec:api-soap}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{API SOAP}
+        \framesubtitle{Définition}
+        SOAP pour \textquote{Simple Object Access Protocol} est un protocole de communication qui permet à des applications de communiquer entre elles.
+
+        Il est basé sur XML et est donc plus verbeux que le JSON~.
+
+        Le plus utilisé over HTTP mais peut également être utilisé over SMTP, FTP, etc.
+        \bigbreak
+        La WSDL pour \textquote{Web Services Description Language} est un fichier XML qui décrit les méthodes, les types de données, les protocoles de communication, etc.
+        % XML listing
+        \begin{lstlisting}[language=xml,basicstyle=\ttfamily\tiny]
+<message name="getTermRequest">
+  <part name="term" type="xs:string"/>
+</message>
+<message name="getTermResponse">
+  <part name="value" type="xs:string"/>
+</message>
+<portType name="glossaryTerms">
+  <operation name="getTerm">
+    <input message="getTermRequest"/>
+    <output message="getTermResponse"/>
+  </operation>
+</portType>
+        \end{lstlisting}
+    \end{frame}
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{API SOAP}
+        \framesubtitle{Définition\footnote{REST et SOAP : quelle est la différence ?, \url{https://www.redhat.com/fr/topics/integration/whats-the-difference-between-soap-rest}}}
+        Les standards de conformité intégrés incluent la sécurité, l'atomicité, la cohérence, l'isolement et la durabilité (ACID), un ensemble de propriétés qui permet d'assurer des transactions de base de données fiables.
+        Voici les principales spécifications de services web~:
+        \begin{itemize}
+            \item \textbf{WS-Security (Web Services Security)}~: spécification qui standardise la manière dont les messages sont sécurisés et transférés via des identifiants uniques appelés jetons.
+            \item \textbf{WS-ReliableMessaging}~: spécification qui standardise la gestion des erreurs entre les messages transférés par le biais d'une infrastructure informatique non fiable.
+            \item \textbf{WS-Adressing (Web Services Addressing)}~: spécification qui ajoute les informations de routage des paquets en tant que métadonnées dans des en-têtes SOAP, au lieu de les conserver plus en profondeur dans le réseau.
+            \item \textbf{WSDL (Web Services Description Language)}~: décrit la fonction d'un service web ainsi que ses limites.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{API SOAP}
+        \framesubtitle{La requête}
+        Des librairies existent pour générer les requêtes SOAP en Python par exemple \lstinline{zeep}~:
+        \begin{lstlisting}[language=python,basicstyle=\ttfamily\tiny]
+from zeep import Client
+from requests import Session
+from zeep.transports import Transport
+
+wsdl = "https://wsvc.cdiscount.com/MarketplaceAPIService.svc?wsdl"
+
+session = Session()
+session.auth = HTTPBasicAuth(<username>, <password>)
+
+#An additional argument 'transport' is passed with the authentication details
+client = Client(wsdl, transport=Transport(session=session))
+request_data = {"account": 1, "new_balance": 100}
+response = client.service.sendData(**request_data)
+        \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{API SOAP}
+        \framesubtitle{Le serveur}
+        Des librairies existent pour transformer une API en API SOAP en Python par exemple \lstinline{spyne}.
+        Voir leur exemple avec le module \url{https://github.com/arskom/spyne/blob/master/examples/helloworld_soap.py}.
+        \bigbreak
+        \centering
+        \includegraphics[width=5cm]{image/soaps-chatting}
+    \end{frame}
 \end{document}
