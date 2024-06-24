@@ -26,7 +26,9 @@
     \end{frame}
 
     \begin{frame}{Table des matières}
-        \tableofcontents
+        \begin{tiny}
+            \tableofcontents
+        \end{tiny}
     \end{frame}
 
 
@@ -95,7 +97,7 @@
             \item Bons points tout au long du module.
             \item 25 \% x 3 sur chaque séance de travaux dirigés évalués en fin de séance.
             Et une application orientée web REST ou SOAP~.
-            \item 25 \% sur une évaluation écrite finale
+            \item 25 \% sur une évaluation écrite finale.
         \end{itemize}
     \end{frame}
 
@@ -1145,6 +1147,118 @@ ostrich.fly()  # Raises NotImplementedError
         \includegraphics[width=4cm]{image/carbon-atoms}
     \end{frame}
 
+    \subsection{Event-Drivent Architecture}\label{subsec:event-drivent-architecture}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Event-Drivent Architecture}
+        \framesubtitle{Définition \cref{fundsofsoftarch}\footnotestep\footnote{\label{redhateda}]Une architecture orientée événements, qu'est-ce que c'est~?, \url{https://www.redhat.com/fr/topics/integration/what-is-event-driven-architecture}}}
+        On parle d'Architecture Orientée Événement, ou d'Architecture Évènementielle en français.
+        L'\textquote{Event-Driven Architecture}, comme l'architecture de service (SOA) est un style d'architecture logicielle.
+        \bigbreak
+        Elle vise également à casser la complexité des systèmes en les découpant en plusieurs parties, à diminuer le couplage entre les composants, les dépendances entre ces derniers, en les dissociant.
+
+        En effet les composants producteurs d'événements ne ciblent pas spécifiquement un consommateur.
+        Ils envoient l'évènement à un broker.
+        \bigbreak
+        Un évènement est un changement d'état, pertinent pour l'applicatif, du logiciel ou du matériel\ldots
+
+        On peut dans certaines technos prioriser les événements pour faciliter le passage à l'échelle.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Event-Drivent Architecture}
+        \framesubtitle{Définition \cref{fundsofsoftarch}\footnotestep\cref{redhateda}}
+        On distingue donc 3 types de composants principaux~:
+        \begin{itemize}
+            \item \textbf{Producteur d'événements}~: Il génère les événements.
+            \item \textbf{Broker}~: Il reçoit les événements et les distribue aux consommateurs.
+            \item \textbf{Consommateur d'événements}~: Il traite les événements du \textquote{topic} auquel il est abonné.
+            Garder en tête que les consommateurs peuvent être des producteurs également (probablement pas du même type d'event sinon on boucle\ldots).
+        \end{itemize}
+        \bigbreak
+        \centering
+        \includegraphics[width=6cm]{image/event-driven-broker-topology} \\ Broker Topology \\
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Event-Drivent Architecture}
+        \framesubtitle{Définition \cref{fundsofsoftarch}\footnotestep\cref{redhateda}}
+        Ces événements sont aussi appelés \textquote{messages}.
+
+        Et le broker est souvent appelé \textquote{message broker} ou Message Queue (MQ).
+
+        Autres synonymes concernant les consommateurs, on parle parfois d'\textquote{event processor}.
+        De pub-sub ou de publish-subscribe.
+        \bigbreak
+        Tout comme les architectures de services, les consommateurs et producteurs de messages sont suffisamment indépendants pour être développés dans des langages différents et déployés indépendamment.
+        \bigbreak
+        Quelques exemples de message broker open source~:
+        \begin{itemize}
+            \item \textbf{Apache Kafka} écrit en Java et ses clients en Go, .NET, Python, C/C++.
+            \item \textbf{RabbitMQ} avec son serveur développé en Erlang et ses clients en Erlang, Java et C\#.
+            \item \textbf{IBM MQ} en Java ou Go et ses clients dans la plupart des langages de programmation modernes.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Event-Drivent Architecture}
+        \framesubtitle{Caractéristriques \cref{fundsofsoftarch}}
+        La communication des events peut être synchrone pour plus de fiabilité, avec un acknowledgement de la part du consommateur.
+        \bigbreak
+        Elle peut être asynchrone pour plus de rapidité, on parle parfois de \textquote{fire-and-forget}.
+        \bigbreak
+        En cas de crash, pour éviter la perte d'événement, la MQ peut être configurée pour sauvegarder les messages de manière permanente sur disque.
+        Les messages peuvent être commités en base.
+        \bigbreak
+        Perdre des messages c'est dangereux mais traiter deux fois ou plus le même message peut être dangereux aussi.
+        Dans le cas d'une opération financière par exemple, un virement peut être effectué deux fois.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Event-Drivent Architecture}
+        \framesubtitle{Exemple d'une marketplace\cref{fundsofsoftarch}}
+        \centering
+        \includegraphics[width=6cm]{image/event-driven-example} \\ Achat d'un livre sur l'Architecture logicielle \\
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Event-Drivent Architecture}
+        \framesubtitle{Exemple de NetFlix\footnote{Navigating the Netflix Data Deluge: The Imperative of Effective Data Management, \url{https://netflixtechblog.medium.com/navigating-the-netflix-data-deluge-the-imperative-of-effective-data-management-e39af70f81f7}}}
+        \centering
+        \includegraphics[width=8cm]{image/netflix-data-deluge} \\ High-Level Architecture \\
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Event-Drivent Architecture}
+        \framesubtitle{Exemple de Uber\footnote{Enabling Seamless Kafka Async Queuing with Consumer Proxy, \url{https://www.uber.com/en-FR/blog/kafka-async-queuing-with-consumer-proxy/}}}
+        \centering
+        \includegraphics[width=10cm]{image/uber-kafka} \\ Kafka Ecosystem at Uber \\
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Event-Drivent Architecture}
+        \framesubtitle{Le protocol MQTT\footnote{MQTT, \url{https://mqtt.org/}}}
+        Inventé en 1999 par IBM, MQTT signifie \textquote{Message Queuing Telemetry Transport}.
+        \bigbreak
+        C'est un protocol de messagerie léger, standardisé par OASIS et ISO, basé sur le principe de pub/sub.
+        Orienté vers les applications IOT et les réseaux à faible bande passante.
+        \bigbreak
+        Quel est l'intérêt d'un standard~?
+        \pause
+        \bigbreak
+        L'interopérabilité entre de multiples implémentations de ce standard.
+        Et l'indépendance vis-à-vis des fournisseurs.
+        La plupart des cloud providers proposent des services MQTT~.
+    \end{frame}
+
 
     \section{High Level Desgin (HLD)}\label{sec:high-level-design}
 
@@ -1367,25 +1481,25 @@ ostrich.fly()  # Raises NotImplementedError
         Exemple d'appel~:
         \begin{lstlisting}[language=xml,basicstyle=\ttfamily\tiny]
 <?xml version="1.0"?>
-    <methodCall>
-        <methodName>Teststatut</methodName>
-        <params>
-        <param>
-            <value><i4>10</i4></value>
-        </param>
-        </params>
-    </methodCall>
+<methodCall>
+<methodName>Teststatut</methodName>
+<params>
+<param>
+<value><i4>10</i4></value>
+</param>
+</params>
+</methodCall>
         \end{lstlisting}
         Exemple de réponse~:
         \begin{lstlisting}[language=xml,basicstyle=\ttfamily\tiny]
 <?xml version="1.0"?>
-    <methodResponse>
-        <params>
-        <param>
-            <value><string>Statut : OK</string></value>
-        </param>
-        </params>
-    </methodResponse>
+<methodResponse>
+<params>
+<param>
+<value><string>Statut : OK</string></value>
+</param>
+</params>
+</methodResponse>
         \end{lstlisting}
     \end{frame}
 
@@ -1429,9 +1543,9 @@ ostrich.fly()  # Raises NotImplementedError
 {"jsonrpc": "2.0", "method": "foobar"} // Appel -->
 // Batch de commandes, les mêmes commandes sont dans un tableau, possible pour les notifications également
 [{"jsonrpc": "2.0", "method": "sum", "params": [1,2,4], "id": "1"},
-    {"jsonrpc": "2.0", "result": 19, "id": "2"}] // Appel -->
+{"jsonrpc": "2.0", "result": 19, "id": "2"}] // Appel -->
 [{"jsonrpc": "2.0", "result": 7, "id": "1"},
-    {"jsonrpc": "2.0", "result": 19, "id": "2"}] // Réponse <--
+{"jsonrpc": "2.0", "result": 19, "id": "2"}] // Réponse <--
         \end{lstlisting}
     \end{frame}
 
@@ -1466,7 +1580,7 @@ ostrich.fly()  # Raises NotImplementedError
         Protobuff est un format binaire défini par un schéma.
         \bigbreak
         Pourquoi un format binaire~?
-        % listing
+% listing
         \begin{lstlisting}
 >>> from sys import getsizeof # La taille en octets d'un objet
 >>> from struct import pack " Struct pour parser ou générer du binaire
@@ -1589,14 +1703,14 @@ api = Api(app)
 
 
 class Hello(Resource):
-    def get(self):
-        return {'hello': 'world'}
+def get(self):
+return {'hello': 'world'}
 
 
 api.add_resource(Hello, '/hello')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+app.run(debug=True)
         \end{lstlisting}
     \end{frame}
 
@@ -1604,37 +1718,147 @@ if __name__ == '__main__':
         \transdissolve
         \frametitle{API}
         Quelques exemples d'API REST avec des POST et aussi des arguments grâce à la librairie \lstinline{webargs} sur leur \href{https://github.com/marshmallow-code/webargs/blob/dev/examples/flaskrestful_example.py}{GitHub}.
-        % Python listing
+% Python listing
         \begin{lstlisting}[language=python,basicstyle=\ttfamily\tiny]
 class DateAddResource(Resource):
-    dateadd_args = {
-        "value": fields.Date(required=False),
-        "addend": fields.Int(required=True, validate=validate.Range(min=1)),
-        "unit": fields.Str(
-            load_default="days", validate=validate.OneOf(["minutes", "days"])
-        ),
-    }
+dateadd_args = {
+"value": fields.Date(required=False),
+"addend": fields.Int(required=True, validate=validate.Range(min=1)),
+"unit": fields.Str(
+load_default="days", validate=validate.OneOf(["minutes", "days"])
+),
+}
 
-    @use_kwargs(dateadd_args)
-    def post(self, value, addend, unit):
-        """A date adder endpoint."""
-        value = value or dt.datetime.utcnow()
-        if unit == "minutes":
-            delta = dt.timedelta(minutes=addend)
-        else:
-            delta = dt.timedelta(days=addend)
-        result = value + delta
-        return {"result": result.isoformat()}
+@use_kwargs(dateadd_args)
+def post(self, value, addend, unit):
+"""A date adder endpoint."""
+value = value or dt.datetime.utcnow()
+if unit == "minutes":
+delta = dt.timedelta(minutes=addend)
+else:
+delta = dt.timedelta(days=addend)
+result = value + delta
+return {"result": result.isoformat()}
 
 
 # This error handler is necessary for usage with Flask-RESTful
 @parser.error_handler
 def handle_request_parsing_error(err, req, schema, *, error_status_code, error_headers):
-    """webargs error handler that uses Flask-RESTful's abort function to return
-    a JSON error response to the client.
-    """
-    abort(error_status_code, errors=err.messages)
+"""webargs error handler that uses Flask-RESTful's abort function to return
+a JSON error response to the client.
+"""
+abort(error_status_code, errors=err.messages)
         \end{lstlisting}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Guideline API REST}
+        \framesubtitle{Les méthodes\footnote{HTTP request methods, \url{https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/HTTP-methods}}}
+        % Make 2 columns
+        \begin{columns}
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=2cm]{image/rest-http-methods}
+            \column{0.6\textwidth}
+            \centering
+            \includegraphics[width=6cm]{image/rest-http-methods-safety}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}[fragile]
+        \transdissolve
+        \frametitle{Guideline API REST}
+        \framesubtitle{La pagination dans les URLs\footnote{A guide to REST API pagination, \url{https://www.merge.dev/blog/rest-api-pagination}}}
+        La plus classique est la pagination par \textquote{offset} et \textquote{limit}~:
+        % listing
+        \begin{lstlisting}
+GET /api/v1/users?offset=10&limit=10
+        \end{lstlisting}
+        \bigbreak
+        Il existe aussi la \textquote{Page based} avec les paramètres \textquote{page} et \textquote{size}~:
+        % listing
+        \begin{lstlisting}
+GET /api/v1/users?page=2&size=10
+        \end{lstlisting}
+        \bigbreak
+        D'autres méthodes existent, comme la pagination par \textquote{cursor} ou \textquote{keyset} mais semblent anecdotiques.
+        \bigbreak
+        Le succès de la pagination avec \textquote{offset} et \textquote{limit} est peut-être dû à sa simplicité et à sa facilité d'implémentation.
+        Il suffit passer ces paramètres à une requête SQL~.
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Guideline API REST}
+        \framesubtitle{Les URLs\footnote{Top REST API URL naming convention standards, \url{https://www.theserverside.com/video/Top-REST-API-URL-naming-convention-standards}}}
+        \begin{tiny}
+            \begin{itemize}
+                \item Utilisez uniquement des lettres minuscules dans les URLs des API RESTful.
+                \item Pour les espaces, utilisez kebab-case, et non snake\_case ou des espaces.
+                \item Construisez les URIs avec des noms, pas des verbes.
+                \item Utilisez les méthodes HTTP appropriées pour effectuer une opération.
+                \item Les appels d'API REST qui retournent une collection doivent être au pluriel.
+                \item Une URL qui retourne un résultat unique doit être au singulier.
+                \item N'incluez pas d'extensions de fichier.
+                \item Utilisez les en-têtes pour garder les URIs propres.
+                \item N'identifiez pas les opérations de création, lecture, mise à jour et suppression (CRUD) dans l'URL~.
+                \item Structurez les URIs librement selon la hiérarchie de votre modèle de données.
+                \item Utilisez des paramètres de requête pour le filtrage et la recherche.
+                \item Ne dévoilez pas le fonctionnement interne de votre architecture.
+                \item Faites des URLs courtes, intuitives et lisibles.
+                \item Protégez-vous contre les injections SQL~.
+                \item Incluez la version de l'API REST à la base de l'URI~.
+            \end{itemize}
+        \end{tiny}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Guideline API REST}
+        \framesubtitle{Les URLs}
+        Donner un exemple d'URL pour les cas suivants~:
+        \begin{itemize}
+            \item Récupérer la liste des utilisateurs.
+            \item Récupérer un utilisateur.
+            \item Créer un utilisateur.
+            \item Mettre à jour un utilisateur.
+            \item Supprimer un utilisateur.
+            \item Récupérer 20 commentaires d'un utilisateur.
+            \item Récupérer 20 commentaires d'un utilisateur, la 3eme page.
+            \item Rechercher les utilisateurs dont le nom contient \textquote{John}.
+        \end{itemize}
+        \pause
+        \bigbreak
+        Qu'est-ce qu'une injection SQL et comment éviter une injection SQL~?
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Guideline API REST}
+        \framesubtitle{Les codes de retour HTTP\footnote{Best Practices for REST API Error Handling, \url{https://www.baeldung.com/rest-api-error-handling-best-practices}}}
+        Codes retour HTTP~:
+        \begin{tiny}
+            \begin{itemize}
+                \item Niveau 100 (Informationnel) – le serveur accuse réception d'une requête.
+                \item Niveau 200 (Succès) – le serveur a complété la requête comme prévu.
+                \item Niveau 300 (Redirection) – le client doit effectuer des actions supplémentaires pour compléter la requête.
+                \item Niveau 400 (Erreur client) – le client a envoyé une requête invalide.
+                \item Niveau 500 (Erreur serveur) – le serveur n'a pas pu exécuter une requête valide en raison d'une erreur du serveur.
+            \end{itemize}
+        \end{tiny}
+        Par exemple, les classiques~:
+        \begin{tiny}
+            \begin{itemize}
+                \item 400 Requête incorrecte – le client a envoyé une requête invalide, comme l'absence du corps de la requête ou d'un paramètre requis
+                \item 401 Non autorisé – le client n'a pas réussi à s'authentifier auprès du serveur
+                \item 403 Interdit – le client est authentifié mais n'a pas la permission d'accéder à la ressource demandée
+                \item 404 Non trouvé – la ressource demandée n'existe pas
+                \item 412 Précondition échouée – une ou plusieurs conditions dans les champs d'en-tête de la requête se sont avérées fausses
+                \item 500 Erreur interne du serveur – une erreur générique s'est produite sur le serveur
+                \item 503 Service indisponible – le service demandé n'est pas disponible
+            \end{itemize}
+        \end{tiny}
     \end{frame}
 
     \subsection{La standardisation du contenu JSON}\label{subsec:api-json}
@@ -1685,11 +1909,11 @@ def handle_request_parsing_error(err, req, schema, *, error_status_code, error_h
         Exemple de retour d'une API JSON-LD~:
         \begin{lstlisting}[language=java,basicstyle=\ttfamily\tiny]
 {
-  "@context": "https://json-ld.org/contexts/person.jsonld",
-  "@id": "http://dbpedia.org/resource/John_Lennon",
-  "name": "John Lennon",
-  "born": "1940-10-09",
-  "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
+"@context": "https://json-ld.org/contexts/person.jsonld",
+"@id": "http://dbpedia.org/resource/John_Lennon",
+"name": "John Lennon",
+"born": "1940-10-09",
+"spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
 }
         \end{lstlisting}
         Le \lstinline{@contex} est une URL qui pointe vers un fichier JSON-LD qui définit les relations entre les données\footnote{JSON-LD contexts, \url{http://niem.github.io/json/reference/json-ld/context/}}.
@@ -1702,13 +1926,13 @@ def handle_request_parsing_error(err, req, schema, *, error_status_code, error_h
         Une \textquote{Collection} de données peut être paginée pour ne pas surcharger le client avec une trop grosse réponse~:
         \begin{lstlisting}[language=java]
 {
-  "@id": "http://api.example.com/an-issue/comments?whatever=3",
-  "@type": "Collection",
-  "first": "/an-issue/comments",
-  "previous": "/an-issue/comments?whatever=2",
-  "next": "/an-issue/comments?whatever=4",
-  "last": "/an-issue/comments?whatever=498",
-  "member": [ ... ]
+"@id": "http://api.example.com/an-issue/comments?whatever=3",
+"@type": "Collection",
+"first": "/an-issue/comments",
+"previous": "/an-issue/comments?whatever=2",
+"next": "/an-issue/comments?whatever=4",
+"last": "/an-issue/comments?whatever=498",
+"member": [ ... ]
 }
         \end{lstlisting}
     \end{frame}
@@ -1726,19 +1950,19 @@ def handle_request_parsing_error(err, req, schema, *, error_status_code, error_h
         Le plus utilisé est over HTTP mais il peut également être utilisé over SMTP, FTP, etc.
         \bigbreak
         La WSDL pour \textquote{Web Services Description Language} est un fichier XML qui décrit les méthodes, les types de données, les protocoles de communication, etc.
-        % XML listing
+% XML listing
         \begin{lstlisting}[language=xml,basicstyle=\ttfamily\tiny]
 <message name="getTermRequest">
-  <part name="term" type="xs:string"/>
+<part name="term" type="xs:string"/>
 </message>
 <message name="getTermResponse">
-  <part name="value" type="xs:string"/>
+<part name="value" type="xs:string"/>
 </message>
 <portType name="glossaryTerms">
-  <operation name="getTerm">
-    <input message="getTermRequest"/>
-    <output message="getTermResponse"/>
-  </operation>
+<operation name="getTerm">
+<input message="getTermRequest"/>
+<output message="getTermResponse"/>
+</operation>
 </portType>
         \end{lstlisting}
     \end{frame}
@@ -1823,5 +2047,74 @@ response = client.service.sendData(**request_data)
                 Le dernier commit de la journée sera évalué.
             \end{dangercolorbox}
         \end{tiny}
+    \end{frame}
+
+
+    \section{Conclusion}\label{sec:conclusion}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Conclusion}
+        \framesubtitle{L'architecture, un Art}
+        L'étymologie d'architecture semble ne pas avoir de rapport l'art mais plutôt \textit{arkhè}, le commencement.
+        % Two columns
+        \begin{columns}
+            \column{0.6\textwidth}
+            \bigbreak
+            On constate bien que ce n'est pas une \textquote{science exacte}.
+            Beaucoup de concepts similaires reviennent dans différents styles d'architecture sous des appellations différentes.
+            De nombreux termes sont utilisés de manière interchangeable, ce qui ne facilite pas la communication.
+            C'est bien un art, dans le monde du logiciel également.
+            \bigbreak
+            C'est le monde du compromis, aucune application complexe ne permettra de suivre à la lettre toutes les recommandations d'architecture.
+            \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=5cm]{image/two-artists-arguing}
+        \end{columns}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Conclusion}
+        \framesubtitle{L'architecture en équipe\cref{fundsofsoftarch}}
+        L'humain est beaucoup plus présent dans l'architecture logicielle que dans le développement.
+
+        Le rôle d'architecture implique souvent du management et de la communication.
+        \bigbreak
+        \centering
+        \includegraphics[width=10cm]{image/efficient-team}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Conclusion}
+        \framesubtitle{L'architecture en équipe}
+        Si vous n'aimez pas communiquer, partager vos choix, peut-être que l'architecture n'est pas faite pour vous.
+
+        La communication doit se faire avec de nombreuses parties prenantes~:
+        \begin{itemize}
+            \item Les développeurs~: doivent comprendre les choix et les implémenter correctement.
+            \item Les managers~: doivent être convaincus des choix pour les défendre.
+            \item Les specifiers~: partager les business rules et les contraintes.
+            \item Many more\ldots
+        \end{itemize}
+        \begin{dangercolorbox}
+            C'est un art mais pour argumenter un choix, les données chiffrées restent la meilleure arme~!
+
+            Sortir des KPI sur les temps de maintenance, les coûts de développement, le nombre de bugs, etc.
+        \end{dangercolorbox}
+    \end{frame}
+
+    \begin{frame}
+        \transdissolve
+        \frametitle{Conclusion}
+        \framesubtitle{Le mot de la fin}
+        Ne pas essayer de paraître malin en utilisant des termes et des technos compliqués.
+        Même si c'est à la mode en ce moment\ldots
+        \bigbreak
+        \centering
+        K.I.S.S. \textquote{Keep It Simple, Stupid}~!
+        \bigbreak
+        \includegraphics[width=5cm]{image/thank-you}
     \end{frame}
 \end{document}
