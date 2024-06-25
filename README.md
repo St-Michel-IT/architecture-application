@@ -1,6 +1,6 @@
-# Qualité Code Source
+# Architecture Logicielle
 
-Ce repository contient les cours, les exercices et les sources du module Qualité Code Source du Bachelor CSI.
+Ce repository contient les cours, les exercices et les sources du module Architecture Logicielle du Bachelor CSI.
 
 Le support de cours est disponible dans le dossier `./doc/build/pdf` au format PDF.
 
@@ -8,41 +8,32 @@ Le support de cours est disponible dans le dossier `./doc/build/pdf` au format P
 
 Les cours couvrent normalement le programme suivant :
 
-1. Tests unitaires
+# 1. Les différentes architectures d’une application
+# 2. L’architecture REST
+## ▪ Architectures Orientées Services
+### o Besoins de la SOA
+### o Notion de service
+### o Introduction aux Architectures Orientées Services
+## ▪ Vers les Architectures Orientées Services
+### o Les architectures Client-Serveur
+### o Les architectures Web
+## ▪ Les Web Services
+### o Appel de procédure
+### o World Wide Web
+### o Formats d’échange textuels
+### o Vers la notion de Web Service
+## ▪ Web Service de type SOAP et REST
+## ▪ Guidelines API-REST
+### o Gestion des actions et des URL
+### o Recherche, Tri, Filtre et Pagination
+### o Gestion des erreurs
 
-    * Intégration des tests unitaires dans un projet
-    * Assertions simples, interprétation des messages de retour
-    * Gestion des exceptions
-    * Tests utilisant des jeux de données
-
-2. Bonnes pratiques
-
-    * Formatage du code source (indentation, CamelCase)
-    * Nomenclature du code
-    * Génération de la documentation
-    * Organisation du code d’un projet
-
-3. Versionning (GIT)
-
-    * Comprendre le versioning (dépôt, instantanés, fichiers à ignorer)
-    * Commandes de base de GIT (annuler des actions, manipuler l’historique, les branches)
-    * Gestion des dépôts de code source
-
-4. Plateforme d’intégration et de livraisons continues
-
-    * Mise en place d’un serveur d’intégration continue
-    * Gestion de des tâches
-    * Automatisation des tests unitaires et d’intégration
-    * Génération et interprétation de rapports
-    * Déploiement de la version validée
 
 ## Compétences
 
 Ils permettent normalement d'acquérir les compétences suivantes :
 
-* Maîtriser la création et l’exécution de tests unitaires avec un framework de tests unitaires
-* Mettre en place une démarche d’amélioration de la qualité du code
-* Utiliser une plateforme d’intégration et de livraison continue
+* Concevoir une architecture d’applications.
 
 ## Installation
 
