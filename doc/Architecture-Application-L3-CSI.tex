@@ -21,7 +21,6 @@
 \begin{document}
 
     \begin{frame}
-        \transdissolve
         \titlepage
     \end{frame}
 
@@ -33,10 +32,7 @@
 
 
     \section{Programme du module}\label{sec:programme-du-module}
-    \begin{frame}
-        \frametitle{Architectures d’Applications}
-        \framesubtitle{Compétence acquise aucours des 3 jours du module}
-        \transdissolve
+    \begin{frame}{Architectures d’Applications}{Compétence acquise aucours des 3 jours du module}
         Compétence~:
         \begin{itemize}
             \item \textquote{Concevoir une architecture d’applications.}~???
@@ -51,10 +47,7 @@
         \includegraphics[width=5cm]{image/engraving-of-a-monk-drawing-a-cathedral}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Architectures d’Applications}
-        \framesubtitle{Le programme officiel des 3 jours du module}
-        \transdissolve
+    \begin{frame}{Architectures d’Applications}{Le programme officiel des 3 jours du module}
         \fontsize{8pt}{8pt}\selectfont
         \begin{enumerate}
             \item Les différentes architectures d’une application
@@ -90,9 +83,7 @@
         \end{enumerate}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Evaluation}
+    \begin{frame}{Evaluation}
         \begin{itemize}
             \item Bons points tout au long du module.
             \item 25 \% x 3 sur chaque séance de travaux dirigés évalués en fin de séance.
@@ -101,10 +92,7 @@
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Intervenant sur le module architecture d'Aplication}
-        \framesubtitle{Christophe Brun, conseil en développement informatique}
+    \begin{frame}{Intervenant sur le module architecture d'Aplication}{Christophe Brun, conseil en développement informatique}
 
         \begin{columns}
             \column{0.7\textwidth}
@@ -135,9 +123,7 @@
 
     \section{Généralités}\label{sec:generalites}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Pourquoi le design ou architecture logicielle~?}
+    \begin{frame}{Pourquoi le design ou architecture logicielle~?}
         \begin{columns}
             \column{0.5\textwidth}
             \textquote{The goal of software architecture is to minimize the human resources required to build and maintain the required system.}\footnotemark
@@ -152,9 +138,7 @@
         \footnotetext{\label{cleanarchitecture}Clean architecture, Robert C. Martin}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Éloge de la simplicité}
+    \begin{frame}{Éloge de la simplicité}
         Léonard de Vinci, 1452-1519~: \textquote{La simplicité est la sophistication suprême.}\footnote{La Pause Philo, \url{https://lapausephilo.fr/2015/09/15/simplicite-sophistication-supreme-leonard-de-vinci/}}
         \bigbreak
         Albert Einstein, 1879-1955~: \textquote{Si vous ne pouvez expliquer quelque chose simplement, c’est que vous ne l’avez pas bien compris.}
@@ -165,10 +149,7 @@
         Ces systèmes plus simples n'ont qu'une seule responsabilité (Comme en programmation fonctionnelle~?).
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Définition}
-        \framesubtitle{Architecture~?, Design~?, les deux~?}
+    \begin{frame}{Définition}{Architecture~?, Design~?, les deux~?}
         Encore une fois, pour faire simple, nous allons présumer que l'architecture et le design sont la même chose dans le monde du logiciel.\cref{cleanarchitecture}
         Le \textquote{Design patterns}\footnote{Design patterns, \url{https://refactoring.guru/design-patterns}} est un classique en développement logiciel.
         \bigbreak
@@ -182,10 +163,7 @@
         L'architecture système est d'ailleurs un domaine en charge de l'architecture de l'entreprise, des produits et des logiciels.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Définition}
-        \framesubtitle{Le couplage}
+    \begin{frame}{Définition}{Le couplage}
         C'est un des termes les plus importants en architecture logicielle.
         Il faut comprendre comment l'éviter tant que possible.
         \bigbreak
@@ -196,10 +174,7 @@
     \section{Les briques}\label{sec:les-briques}
 
     \subsection{Généralités}\label{subsec:briques-generalites}
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les briques}
-        \framesubtitle{Les briques en architecture}
+    \begin{frame}{Les briques}{Les briques en architecture}
         \begin{columns}
             \column{0.6\textwidth}
             Probablement hérité du jargon de l'architecture des bâtiments, le mot brique est aussi souvent utilisé en architecture logicielle.
@@ -217,10 +192,7 @@
         1 des 4 règles pour la direction de l'esprit de Descartes~: \textquote{Diviser chacune des difficultés que j'examinerais, en autant de parcelles qu'il se pourrait et qu'il serait requis pour les mieux résoudre.}.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les briques}
-        \framesubtitle{3 paradigmes de programmation représentant par des briques\cref{cleanarchitecture}}
+    \begin{frame}{Les briques}{3 paradigmes de programmation représentant par des briques\cref{cleanarchitecture}}
         \begin{itemize}
             \item Programmation structurée (sous-ensemble de la programmation impérative), où la brique est le module de code, i.e., des programmes et sous-programmes.
             Il contient les instructions de control de flux (if, else, for, while, etc.).
@@ -232,10 +204,7 @@
     \end{frame}
 
     \subsection{Programmation structurée}\label{subsec:briques-struct}
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les briques}
-        \framesubtitle{Exemple de programmation structurée}
+    \begin{frame}{Les briques}{Exemple de programmation structurée}
         Utilisation de tout le control flow classique.
         \bigbreak
         \centering
@@ -246,10 +215,7 @@
     \end{frame}
 
     \subsection{Programmation fonctionnelle}\label{subsec:briques-fonc}
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Les briques}
-        \framesubtitle{Exemple de programmation fonctionnelle\cref{cleanarchitecture}}
+    \begin{frame}[fragile]{Les briques}{Exemple de programmation fonctionnelle\cref{cleanarchitecture}}
         Les briques sont de simples fonctions, des fonctions dîtes pures.
         Les données ne sont modifiées uniquement que par ces fonctions.
         \bigbreak
@@ -270,10 +236,7 @@
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Les briques}
-        \framesubtitle{Exemple de programmation fonctionnelle}
+    \begin{frame}[fragile]{Les briques}{Exemple de programmation fonctionnelle}
         3 modules dédiés à la programmation fonctionnelle dans la \textquote{standard library} Python\footnote{Functional Programming Modules, \url{https://docs.python.org/3/library/functional.html}}~:
         \begin{itemize}
             \item \lstinline{functools}, \textquote{Higher-order functions and operations on callable objects}.
@@ -298,10 +261,7 @@ true
     \end{frame}
 
     \subsection{Programmation orientée objet}\label{subsec:briques-oop}
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Les briques}
-        \framesubtitle{Exemple de programmation orientée objet\cref{cleanarchitecture}} (OOP)
+    \begin{frame}[fragile]{Les briques}{Exemple de programmation orientée objet\cref{cleanarchitecture}} (OOP)
         La brique de base en programmation orientée objet est la classe.
         \bigbreak
         En OOP on parle de polymorphisme, c'est la capacité d'un objet, i.e., d'une classe, à prendre plusieurs formes.
@@ -315,10 +275,7 @@ true
         L'encapsulation et l'héritage qui permet le polymorphisme sont les 2 atouts principaux de la programmation orientée objet.
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Les briques}
-        \framesubtitle{Exemple de programmation orientée objet}
+    \begin{frame}[fragile]{Les briques}{Exemple de programmation orientée objet}
         Polymorphisme par héritage d'une classe.
         \begin{lstlisting}
 >>> class Oiseau:
@@ -345,10 +302,7 @@ True
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Les briques}
-        \framesubtitle{Exemple de programmation orientée objet}
+    \begin{frame}[fragile]{Les briques}{Exemple de programmation orientée objet}
         Polymorphisme par héritage d'une classe abstraite.
         \begin{lstlisting}
 >>> from abc import ABC, abstractmethod
@@ -373,10 +327,7 @@ Je vole quelques mètres
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Les briques}
-        \framesubtitle{Exemple de programmation orientée objet}
+    \begin{frame}[fragile]{Les briques}{Exemple de programmation orientée objet}
         Contrainte d'implémentation d'une méthode abstraite \lstinline{vole} .
 
         \begin{lstlisting}
@@ -395,10 +346,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
     \end{frame}
 
     \subsection{Exercice}\label{subsec:briques-exe}
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les types de briques}
-        \framesubtitle{Exercice \execcounterdispinc{} de 5 minutes}
+    \begin{frame}{Les types de briques}{Exercice \execcounterdispinc{} de 5 minutes}
         Trouver quel type de paradigme de programmation est utilisé dans les exemples suivants~:
         \begin{itemize}
             \item \url{https://github.com/facebook/Haxl/}
@@ -411,10 +359,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
 
     \section{TDD}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Le TDD}
-        \framesubtitle{Test Driven Development}
+    \begin{frame}{Le TDD}{Test Driven Development}
         Vouloir aller plus vite sans faire de test semble être une mauvaise idée.
 
         Ce qui pratiquent le TDD vont plus vite dès le début d'un projet\cref{cleanarchitecture}~!
@@ -425,10 +370,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         \includegraphics[width=8cm]{image/tdd-vs-no-tdd}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Le TDD}
-        \framesubtitle{Quel type(s) de test~?}
+    \begin{frame}{Le TDD}{Quel type(s) de test~?}
         Tous les types de tests possibles sont à écrire dès que possible avant même de commencer à coder.
         Les tests unitaires sont en général les plus simples à écrire et les plus rapides à exécuter.
         \bigbreak
@@ -438,10 +380,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         \includegraphics[width=6cm]{image/the-clean-architecture}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Le TDD}
-        \framesubtitle{Quel types de test~?}
+    \begin{frame}{Le TDD}{Quel types de test~?}
         Edsger Dijkstra~: \textquote{Testing shows the presence, not the absence of bugs.}
         \bigbreak
         \begin{columns}
@@ -455,10 +394,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Le TDD}
-        \framesubtitle{Exercices \execcounterdispinc{}}
+    \begin{frame}{Le TDD}{Exercices \execcounterdispinc{}}
         De nombreux exercices de TDD sont disponibles sur le web comme par sur GitHub, \url{https://github.com/gabbloquet/entrainement-au-tdd}.
         \bigbreak
         En 30 minutes, sans assistant du type ChatGPT, réaliser l'un des plus classique d'entre eux, le \textquote{FizzBuzz}, \url{https://github.com/gabbloquet/entrainement-au-tdd/tree/master/src/main/java/io/github/gabbloquet/tddtraining/FizzBuzz}~.
@@ -475,10 +411,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
 
     \section{Les mesures}\label{sec:les-mesures}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les mesures du couplage}
-        \framesubtitle{L'importance des données}
+    \begin{frame}{Les mesures du couplage}{L'importance des données}
         L'architecture c'est le monde du compromis, des possibilités infinies.
         \bigbreak
         L'intuition, l'expérience, les connaissances et le bon sens, nous guiderons.
@@ -490,10 +423,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         On parle parfois aussi des CK (Chidamber \& Kemerer) metrics qui peuvent ressembler, etc.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les mesures du couplage}
-        \framesubtitle{L'\textquote{abstractness} $A$\cref{fundsofsoftarch}}
+    \begin{frame}{Les mesures du couplage}{L'\textquote{abstractness} $A$\cref{fundsofsoftarch}}
         L'\textquote{abstractness}  une mesure de l'abstraction par rapport aux implémentations concrètes.
         Elle fut introduite par Robert C. Martin.
         \begin{equation}
@@ -510,10 +440,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         Les extrêmes proches de 0 ou 1 sont à éviter, elles représentent des architectures trop concrètes ou trop abstraites.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les mesures du couplage}
-        \framesubtitle{Couplage afférent}
+    \begin{frame}{Les mesures du couplage}{Couplage afférent}
         Le couplage afférent est le nombre total de classe(s) qui dépend(ent) de la classe A~:
         \bigbreak
         \centering
@@ -526,10 +453,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         Car ce code viendra forcément avec beaucoup de code en dépendance.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les mesures du couplage}
-        \framesubtitle{Couplage efférent $Ce$}
+    \begin{frame}{Les mesures du couplage}{Couplage efférent $Ce$}
         Le couplage efférent est le nombre total de classe(s) dont dépend la classe A~:
         \bigbreak
         \centering
@@ -541,10 +465,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         Plus le $Ce$ est élevé, plus le code est difficile à reuse et à maintenir.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les mesures du couplage}
-        \framesubtitle{L'\textquote{instability} $I$\cref{fundsofsoftarch}}
+    \begin{frame}{Les mesures du couplage}{L'\textquote{instability} $I$\cref{fundsofsoftarch}}
         L'\textquote{instability} est une autre mesure qui en découle.
         Elle détermine la volatilité du code, l'effort à fournir pour modifier une partie du code sans devoir en modifier une autre.
         \begin{equation}
@@ -561,11 +482,8 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         Elle a donc un impact négatif sur le reuse, les correctifs, la maintenance et la portabilité.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les mesures du couplage}
-        \framesubtitle{La\textquote{Distance from main sequence} $D$\cref{fundsofsoftarch}\footnotestep\footnote{A Study on Robert C.Martin’s Metrics for Packet Categorization
-        Using Fuzzy Logic, Gurpreet Kaur and Deepak Sharma\url{https://gvpress.com/journals/IJHIT/vol8_no12/15.pdf}}}
+    \begin{frame}{Les mesures du couplage}{La\textquote{Distance from main sequence} $D$\cref{fundsofsoftarch}\footnotestep\footnote{A Study on Robert C.Martin’s Metrics for Packet Categorization
+    Using Fuzzy Logic, Gurpreet Kaur and Deepak Sharma\url{https://gvpress.com/journals/IJHIT/vol8_no12/15.pdf}}}
         Une cinquième métrique introduite par Robert C. Martin est la \textquote{Distance from main sequence}.
         \bigbreak
         Elle définit une relation entre $A$ et $I$ comme suit~:
@@ -583,27 +501,18 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         Si $D$ est élevé, on s'éloigne de compromis acceptable.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les mesures du couplage}
-        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes}
+    \begin{frame}{Les mesures du couplage}{Exercice \execcounterdispinc{} de 30 minutes}
         Calculer les valeurs de $Ca$, $Ce$, $A$, $I$ et $D$ pour chaque classe du source \url{https://github.com/St-Michel-IT/architecture-application/blob/main/coupling.py}.
         \bigbreak
         Restituer le résultat dans un tableau Excel et un graphique avec les $D$ et la droite \textquote{main sequence}.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les mesures du couplage}
-        \framesubtitle{Résultat de l'exercice précédent}
+    \begin{frame}{Les mesures du couplage}{Résultat de l'exercice précédent}
         \centering
         \includegraphics[width=10cm]{image/exercice-metrics-1}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Les mesures du couplage}
-        \framesubtitle{Les outils}
+    \begin{frame}[fragile]{Les mesures du couplage}{Les outils}
         Certains outils comme \lstinline{JCAT}\footnote{Tool for Measuring Coupling in Object-Oriented Java Software, \url{https://shorturl.at/npDR2}} en Java ou \lstinline{module_coupling_metrics}\footnote{\url{https://github.com/Oaz/module_coupling_metrics}} en Python permettent de calculer ces métriques.
         % shell listing with the command~:
         \begin{lstlisting}[language=bash]
@@ -623,10 +532,7 @@ $ module_coupling_metrics data_management.py
         \bigbreak
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les mesures de la complexité cyclomatique}
-        \framesubtitle{La théorie}
+    \begin{frame}{Les mesures de la complexité cyclomatique}{La théorie}
         Établie en 1976, elle est devenue le standard de mesure de complexité du code.
         \bigbreak
         Elle se calcule pour une méthode ou fonction avec l'équation suivante~:
@@ -645,10 +551,7 @@ $ module_coupling_metrics data_management.py
         Une $CC$ trop élevée est un code smell de Sonar Qube.
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Les mesures de la complexité cyclomatique}
-        \framesubtitle{Exemple de fonction}
+    \begin{frame}[fragile]{Les mesures de la complexité cyclomatique}{Exemple de fonction}
         % C code listing
         \begin{lstlisting}[language=c]
 uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
@@ -674,10 +577,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         Ici $E$ est 2 et $N$ est 3, donc $CC$ est 1.
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Les mesures de la complexité cyclomatique}
-        \framesubtitle{Exercice \execcounterdispinc{}}
+    \begin{frame}[fragile]{Les mesures de la complexité cyclomatique}{Exercice \execcounterdispinc{}}
         \begin{columns}
             \column{0.5\textwidth}
             Cette métrique peut se calculer plus facilement avec un graphe de contrôle de flux.
@@ -689,10 +589,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \end{columns}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Les mesures de la complexité cyclomatique}
-        \framesubtitle{Exercice \execcounterdispinc{}}
+    \begin{frame}[fragile]{Les mesures de la complexité cyclomatique}{Exercice \execcounterdispinc{}}
         Calculer la complexité cyclomatique des fonctions de l'implémentation de l'algorithme de hachage MD5 du noyau Linux.
         \bigbreak
         Le code est sur Github~: \url{https://github.com/torvalds/linux/blob/master/crypto/md5.c}
@@ -705,10 +602,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
 
     \subsection{Généralités}\label{subsec:mid-level-generalites}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{\textquote{Mid-level} architecture}
-        \framesubtitle{Comment agencer les briques}
+    \begin{frame}{\textquote{Mid-level} architecture}{Comment agencer les briques}
         Les briques vues précédemment sont nécessaires mais pas suffisantes pour construire un système.
         Si elles ne sont pas correctement conçues il est inutile de les intégrer à un design élaboré, le système risque fortement de ne pas fonctionner
         \bigbreak
@@ -725,10 +619,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{\textquote{Mid-level} architecture}
-        \framesubtitle{Comment agencer les briques}
+    \begin{frame}{\textquote{Mid-level} architecture}{Comment agencer les briques}
         De manière générale ces différents patterns ne sont pas concurrents.
         Ils ne se contredisent pas.
         Ils peuvent même être utilisés ensemble.
@@ -744,10 +635,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{\textquote{Mid-level} architecture}
-        \framesubtitle{Comment agencer les briques}
+    \begin{frame}{\textquote{Mid-level} architecture}{Comment agencer les briques}
         De même, l'architecture hexagonale semble similaire elle aussi\cref{cleanarchitecture}\footnotestep\footnote{Architecture hexagonale, Wikipédia, \url{https://fr.wikipedia.org/wiki/Architecture_hexagonale}}~:
         \bigbreak
         \begin{columns}
@@ -763,10 +651,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
     \subsection{S.O.L.I.D}\label{subsec:mid-level-solid}
 
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les principes S.O.L.I.D}
-        \framesubtitle{Histoire et définition\cref{cleanarchitecture}}
+    \begin{frame}{Les principes S.O.L.I.D}{Histoire et définition\cref{cleanarchitecture}}
         Démarrés dans les années 80, ils sont finalisés en 2004 par Robert C. Martin.
         S.O.L.I.D est un acronyme pour 5 principes de design.
         \bigbreak
@@ -780,10 +665,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         C'est de la \textquote{Mid-level architecture}, car même avec des briques biens conçues, agencées selon ces principes, il manque encore l'architecture de plus haut niveau.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les principes S.O.L.I.D}
-        \framesubtitle{Les 5 principes résumés\cref{cleanarchitecture}}
+    \begin{frame}{Les principes S.O.L.I.D}{Les 5 principes résumés\cref{cleanarchitecture}}
         \begin{footnotesize}
             \begin{itemize}
                 \item \textbf{Single Responsibility Principle}~: Une classe ne doit avoir qu'une seule responsabilité.
@@ -803,10 +685,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
 
     \subsection{Single Responsibility Principle}\label{subsec:mid-level-s}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Single Responsibility Principle (SRP)}
-        \framesubtitle{Définition\cref{cleanarchitecture}}
+    \begin{frame}{Single Responsibility Principle (SRP)}{Définition\cref{cleanarchitecture}}
         \begin{dangercolorbox}
             Ne pas confondre avec le refactor d'une méthode ou d'une fonction en méthode ou fonction plus atomique.
         \end{dangercolorbox}
@@ -822,10 +701,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Single Responsibility Principle}
-        \framesubtitle{Exercice \execcounterdispinc{} de 15 minutes}
+    \begin{frame}{Single Responsibility Principle}{Exercice \execcounterdispinc{} de 15 minutes}
         \begin{columns}
             \column{0.5\textwidth}
             Quelles solutions pour éviter ce pattern anti-SRP~?
@@ -843,10 +719,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Single Responsibility Principle}
-        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes}
+    \begin{frame}{Single Responsibility Principle}{Exercice \execcounterdispinc{} de 30 minutes}
         Coder la solution de manière simpliste.
         \bigbreak
         Appliquer le TDD, rédiger les tests unitaires avant de coder.
@@ -863,10 +736,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
 
     \subsection{Open-Closed Principle}\label{subsec:mid-level-o}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Open-Closed Principle (OCP)}
-        \framesubtitle{Définition\cref{cleanarchitecture}}
+    \begin{frame}{Open-Closed Principle (OCP)}{Définition\cref{cleanarchitecture}}
         OCP veut dire~: \textquote{A software artifact should be open for extension but closed for modification}.
         \bigbreak
         En d'autres termes, un code doit être extensible, on peut ajouter du code et des fonctionnalités sans modifier le code existant.
@@ -875,10 +745,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         Une des solutions est de séparer tout ce qui est susceptible de changer pour des raisons différentes dans le futur.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Open-Closed Principle}
-        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes}
+    \begin{frame}{Open-Closed Principle}{Exercice \execcounterdispinc{} de 30 minutes}
         Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/blob/main/open-close-bank-customer.py}.
         Le code souhaité doit être extensible sans modification pour pouvoir retourner les informations actuellement printées dans stdout en HTML~.
         \begin{columns}
@@ -895,10 +762,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         \end{columns}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Open-Closed Principle}
-        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes avec les interfaces}
+    \begin{frame}[fragile]{Open-Closed Principle}{Exercice \execcounterdispinc{} de 30 minutes avec les interfaces}
         En Java comme dans beaucoup de language il existe des interfaces.
         Pour rappel, une interface est une structure, une liste de méthodes que les classes qui l'implémentent doivent respecter.
         Comme les classes abstraites, une implementation, i.e., une classe en hérite.
@@ -921,10 +785,7 @@ public class UserAgeValidator {
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Open-Closed Principle}
-        \framesubtitle{Exercice \execcounterdispinc{} de 30 minutes avec les interfaces}
+    \begin{frame}{Open-Closed Principle}{Exercice \execcounterdispinc{} de 30 minutes avec les interfaces}
         En utilisant les interfaces, refactoriser la classe \lstinline{UserAgeValidator} pour qu'elle respecte le OCP et créer les classes qui l'implémentent pour divers pays.
         \bigbreak
         \begin{columns}
@@ -938,10 +799,7 @@ public class UserAgeValidator {
         \end{columns}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Liskov Principle}
-        \framesubtitle{Définition\cref{cleanarchitecture}}
+    \begin{frame}[fragile]{Liskov Principle}{Définition\cref{cleanarchitecture}}
         Une classe enfant doit pouvoir être utilisée à la place de sa classe mère sans que cela ne modifie le comportement du programme.
         \bigbreak
         Pour rappel, évidemment, une classe enfant peut être substitué par un autre enfant de la même classe mère.
@@ -967,10 +825,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Liskov Principle}
-        \framesubtitle{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
+    \begin{frame}{Liskov Principle}{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
         Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/blob/main/liskov-rectangle.py}.
         La fonction \lstinline{use_it} ne peut pas être utilisée avec la classe \lstinline{Square} sans modification.
         Refactoriser cette dernière pour qu'elle le puisse et donc qu'elle respecte le Liskov Principle.
@@ -988,10 +843,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Liskov Principle}
-        \framesubtitle{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
+    \begin{frame}{Liskov Principle}{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
         Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/liskov-rectangle.py}.
         La fonction \lstinline{use_it} ne peut pas être utilisée avec la classe \lstinline{Square} sans modification.
         Refactoriser les classes \lstinline{Square} et \lstinline{Rectangle} pour qu'elles héritent d'une classe abstraite à développer et que \lstinline{use_it} fonctionne avec les deux classes.
@@ -1009,10 +861,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Interface Segragation Principle (ISP)}
-        \framesubtitle{Définition\cref{cleanarchitecture}}
+    \begin{frame}{Interface Segragation Principle (ISP)}{Définition\cref{cleanarchitecture}}
         Dépendre de quelque qui a un bagage que l'on utilise pas peut être une source de bugs inattendus.
         \bigbreak
         Pour éviter ce risque, il faut multiplier les interfaces plus petites pour mieux isoler l'impact d'une modification.
@@ -1026,10 +875,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Interface Segragation Principle}
-        \framesubtitle{Définition\cref{cleanarchitecture}}
+    \begin{frame}{Interface Segragation Principle}{Définition\cref{cleanarchitecture}}
         \begin{columns}
             \column{0.5\textwidth}
             \centering
@@ -1043,10 +889,7 @@ ostrich.fly()  # Raises NotImplementedError
         Ce problème n'existe pas avec l'approche à droite. \lstinline{Ops} peut être modifié sans avoir à recompiler les classes \lstinline{UserX}.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Interface Segregation Principle}
-        \framesubtitle{Définition\cref{cleanarchitecture}}
+    \begin{frame}{Interface Segregation Principle}{Définition\cref{cleanarchitecture}}
         Question~:Pourquoi ce problème n'apparait pas avec les langages typés dynamiquement~?
         \pause
         \bigbreak
@@ -1062,10 +905,7 @@ ostrich.fly()  # Raises NotImplementedError
         Le plus souvient, au mieux, on en connait les interfaces décrites dans la documentation.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Interface Segregation Principle}
-        \framesubtitle{Exercice \execcounterdispinc{} de refactoring de 30 minutes}
+    \begin{frame}{Interface Segregation Principle}{Exercice \execcounterdispinc{} de refactoring de 30 minutes}
         Dans le code \url{https://github.com/St-Michel-IT/architecture-application/blob/main/interface-segregation-payment.py}.
         \begin{itemize}
             \item Trouver les classes qui ne respectent pas l'ISP~.
@@ -1083,10 +923,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Dependency Inversion Principle (DIP)}
-        \framesubtitle{Définition\cref{cleanarchitecture}}
+    \begin{frame}{Dependency Inversion Principle (DIP)}{Définition\cref{cleanarchitecture}}
         Dépendre des structures les plus stables, i.e., les moins volatiles.
         \bigbreak
         Tout changement dans une classe abstraite implique un changement dans les classes concrètes qui en héritent.
@@ -1107,10 +944,7 @@ ostrich.fly()  # Raises NotImplementedError
     \end{frame}
 
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Dependency Inversion Principle}
-        \framesubtitle{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
+    \begin{frame}{Dependency Inversion Principle}{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
         Dans le code \url{https://github.com/St-Michel-IT/architecture-application/blob/main/dip-to-refactor.py}.
         \begin{itemize}
             \item il y a couplage entre la classe \lstinline{PowerSwitch} et \lstinline{LightBulb}.
@@ -1132,10 +966,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{S.O.L.I.D.}
-        \framesubtitle{Conclusion}
+    \begin{frame}{S.O.L.I.D.}{Conclusion}
         S.O.L.I.D. est un ensemble de principes qui aident à solutionner des problèmes déjà vus aux chapitres précédents.
         \begin{itemize}
             \item Principalement les soucis de couplage trop fort \cref{sec:generalites}.
@@ -1149,10 +980,7 @@ ostrich.fly()  # Raises NotImplementedError
 
     \subsection{Event-Drivent Architecture}\label{subsec:event-drivent-architecture}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Event-Drivent Architecture}
-        \framesubtitle{Définition \cref{fundsofsoftarch}\footnotestep\footnote{\label{redhateda}]Une architecture orientée événements, qu'est-ce que c'est~?, \url{https://www.redhat.com/fr/topics/integration/what-is-event-driven-architecture}}}
+    \begin{frame}{Event-Drivent Architecture}{Définition \cref{fundsofsoftarch}\footnotestep\footnote{\label{redhateda}]Une architecture orientée événements, qu'est-ce que c'est~?, \url{https://www.redhat.com/fr/topics/integration/what-is-event-driven-architecture}}}
         On parle d'Architecture Orientée Événement, ou d'Architecture Évènementielle en français.
         L'\textquote{Event-Driven Architecture}, comme l'architecture de service (SOA) est un style d'architecture logicielle.
         \bigbreak
@@ -1166,10 +994,7 @@ ostrich.fly()  # Raises NotImplementedError
         On peut dans certaines technos prioriser les événements pour faciliter le passage à l'échelle.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Event-Drivent Architecture}
-        \framesubtitle{Définition \cref{fundsofsoftarch}\footnotestep\cref{redhateda}}
+    \begin{frame}{Event-Drivent Architecture}{Définition \cref{fundsofsoftarch}\footnotestep\cref{redhateda}}
         On distingue donc 3 types de composants principaux~:
         \begin{itemize}
             \item \textbf{Producteur d'événements}~: Il génère les événements.
@@ -1182,10 +1007,7 @@ ostrich.fly()  # Raises NotImplementedError
         \includegraphics[width=6cm]{image/event-driven-broker-topology} \\ Broker Topology \\
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Event-Drivent Architecture}
-        \framesubtitle{Définition \cref{fundsofsoftarch}\footnotestep\cref{redhateda}}
+    \begin{frame}{Event-Drivent Architecture}{Définition \cref{fundsofsoftarch}\footnotestep\cref{redhateda}}
         Ces événements sont aussi appelés \textquote{messages}.
 
         Et le broker est souvent appelé \textquote{message broker} ou Message Queue (MQ).
@@ -1203,10 +1025,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Event-Drivent Architecture}
-        \framesubtitle{Caractéristriques \cref{fundsofsoftarch}}
+    \begin{frame}{Event-Drivent Architecture}{Caractéristriques \cref{fundsofsoftarch}}
         La communication des events peut être synchrone pour plus de fiabilité, avec un acknowledgement de la part du consommateur.
         \bigbreak
         Elle peut être asynchrone pour plus de rapidité, on parle parfois de \textquote{fire-and-forget}.
@@ -1218,34 +1037,22 @@ ostrich.fly()  # Raises NotImplementedError
         Dans le cas d'une opération financière par exemple, un virement peut être effectué deux fois.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Event-Drivent Architecture}
-        \framesubtitle{Exemple d'une marketplace\cref{fundsofsoftarch}}
+    \begin{frame}{Event-Drivent Architecture}{Exemple d'une marketplace\cref{fundsofsoftarch}}
         \centering
         \includegraphics[width=6cm]{image/event-driven-example} \\ Achat d'un livre sur l'Architecture logicielle \\
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Event-Drivent Architecture}
-        \framesubtitle{Exemple de NetFlix\footnote{Navigating the Netflix Data Deluge: The Imperative of Effective Data Management, \url{https://netflixtechblog.medium.com/navigating-the-netflix-data-deluge-the-imperative-of-effective-data-management-e39af70f81f7}}}
+    \begin{frame}{Event-Drivent Architecture}{Exemple de NetFlix\footnote{Navigating the Netflix Data Deluge: The Imperative of Effective Data Management, \url{https://netflixtechblog.medium.com/navigating-the-netflix-data-deluge-the-imperative-of-effective-data-management-e39af70f81f7}}}
         \centering
         \includegraphics[width=8cm]{image/netflix-data-deluge} \\ High-Level Architecture \\
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Event-Drivent Architecture}
-        \framesubtitle{Exemple de Uber\footnote{Enabling Seamless Kafka Async Queuing with Consumer Proxy, \url{https://www.uber.com/en-FR/blog/kafka-async-queuing-with-consumer-proxy/}}}
+    \begin{frame}{Event-Drivent Architecture}{Exemple de Uber\footnote{Enabling Seamless Kafka Async Queuing with Consumer Proxy, \url{https://www.uber.com/en-FR/blog/kafka-async-queuing-with-consumer-proxy/}}}
         \centering
         \includegraphics[width=10cm]{image/uber-kafka} \\ Kafka Ecosystem at Uber \\
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Event-Drivent Architecture}
-        \framesubtitle{Le protocol MQTT\footnote{MQTT, \url{https://mqtt.org/}}}
+    \begin{frame}{Event-Drivent Architecture}{Le protocol MQTT\footnote{MQTT, \url{https://mqtt.org/}}}
         Inventé en 1999 par IBM, MQTT signifie \textquote{Message Queuing Telemetry Transport}.
         \bigbreak
         C'est un protocol de messagerie léger, standardisé par OASIS et ISO, basé sur le principe de pub/sub.
@@ -1262,10 +1069,7 @@ ostrich.fly()  # Raises NotImplementedError
 
     \section{High Level Desgin (HLD)}\label{sec:high-level-design}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{High Level Desgin (HLD)}
-        \framesubtitle{Déifiniton \footnote{Carnegie Mellon UNiverety, Philip Koopman, \url{https://course.ece.cmu.edu/~ece642/lectures/12_Architecture_HLD.pdf}}}
+    \begin{frame}{High Level Desgin (HLD)}{Déifiniton \footnote{Carnegie Mellon UNiverety, Philip Koopman, \url{https://course.ece.cmu.edu/~ece642/lectures/12_Architecture_HLD.pdf}}}
         Le HLD est une description de l'architecture, une vue d'ensemble d'un système qui peut être un produit entier.
         \bigbreak
         On peut entre autre utiliser plusieurs diagrammes pour décrire le HLD~:
@@ -1280,10 +1084,7 @@ ostrich.fly()  # Raises NotImplementedError
         Ces derniers sont dans les diagrammes de la mid-level architecture.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{High Level Desgin (HLD)}
-        \framesubtitle{Exemples de diagrammes}
+    \begin{frame}{High Level Desgin (HLD)}{Exemples de diagrammes}
         \begin{columns}
             \column{0.5\textwidth}
             \centering
@@ -1302,10 +1103,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{High Level Desgin (HLD)}
-        \framesubtitle{Bonnes pratiques}
+    \begin{frame}{High Level Desgin (HLD)}{Bonnes pratiques}
         \begin{itemize}
             \item C'est un ou plusieurs diagrammes
             \item S'applique à tous les composants du système, soft, hard, réseau, etc.
@@ -1320,10 +1118,7 @@ ostrich.fly()  # Raises NotImplementedError
 
     \section{Service-Oriented Architecture}\label{sec:soa}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Architectures Orientées Service}
-        \framesubtitle{Définition\cref{fundsofsoftarch}}
+    \begin{frame}{Architectures Orientées Service}{Définition\cref{fundsofsoftarch}}
         \textquote{Service-Oriented Architecture} (SOA) en anglais, est un style d'architecture logicielle qui vise à concevoir des applications comme un ensemble de services.
         \bigbreak
         Vu de l'extérieur, un service expose une interface qui permet d'interagir avec lui.
@@ -1340,10 +1135,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Architectures Orientées Service}
-        \framesubtitle{Définition\cref{fundsofsoftarch}}
+    \begin{frame}{Architectures Orientées Service}{Définition\cref{fundsofsoftarch}}
         Cette approche est hybride entre le monolithique et les microservices.
         \bigbreak
         Elle est considérée comme plus souple que le monolithique et plus simple que le microservices.
@@ -1360,10 +1152,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Architectures Orientées Service}
-        \framesubtitle{Définition\cref{fundsofsoftarch}}
+    \begin{frame}{Architectures Orientées Service}{Définition\cref{fundsofsoftarch}}
         Quel est l'intérêt d'avoir une ou des bases de données communes à tous les services~?
         \pause
         \bigbreak
@@ -1379,10 +1168,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{dangercolorbox}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Introduction aux Architectures Orientées Services}
-        \framesubtitle{Introduction aux Architectures Orientées Services\footnote{\label{newop-soa}A Guide to Service-Oriented Architecture (SOA) Styles, \url{https://www.newnop.com/blog/a-guide-to-service-oriented-architecture-(soa)-styles}}}
+    \begin{frame}{Introduction aux Architectures Orientées Services}{Introduction aux Architectures Orientées Services\footnote{\label{newop-soa}A Guide to Service-Oriented Architecture (SOA) Styles, \url{https://www.newnop.com/blog/a-guide-to-service-oriented-architecture-(soa)-styles}}}
         \begin{columns}
             \column{0.5\textwidth}
             Plusieurs variantes de SOA ont vues le jour~:
@@ -1392,10 +1178,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Introduction aux Architectures Orientées Services}
-        \framesubtitle{Introduction aux Architectures Orientées Services\cref{newop-soa}}
+    \begin{frame}{Introduction aux Architectures Orientées Services}{Introduction aux Architectures Orientées Services\cref{newop-soa}}
         \begin{footnotesize}
             \begin{itemize}
                 \item \textbf{broker}~: En s'appuyant sur les fondations de l'architecture orientée services (SOA), le style Broker introduit une entité centrale appelée \textquote{broker} pour gérer la communication entre différents services.
@@ -1417,10 +1200,7 @@ ostrich.fly()  # Raises NotImplementedError
 
     \subsection{Communication client-serveur}\label{subsec:web-com-server-client}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les architectures Client-Serveur}
-        \framesubtitle{Les protocoles entre navigateur et serveur}
+    \begin{frame}{Les architectures Client-Serveur}{Les protocoles entre navigateur et serveur}
         Si le client est un navigateur web, les protocoles seront le HTTP et les protocoles construits au dessus.
         \bigbreak
         \centering
@@ -1434,10 +1214,7 @@ ostrich.fly()  # Raises NotImplementedError
         Potentiellement dans un autre protocole comme JSON-RPC, OpenID Connect, SOAP over HTTP, REST, etc.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Les architectures Client-Serveur}
-        \framesubtitle{Les protocoles entre serveurs}
+    \begin{frame}{Les architectures Client-Serveur}{Les protocoles entre serveurs}
         Si le client est une autre machine, beaucoup plus de protocoles sont disponibles.
         \bigbreak
         \centering
@@ -1453,10 +1230,7 @@ ostrich.fly()  # Raises NotImplementedError
 
     \subsection{Appel de procédure}\label{subsec:rpc}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Appel de procédure}
-        \framesubtitle{Définition}
+    \begin{frame}{Appel de procédure}{Définition}
         Couramment appelé RPC pour \textquote{Remote Procedure Call} en anglais.
         \bigbreak
         Ensemble de protocoles qui permettent à un programme client de demander à un serveur d'exécuter une fonction/procédure/programme.
@@ -1472,10 +1246,7 @@ ostrich.fly()  # Raises NotImplementedError
         Fort de leur standardisation, on trouve leur implémentation côté client et serveur dans tous les langages de programmation courants.
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Appel de procédure}
-        \framesubtitle{1998 le XML-RPC\footnote{Simple cross-platform distributed computing, based on the standards of the Internet., \url{http://1998.xmlrpc.com/}}}
+    \begin{frame}[fragile]{Appel de procédure}{1998 le XML-RPC\footnote{Simple cross-platform distributed computing, based on the standards of the Internet., \url{http://1998.xmlrpc.com/}}}
         Cette appel de procédure distant utilise le HTTP pour le transport et le XML pour la sérialisation.
 
         Exemple d'appel~:
@@ -1503,10 +1274,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Appel de procédure}
-        \framesubtitle{1998, le XML-RPC}
+    \begin{frame}{Appel de procédure}{1998, le XML-RPC}
         Quel est l'avantage du XML-RPC~?
         \pause
         \bigbreak
@@ -1522,10 +1290,7 @@ ostrich.fly()  # Raises NotImplementedError
         \textquote{Rappel}~: On peut parser du XML en JS dans le navigateur \url{https://developer.mozilla.org/en-US/docs/Web/XML/Parsing_and_serializing_XML}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Appel de procédure}
-        \framesubtitle{Le JSON-RPC 1 et 2\footnote{JSON-RPC, A light weight remote procedure call protocol. It is designed to be simple~!, \url{https://www.jsonrpc.org/}}}
+    \begin{frame}[fragile]{Appel de procédure}{Le JSON-RPC 1 et 2\footnote{JSON-RPC, A light weight remote procedure call protocol. It is designed to be simple~!, \url{https://www.jsonrpc.org/}}}
         Le JSON se popularise au milieu des années 2000 mais est standardisé seulement en 2013\footnote{The JavaScript Object Notation (JSON) Data Interchange Format, \url{https://www.rfc-editor.org/rfc/rfc7158}}.
 
         La dernière version de JSON-RPC, la 2.0, celle à utiliser, date de 2013 également.
@@ -1549,10 +1314,7 @@ ostrich.fly()  # Raises NotImplementedError
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Appel de procédure}
-        \framesubtitle{JSON-RPC}
+    \begin{frame}{Appel de procédure}{JSON-RPC}
         Quel sont les avantages du JSON-RPC~?
         \pause
         \bigbreak
@@ -1570,10 +1332,7 @@ ostrich.fly()  # Raises NotImplementedError
         Voir l'exemple de serveur qui \href{https://github.com/St-Michel-IT/testing/blob/master/ble_to_rpc.py}{expose le BLE sur le HTTP over JSON-RPC}~.
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Appel de procédure}
-        \framesubtitle{gRPC\footnote{gRPC, A high performance, open source universal RPC framework, \url{https://grpc.io/}}}
+    \begin{frame}[fragile]{Appel de procédure}{gRPC\footnote{gRPC, A high performance, open source universal RPC framework, \url{https://grpc.io/}}}
         gRPC est un RPC open source développé par Google qui l'a libéré en 2015.
         \bigbreak
         Il est basé sur le protocole HTTP/2 et utilise le format de sérialisation de données Protobuf A.K.A Protocol Buffer.
@@ -1596,10 +1355,7 @@ lentgh of the struct: 35
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Appel de procédure}
-        \framesubtitle{Pourquoi Protobuff dans le RPC}
+    \begin{frame}{Appel de procédure}{Pourquoi Protobuff dans le RPC}
         Un schéma réduit les bugs possibles.
         \begin{itemize}
             \item Comme par exemple un format de donnée incohérent, une balise ou une clé en JSON qui ne respecte pas la hiérarchie attendue.
@@ -1613,20 +1369,14 @@ lentgh of the struct: 35
         D'où la diminution des bugs possibles.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Appel de procédure}
-        \framesubtitle{Pourquoi Protobuff dans le RPC}
+    \begin{frame}{Appel de procédure}{Pourquoi Protobuff dans le RPC}
         Rappel sur la sérialisation des données, les grandes familles~:
         \bigbreak
         \centering
         \includegraphics[width=10cm]{image/serialization.drawio} \\ Échelle des problèmes potentiels du vert au rouge \\
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Appel de procédure}
-        \framesubtitle{gRPC}
+    \begin{frame}{Appel de procédure}{gRPC}
         Quel sont les avantages du gRPC~?
         \pause
         \bigbreak
@@ -1646,10 +1396,7 @@ lentgh of the struct: 35
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Appel de procédure}
-        \framesubtitle{Conclusion}
+    \begin{frame}{Appel de procédure}{Conclusion}
         Les 3 types d'appels de procédure vus sont très standardisés.
         Les librairies pour les implémenter sont disponibles dans tous les langages de programmation courants.
         Souvent depuis des années et donc robustes.
@@ -1666,10 +1413,7 @@ lentgh of the struct: 35
     \subsection{API REST}\label{subsec:api-rest}
 
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{API REST}
-        \framesubtitle{Définition\footnote{Une API REST, qu'est-ce que c'est~?, \url{https://www.redhat.com/fr/topics/api/what-is-a-rest-api}}}
+    \begin{frame}{API REST}{Définition\footnote{Une API REST, qu'est-ce que c'est~?, \url{https://www.redhat.com/fr/topics/api/what-is-a-rest-api}}}
         \begin{footnotesize}
             Les API REST aussi parfois appelées API RESTful sont des API qui respectent les contraintes de l'architecture REST (Representational State Transfer) de Roy Fielding.
             \bigbreak
@@ -1685,11 +1429,8 @@ lentgh of the struct: 35
         \end{footnotesize}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{API}
-        \framesubtitle{Définition}
-        Aucune contrainte donc sur le langage de programmation, le système d'exploitation, le type de donnée, etc.
+    \begin{frame}[fragile]{API}{Définition}
+        Aucune contrainte donc sur le langage de programmation, le système d'exploitation, le type de donnée (HTML, XML, protobuff, YAML mais plus souvent JSON), etc.
         \bigbreak
         De nombreuses libraries existent pour implémenter des API REST dans tous les langages de programmation courants.
         \bigbreak
@@ -1714,47 +1455,42 @@ app.run(debug=True)
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{API}
+    \begin{frame}[fragile]{API}
         Quelques exemples d'API REST avec des POST et aussi des arguments grâce à la librairie \lstinline{webargs} sur leur \href{https://github.com/marshmallow-code/webargs/blob/dev/examples/flaskrestful_example.py}{GitHub}.
 % Python listing
         \begin{lstlisting}[language=python,basicstyle=\ttfamily\tiny]
 class DateAddResource(Resource):
-dateadd_args = {
-"value": fields.Date(required=False),
-"addend": fields.Int(required=True, validate=validate.Range(min=1)),
-"unit": fields.Str(
-load_default="days", validate=validate.OneOf(["minutes", "days"])
-),
-}
+    dateadd_args = {
+        "value": fields.Date(required=False),
+        "addend": fields.Int(required=True, validate=validate.Range(min=1)),
+        "unit": fields.Str(
+        load_default="days", validate=validate.OneOf(["minutes", "days"])
+    ),
+    }
 
 @use_kwargs(dateadd_args)
 def post(self, value, addend, unit):
-"""A date adder endpoint."""
-value = value or dt.datetime.utcnow()
-if unit == "minutes":
-delta = dt.timedelta(minutes=addend)
-else:
-delta = dt.timedelta(days=addend)
-result = value + delta
-return {"result": result.isoformat()}
+    """A date adder endpoint."""
+    value = value or dt.datetime.utcnow()
+    if unit == "minutes":
+        delta = dt.timedelta(minutes=addend)
+    else:
+        delta = dt.timedelta(days=addend)
+    result = value + delta
+    return {"result": result.isoformat()}
 
 
 # This error handler is necessary for usage with Flask-RESTful
 @parser.error_handler
 def handle_request_parsing_error(err, req, schema, *, error_status_code, error_headers):
-"""webargs error handler that uses Flask-RESTful's abort function to return
-a JSON error response to the client.
-"""
-abort(error_status_code, errors=err.messages)
+    """webargs error handler that uses Flask-RESTful's abort function to return
+    a JSON error response to the client.
+    """
+    abort(error_status_code, errors=err.messages)
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Guideline API REST}
-        \framesubtitle{Les méthodes\footnote{HTTP request methods, \url{https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/HTTP-methods}}}
+    \begin{frame}{Guideline API REST}{Les méthodes\footnote{HTTP request methods, \url{https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/HTTP-methods}}}
         % Make 2 columns
         \begin{columns}
             \column{0.4\textwidth}
@@ -1766,10 +1502,7 @@ abort(error_status_code, errors=err.messages)
         \end{columns}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Guideline API REST}
-        \framesubtitle{La pagination dans les URLs\footnote{A guide to REST API pagination, \url{https://www.merge.dev/blog/rest-api-pagination}}}
+    \begin{frame}[fragile]{Guideline API REST}{La pagination dans les URLs\footnote{A guide to REST API pagination, \url{https://www.merge.dev/blog/rest-api-pagination}}}
         La plus classique est la pagination par \textquote{offset} et \textquote{limit}~:
         % listing
         \begin{lstlisting}
@@ -1788,10 +1521,7 @@ GET /api/v1/users?page=2&size=10
         Il suffit passer ces paramètres à une requête SQL~.
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Guideline API REST}
-        \framesubtitle{Les URLs\footnote{Top REST API URL naming convention standards, \url{https://www.theserverside.com/video/Top-REST-API-URL-naming-convention-standards}}}
+    \begin{frame}{Guideline API REST}{Les URLs\footnote{Top REST API URL naming convention standards, \url{https://www.theserverside.com/video/Top-REST-API-URL-naming-convention-standards}}}
         \begin{tiny}
             \begin{itemize}
                 \item Utilisez uniquement des lettres minuscules dans les URLs des API RESTful.
@@ -1813,10 +1543,7 @@ GET /api/v1/users?page=2&size=10
         \end{tiny}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Guideline API REST}
-        \framesubtitle{Les URLs}
+    \begin{frame}{Guideline API REST}{Les URLs}
         Donner un exemple d'URL pour les cas suivants~:
         \begin{itemize}
             \item Récupérer la liste des utilisateurs.
@@ -1830,13 +1557,17 @@ GET /api/v1/users?page=2&size=10
         \end{itemize}
         \pause
         \bigbreak
+        Corriger les URLs~:
+        \begin{itemize}
+            \item \lstinline{GET /api/v1/user/1/update}
+            \item \lstinline{GET /api/v1/user/1/delete}
+        \end{itemize}
+        \pause
+        \bigbreak
         Qu'est-ce qu'une injection SQL et comment éviter une injection SQL~?
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Guideline API REST}
-        \framesubtitle{Les codes de retour HTTP\footnote{Best Practices for REST API Error Handling, \url{https://www.baeldung.com/rest-api-error-handling-best-practices}}}
+    \begin{frame}{Guideline API REST}{Les codes de retour HTTP\footnote{Best Practices for REST API Error Handling, \url{https://www.baeldung.com/rest-api-error-handling-best-practices}}}
         Codes retour HTTP~:
         \begin{tiny}
             \begin{itemize}
@@ -1863,10 +1594,7 @@ GET /api/v1/users?page=2&size=10
 
     \subsection{La standardisation du contenu JSON}\label{subsec:api-json}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Swagger}
-        \framesubtitle{La spécification OpenAPI et le format Swagger}
+    \begin{frame}[fragile]{Swagger}{La spécification OpenAPI et le format Swagger}
         La spécification OpenAPI est une spécification pour décrire des API JSON~.
         Donc les API RESTful entre autre.
         \bigbreak
@@ -1883,10 +1611,7 @@ GET /api/v1/users?page=2&size=10
         \end{itemize}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{Swagger}
-        \framesubtitle{La spécification OpenAPI et le format Swagger}
+    \begin{frame}[fragile]{Swagger}{La spécification OpenAPI et le format Swagger}
         Pour écrire le \textquote{Swagger} directement dans le code, il existe des librairies comme \lstinline{flasgger} qui permettent de générer la documentation de l'API à partir des docstrings des méthodes.
 
         Voir par exemple \url{https://github.com/flasgger/flasgger}.
@@ -1898,10 +1623,7 @@ GET /api/v1/users?page=2&size=10
         \end{dangercolorbox}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{JSON-LD}
-        \framesubtitle{JSON Linked-Data\footnote{JSON for Linking Data, \url{https://json-ld.org/}}}
+    \begin{frame}[fragile]{JSON-LD}{JSON Linked-Data\footnote{JSON for Linking Data, \url{https://json-ld.org/}}}
         Inspiré du web sémantique et de la sémantique des données, le JSON-LD est un format de données structurées qui permet de lier des données entre elles.
 
         \textquote{JSON-LD is a lightweight Linked Data format. It is easy for humans to read and write.}
@@ -1919,10 +1641,7 @@ GET /api/v1/users?page=2&size=10
         Le \lstinline{@contex} est une URL qui pointe vers un fichier JSON-LD qui définit les relations entre les données\footnote{JSON-LD contexts, \url{http://niem.github.io/json/reference/json-ld/context/}}.
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{JSON-LD}
-        \framesubtitle{La pagination\footnote{Pagination, \url{https://www.w3.org/community/hydra/wiki/Pagination}}}
+    \begin{frame}[fragile]{JSON-LD}{La pagination\footnote{Pagination, \url{https://www.w3.org/community/hydra/wiki/Pagination}}}
         Une \textquote{Collection} de données peut être paginée pour ne pas surcharger le client avec une trop grosse réponse~:
         \begin{lstlisting}[language=java]
 {
@@ -1939,10 +1658,7 @@ GET /api/v1/users?page=2&size=10
 
     \subsection{API SOAP}\label{subsec:api-soap}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{API SOAP}
-        \framesubtitle{Définition}
+    \begin{frame}[fragile]{API SOAP}{Définition}
         SOAP pour \textquote{Simple Object Access Protocol} est un protocole de communication qui permet à des applications de communiquer entre elles.
 
         Il est basé sur XML et est donc plus verbeux que le JSON~.
@@ -1966,10 +1682,7 @@ GET /api/v1/users?page=2&size=10
 </portType>
         \end{lstlisting}
     \end{frame}
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{API SOAP}
-        \framesubtitle{Définition\footnote{REST et SOAP : quelle est la différence ?, \url{https://www.redhat.com/fr/topics/integration/whats-the-difference-between-soap-rest}}}
+    \begin{frame}[fragile]{API SOAP}{Définition\footnote{REST et SOAP : quelle est la différence ?, \url{https://www.redhat.com/fr/topics/integration/whats-the-difference-between-soap-rest}}}
         \begin{footnotesize}
             Les standards de conformité intégrés incluent la sécurité, l'atomicité, la cohérence, l'isolement et la durabilité (ACID), un ensemble de propriétés qui permet d'assurer des transactions de base de données fiables.
             Voici les principales spécifications de ces services web~:
@@ -1982,10 +1695,7 @@ GET /api/v1/users?page=2&size=10
         \end{footnotesize}
     \end{frame}
 
-    \begin{frame}[fragile]
-        \transdissolve
-        \frametitle{API SOAP}
-        \framesubtitle{La requête}
+    \begin{frame}[fragile]{API SOAP}{La requête}
         Des librairies existent pour générer les requêtes SOAP, par exemple en Python \lstinline{zeep}~:
         \begin{lstlisting}[language=python,basicstyle=\ttfamily\tiny]
 from zeep import Client
@@ -2004,10 +1714,7 @@ response = client.service.sendData(**request_data)
         \end{lstlisting}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{API SOAP}
-        \framesubtitle{Le serveur}
+    \begin{frame}{API SOAP}{Le serveur}
         Des librairies existent pour transformer un serveur web Python classique en API SOAP, par exemple \lstinline{spyne}.
         Voir leur exemple avec le module \url{https://github.com/arskom/spyne/blob/master/examples/helloworld_soap.py}.
         \bigbreak
@@ -2015,10 +1722,7 @@ response = client.service.sendData(**request_data)
         \includegraphics[width=5cm]{image/soaps-chatting}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{SOA}
-        \framesubtitle{Exercice \execcounterdispinc{}}
+    \begin{frame}{SOA}{Exercice \execcounterdispinc{}}
         \begin{tiny}
             Désigner et développer une architecture de services qui distribue les données de l'\href{https://www.data.gouv.fr/fr/datasets/index-egalite-professionnelle-f-h-des-entreprises-de-50-salaries-ou-plus/}{Index EgaPro}.
             Respecter les exigences suivantes~:
@@ -2052,10 +1756,7 @@ response = client.service.sendData(**request_data)
 
     \section{Conclusion}\label{sec:conclusion}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Conclusion}
-        \framesubtitle{L'architecture, un Art}
+    \begin{frame}{Conclusion}{L'architecture, un Art}
         L'étymologie d'architecture semble ne pas avoir de rapport l'art mais plutôt \textit{arkhè}, le commencement.
         % Two columns
         \begin{columns}
@@ -2073,10 +1774,7 @@ response = client.service.sendData(**request_data)
         \end{columns}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Conclusion}
-        \framesubtitle{L'architecture en équipe\cref{fundsofsoftarch}}
+    \begin{frame}{Conclusion}{L'architecture en équipe\cref{fundsofsoftarch}}
         L'humain est beaucoup plus présent dans l'architecture logicielle que dans le développement.
 
         Le rôle d'architecture implique souvent du management et de la communication.
@@ -2085,10 +1783,7 @@ response = client.service.sendData(**request_data)
         \includegraphics[width=10cm]{image/efficient-team}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Conclusion}
-        \framesubtitle{L'architecture en équipe}
+    \begin{frame}{Conclusion}{L'architecture en équipe}
         Si vous n'aimez pas communiquer, partager vos choix, peut-être que l'architecture n'est pas faite pour vous.
 
         La communication doit se faire avec de nombreuses parties prenantes~:
@@ -2105,10 +1800,7 @@ response = client.service.sendData(**request_data)
         \end{dangercolorbox}
     \end{frame}
 
-    \begin{frame}
-        \transdissolve
-        \frametitle{Conclusion}
-        \framesubtitle{Le mot de la fin}
+    \begin{frame}{Conclusion}{Le mot de la fin}
         Ne pas essayer de paraître malin en utilisant des termes et des technos compliqués.
         Même si c'est à la mode en ce moment\ldots
         \bigbreak
