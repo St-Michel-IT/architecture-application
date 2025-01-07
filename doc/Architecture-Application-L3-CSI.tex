@@ -403,7 +403,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
             \item Écrire un test par requirement.
             \item Écrire l'algorithme.
             \item Refactoriser.
-            \item Revenir à l'étape 2 jusqu'à ce que tous les test passent.
+            \item Revenir à l'étape 2 jusqu'à ce que tous les tests passent.
         \end{enumerate}
 
     \end{frame}
@@ -427,13 +427,13 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
         L'\textquote{abstractness}  une mesure de l'abstraction par rapport aux implémentations concrètes.
         Elle fut introduite par Robert C. Martin.
         \begin{equation}
-            A = \frac{\sum Ca}{\sum Cc}
+            A = \frac{\sum Cabs}{\sum Cconc}
         \end{equation}
         Dans l'équation 1~:
         \begin{itemize}
             \item $A$ est \textquote{abstractness}.
-            \item $Ca$ est le nombre de classe(s) abstraite(s).
-            \item $Cc$ est le nombre de classe(s) concrète(s).
+            \item $\sum Cabs$ est le nombre de classe(s) abstraite(s).
+            \item $\sum Cconc$ est le nombre de classe(s) concrète(s).
         \end{itemize}
         \bigbreak
         Les valeurs de $A$ sont entre 0 et 1.
@@ -509,7 +509,7 @@ TypeError: Can't instantiate abstract class Dodo with abstract method vole
 
     \begin{frame}{Les mesures du couplage}{Résultat de l'exercice précédent}
         \centering
-        \includegraphics[width=10cm]{image/exercice-metrics-1}
+        \includegraphics[width=11cm]{image/exercice-metrics-1}
     \end{frame}
 
     \begin{frame}[fragile]{Les mesures du couplage}{Les outils}
@@ -672,7 +672,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
                 \item \textbf{Open-Closed Principle}~: Une classe doit être ouverte à l'extension mais fermée à la modification.
                 \item \textbf{Liskov Substitution Principle}~: Une instance de type T doit pouvoir être remplacée par une instance de type G, tel que G sous-type de T, sans que cela ne modifie la cohérence du programme.
                 Cela garantit que les sous-classes peuvent être utilisées de manière interchangeable avec leurs classes de base.
-                \item \textbf{Interface Segregation Principle}~: Les classes ne doivent pas être forcés d'implémenter des interfaces qu'ils n'utilisent pas.
+                \item \textbf{Interface Segregation Principle}~: Les classes ne doivent pas être forcés d'implémenter des interfaces qu'elles n'utilisent pas.
                 Préférer plusieurs interfaces spécifiques pour chaque client plutôt qu'une seule interface générale.
                 Cela évite aux classes de dépendre de méthodes dont elles n'ont pas besoin, réduisant ainsi les couplages inutiles.
                 \item \textbf{Dependency Inversion Principle}~: Il faut dépendre des abstractions, pas des implémentations.
@@ -714,7 +714,7 @@ uint64_t fsma(uint64_t base, uint64_t exp, uint64_t mod) {
         Les exigences~:
         \begin{itemize}
             \item Refactoriser des fonctions \lstinline{calculatePay}, \lstinline{reportHours} et \lstinline{save} avec le(s) éventuel(s) argument(s) nécessaire(s) pour qu'elles respectent le SRP~.
-            \item Ajouter les attribues nécessaire(s) et au moins 4 méthodes à la classe \lstinline{Employee} tout en respectant le SRP~.
+            \item Ajouter les attribues nécessaires et au moins 4 méthodes à la classe \lstinline{Employee} tout en respectant le SRP~.
             \item Répondre sous forme d'un schéma (en utilisant Draw.io par exemple) avec les différents et classe(s), méthodes.
         \end{itemize}
     \end{frame}
@@ -802,8 +802,6 @@ public class UserAgeValidator {
     \begin{frame}[fragile]{Liskov Principle}{Définition\cref{cleanarchitecture}}
         Une classe enfant doit pouvoir être utilisée à la place de sa classe mère sans que cela ne modifie le comportement du programme.
         \bigbreak
-        Pour rappel, évidemment, une classe enfant peut être substitué par un autre enfant de la même classe mère.
-        \bigbreak
         Autrement dit une classe fille ne doit pas casser pas le code de la classe mère.
         Ne jamais surcharger une méthode de la classe mère.
         % Python listing
@@ -827,7 +825,7 @@ ostrich.fly()  # Raises NotImplementedError
 
     \begin{frame}{Liskov Principle}{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
         Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/blob/main/liskov-rectangle.py}.
-        La fonction \lstinline{use_it} ne peut pas être utilisée avec la classe \lstinline{Square} sans modification.
+        La fonction \lstinline{check_shape_area} ne peut pas être utilisée avec la classe \lstinline{Square} sans modification.
         Refactoriser cette dernière pour qu'elle le puisse et donc qu'elle respecte le Liskov Principle.
         \bigbreak
         \begin{columns}
@@ -845,8 +843,8 @@ ostrich.fly()  # Raises NotImplementedError
 
     \begin{frame}{Liskov Principle}{Exercice \execcounterdispinc{} de refactoring de 15 minutes}
         Refactoriser le code \url{https://github.com/St-Michel-IT/architecture-application/liskov-rectangle.py}.
-        La fonction \lstinline{use_it} ne peut pas être utilisée avec la classe \lstinline{Square} sans modification.
-        Refactoriser les classes \lstinline{Square} et \lstinline{Rectangle} pour qu'elles héritent d'une classe abstraite à développer et que \lstinline{use_it} fonctionne avec les deux classes.
+        La fonction \lstinline{check_shape_area} ne peut pas être utilisée avec la classe \lstinline{Square} sans modification.
+        Refactoriser les classes \lstinline{Square} et \lstinline{Rectangle} pour qu'elles héritent d'une classe abstraite à développer et que \lstinline{check_shape_area} fonctionne avec les deux classes.
         \bigbreak
         \begin{columns}
             \column{0.5\textwidth}
@@ -862,7 +860,7 @@ ostrich.fly()  # Raises NotImplementedError
     \end{frame}
 
     \begin{frame}{Interface Segragation Principle (ISP)}{Définition\cref{cleanarchitecture}}
-        Dépendre de quelque qui a un bagage que l'on utilise pas peut être une source de bugs inattendus.
+        Dépendre de quelque chose qui a un bagage que l'on utilise pas peut être une source de bugs inattendus.
         \bigbreak
         Pour éviter ce risque, il faut multiplier les interfaces plus petites pour mieux isoler l'impact d'une modification.
         \begin{columns}
@@ -890,7 +888,7 @@ ostrich.fly()  # Raises NotImplementedError
     \end{frame}
 
     \begin{frame}{Interface Segregation Principle}{Définition\cref{cleanarchitecture}}
-        Question~:Pourquoi ce problème n'apparait pas avec les langages typés dynamiquement~?
+        Question~: Pourquoi ce problème n'apparait pas avec les langages typés dynamiquement~?
         \pause
         \bigbreak
         Car le type est inféré au moment de l'exécution puisqu'il est dynamique.

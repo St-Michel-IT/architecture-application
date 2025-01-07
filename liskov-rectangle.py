@@ -82,8 +82,8 @@ def check_shape_area(shape: Rectangle | Square):
        :raise AssertionError: If the area is not calculated correctly. 
     """
     height = 10
-    w = shape.width
     shape.set_height(height)
+    w = shape.width
     assert shape.get_area() == w * height
 
 
