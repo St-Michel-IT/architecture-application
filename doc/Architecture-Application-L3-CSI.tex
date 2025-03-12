@@ -237,14 +237,15 @@
     \end{frame}
 
     \begin{frame}[fragile]{Les briques}{Exemple de programmation fonctionnelle}
-        3 modules dédiés à la programmation fonctionnelle dans la \textquote{standard library} Python\footnote{Functional Programming Modules, \url{https://docs.python.org/3/library/functional.html}}~:
-        \begin{itemize}
-            \item \lstinline{functools}, \textquote{Higher-order functions and operations on callable objects}.
-            \item \lstinline{itertools}, \textquote{Functions creating iterators for efficient looping}.
-            \item \lstinline{operator}, \textquote{Standard operators as functions}.
-        \end{itemize}
-        L'équivalent en JS, sans aucune librairie à importer~:
-        \begin{lstlisting}[language=java]
+        \begin{footnotesize}
+            3 modules dédiés à la programmation fonctionnelle dans la \textquote{standard library} Python\footnote{Functional Programming Modules, \url{https://docs.python.org/3/library/functional.html}}~:
+            \begin{itemize}
+                \item \lstinline{functools}, \textquote{Higher-order functions and operations on callable objects}.
+                \item \lstinline{itertools}, \textquote{Functions creating iterators for efficient looping}.
+                \item \lstinline{operator}, \textquote{Standard operators as functions}.
+            \end{itemize}
+            L'équivalent en JS, sans aucune librairie à importer~:
+            \begin{lstlisting}[language=java]
 > numbers = new Array(1, 2, 3, 4, 5)
 [ 1, 2, 3, 4, 5 ]
 > const isEven = x => x % 2 === 0;
@@ -257,7 +258,8 @@ true
 [ 2, 4 ]
 > numbers.reduce((x, y) => y * x);
 120
-        \end{lstlisting}
+            \end{lstlisting}
+        \end{footnotesize}
     \end{frame}
 
     \subsection{Programmation orientée objet}\label{subsec:briques-oop}
@@ -1067,7 +1069,7 @@ ostrich.fly()  # Raises NotImplementedError
 
     \section{High Level Desgin (HLD)}\label{sec:high-level-design}
 
-    \begin{frame}{High Level Desgin (HLD)}{Déifiniton \footnote{Carnegie Mellon UNiverety, Philip Koopman, \url{https://course.ece.cmu.edu/~ece642/lectures/12_Architecture_HLD.pdf}}}
+    \begin{frame}{High Level Desgin (HLD)}{Déifiniton \footnote{Carnegie Mellon University, Philip Koopman, \url{https://course.ece.cmu.edu/~ece642/lectures/12_Architecture_HLD.pdf}}}
         Le HLD est une description de l'architecture, une vue d'ensemble d'un système qui peut être un produit entier.
         \bigbreak
         On peut entre autre utiliser plusieurs diagrammes pour décrire le HLD~:
@@ -1301,7 +1303,7 @@ ostrich.fly()  # Raises NotImplementedError
 // Équivalent aux "positional parameters"
 {"jsonrpc": "2.0", "method": "subtract", "params": [42, 23], "id": 1} // Appel -->
 {"jsonrpc": "2.0", "result": 19, "id": 1} // Réponse <--
-// Une notification n'a pas de "id" et donc pas ed réponse
+// Une notification n'a pas de "id" et donc pas de réponse
 {"jsonrpc": "2.0", "method": "update", "params": [1,2,3,4,5]} // Appel -->
 {"jsonrpc": "2.0", "method": "foobar"} // Appel -->
 // Batch de commandes, les mêmes commandes sont dans un tableau, possible pour les notifications également
@@ -1358,7 +1360,7 @@ lentgh of the struct: 35
         \begin{itemize}
             \item Comme par exemple un format de donnée incohérent, une balise ou une clé en JSON qui ne respecte pas la hiérarchie attendue.
             \item Type de donnée incohérent
-            \item Valeur incohérente, comme 6000000 dans un champ qui attend un entier 16 bits.
+            \item Valeur incohérente, comme 6 000 000 dans un champ qui attend un entier 16 bits.
             \item Sûrement d'autres\ldots
         \end{itemize}
         \bigbreak
